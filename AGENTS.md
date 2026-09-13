@@ -21,17 +21,25 @@
 
 ## Current Implemented State
 
-- Three scored advancement prototypes are implemented:
+- Ten scored advancement prototypes are implemented:
   - Stone Age (`minecraft:story/mine_stone`), base score **100**.
   - A Seedy Place (`minecraft:husbandry/plant_seed`), base score **100**.
   - Monster Hunter (`minecraft:adventure/kill_a_mob`), base score **200**.
-- A shared scoring core applies the confirmed completion-order multipliers: **100% / 80% / 60% / 40% / 20%** for first / second / third / fourth / fifth and later. It preserves the all-chat announcement and Actionbar notification for each advancement.
+- Getting an Upgrade (`minecraft:story/upgrade_tools`), base score **100**.
+- Acquire Hardware (`minecraft:story/smelt_iron`), base score **150**.
+- Hot Stuff (`minecraft:story/lava_bucket`), base score **200**.
+- We Need to Go Deeper (`minecraft:story/enter_the_nether`), base score **300**.
+- Sweet Dreams (`minecraft:adventure/sleep_in_bed`), base score **100**.
+- Fishy Business (`minecraft:husbandry/fishy_business`), base score **150**.
+- What a Deal! (`minecraft:adventure/trade`), base score **200**.
+- The shared scoring core is unchanged. It applies the confirmed completion-order multipliers: **100% / 80% / 60% / 40% / 20%** for first / second / third / fourth / fifth and later, and preserves the all-chat announcement and Actionbar notification for each advancement.
 - Each advancement has its own completion counter. `race_place`, `race_award`, and `race_points` retain their defined semantics below.
 - A Storage event ledger records sequence, player UUID, registered in-match name, advancement ID, place, and awarded points.
-- A minimal Match Lifecycle is implemented: participants can be registered while idle; starting locks the roster and enables scoring only for registered players; ending archives the match snapshot under `history.matches` while retaining the current match snapshot; resetting prepares a new match without clearing archived history. Registering revokes the participant's helper advancements so they can trigger in the next match.
-- `tools/advancements.manifest.json` is a static metadata prototype for these three advancements. It does not generate datapack files and is not read by runtime datapack logic.
+- A minimal Match Lifecycle is unchanged: participants can be registered while idle; starting locks the roster and enables scoring only for registered players; ending archives the match snapshot under `history.matches` while retaining the current match snapshot; resetting prepares a new match without clearing archived history.
+- Counter initialization, counter reset, and helper revocation are each maintained by a dedicated shared function. Registering revokes a participant's helpers so they can trigger in the next match.
+- `tools/advancements.manifest.json` is a static metadata prototype for all ten advancements. It does not generate datapack files and is not read by runtime datapack logic.
 
-Do not assume generator-based advancement support, 100+ advancement coverage, historical query tools, settlement, final rankings, or written book reports are implemented.
+Do not assume a generator, 100+ advancement automatic generation, historical query tools or query books, settlement, final rankings, or written book reports are implemented.
 
 ## Important Variable Semantics
 
