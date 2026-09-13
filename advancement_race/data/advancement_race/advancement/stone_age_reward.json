@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "get_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:stone_tool_materials"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_stone"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_stone_age"
+  }
+}
