@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "advancements": [
+    {
+      "key": "stone_age",
+      "vanilla_id": "minecraft:story/mine_stone",
+      "helper_id": "advancement_race:stone_age_reward",
+      "counter": "#stone_age_count",
+      "base_score": 100,
+      "title_translate": "advancements.story.mine_stone.title",
+      "category": "story"
+    },
+    {
+      "key": "a_seedy_place",
+      "vanilla_id": "minecraft:husbandry/plant_seed",
+      "helper_id": "advancement_race:a_seedy_place_reward",
+      "counter": "#a_seedy_place_count",
+      "base_score": 100,
+      "title_translate": "advancements.husbandry.plant_seed.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "monster_hunter",
+      "vanilla_id": "minecraft:adventure/kill_a_mob",
+      "helper_id": "advancement_race:monster_hunter_reward",
+      "counter": "#monster_hunter_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.kill_a_mob.title",
+      "category": "adventure"
+    }
+  ]
+}
