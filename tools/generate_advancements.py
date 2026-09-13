@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
 """Generate Advancement Race datapack files from the manifest and a server jar.
 
-This phase accepts an already-downloaded, official Minecraft server artifact via
---server-jar. Downloading, Mojang metadata hash validation, and persistent
-caching are intentionally added in the following phase.
+The generator accepts either an already-downloaded server artifact via
+--server-jar or a verified, cached artifact resolved from Mojang metadata.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import io
 import json
+import os
 import re
 import sys
 import zipfile
 from pathlib import Path
 from typing import Any
+from urllib.error import URLError
+from urllib.request import Request, urlopen
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -58,13 +61,163 @@ def validate_config(config: Any) -> dict[str, Any]:
     minecraft = require_mapping(config.get("minecraft"), "Generator config minecraft")
     version = require_string(minecraft.get("version"), "Generator config minecraft.version")
     artifact = require_string(minecraft.get("artifact"), "Generator config minecraft.artifact")
-    require_string(
+    version_manifest_url = require_string(
         minecraft.get("version_manifest_url"),
         "Generator config minecraft.version_manifest_url",
     )
     if artifact != "server":
         raise GeneratorError("Generator MVP supports only the Minecraft server artifact.")
-    return {"version": version}
+    return {"version": version, "version_manifest_url": version_manifest_url}
+
+
+def fetch_json(url: str, description: str) -> dict[str, Any]:
+    request = Request(url, headers={"User-Agent": "advancement-race-generator"})
+    try:
+        with urlopen(request) as response:
+            payload = response.read()
+    except URLError as error:
+        raise GeneratorError(f"Could not fetch {description}: {error.reason}") from error
+
+    try:
+        return require_mapping(json.loads(payload.decode("utf-8")), description)
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise GeneratorError(f"{description} is not valid UTF-8 JSON.") from error
+
+
+def resolve_server_download(config: dict[str, Any]) -> dict[str, str]:
+    version_manifest = fetch_json(config["version_manifest_url"], "Mojang version manifest")
+    versions = version_manifest.get("versions")
+    if not isinstance(versions, list):
+        raise GeneratorError("Mojang version manifest does not contain a versions array.")
+
+    version_metadata_url = None
+    for version_entry in versions:
+        if isinstance(version_entry, dict) and version_entry.get("id") == config["version"]:
+            version_metadata_url = version_entry.get("url")
+            break
+    version_metadata_url = require_string(
+        version_metadata_url,
+        f"Mojang metadata URL for Minecraft {config['version']}",
+    )
+
+    version_metadata = fetch_json(
+        version_metadata_url, f"Mojang metadata for Minecraft {config['version']}"
+    )
+    downloads = require_mapping(version_metadata.get("downloads"), "Mojang downloads metadata")
+    server = require_mapping(downloads.get("server"), "Mojang server artifact metadata")
+    return {
+        "url": require_string(server.get("url"), "Mojang server artifact URL"),
+        "sha1": require_string(server.get("sha1"), "Mojang server artifact SHA-1"),
+    }
+
+
+def sha1_file(path: Path) -> str:
+    digest = hashlib.sha1()
+    try:
+        with path.open("rb") as file:
+            while chunk := file.read(1024 * 1024):
+                digest.update(chunk)
+    except OSError as error:
+        raise GeneratorError(f"Could not read {path} for SHA-1 validation: {error}") from error
+    return digest.hexdigest()
+
+
+def default_cache_directory() -> Path:
+    if os.name == "nt" and os.environ.get("LOCALAPPDATA"):
+        return Path(os.environ["LOCALAPPDATA"]) / "advancement-race" / "vanilla"
+    if os.environ.get("XDG_CACHE_HOME"):
+        return Path(os.environ["XDG_CACHE_HOME"]) / "advancement-race" / "vanilla"
+    return Path.home() / ".cache" / "advancement-race" / "vanilla"
+
+
+def validate_cache_directory(path: Path) -> Path:
+    resolved = path.resolve()
+    try:
+        resolved.relative_to(REPO_ROOT.resolve())
+    except ValueError:
+        return resolved
+    raise GeneratorError("Minecraft artifact cache must remain outside the repository.")
+
+
+def verify_server_artifact(path: Path, expected_sha1: str) -> None:
+    if not path.is_file():
+        raise GeneratorError(f"Minecraft server artifact does not exist: {path}")
+    actual_sha1 = sha1_file(path)
+    if actual_sha1.lower() != expected_sha1.lower():
+        raise GeneratorError(
+            f"Minecraft server artifact SHA-1 mismatch for {path}: "
+            f"expected {expected_sha1}, got {actual_sha1}."
+        )
+
+
+def cache_path(cache_directory: Path, minecraft_version: str, expected_sha1: str) -> Path:
+    return cache_directory / minecraft_version / "server" / f"{expected_sha1}.jar"
+
+
+def download_server_artifact(url: str, destination: Path, expected_sha1: str) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = destination.with_name(f"{destination.name}.download")
+    try:
+        request = Request(url, headers={"User-Agent": "advancement-race-generator"})
+        with urlopen(request) as response, temporary_path.open("wb") as output:
+            while chunk := response.read(1024 * 1024):
+                output.write(chunk)
+        verify_server_artifact(temporary_path, expected_sha1)
+        temporary_path.replace(destination)
+    except URLError as error:
+        raise GeneratorError(f"Could not download Mojang server artifact: {error.reason}") from error
+    finally:
+        if temporary_path.exists():
+            temporary_path.unlink()
+
+
+def cached_server_artifact(cache_directory: Path, minecraft_version: str) -> Path:
+    server_directory = cache_directory / minecraft_version / "server"
+    artifacts = sorted(server_directory.glob("*.jar")) if server_directory.is_dir() else []
+    if len(artifacts) != 1:
+        raise GeneratorError(
+            f"Offline mode requires exactly one cached server artifact in {server_directory}."
+        )
+    artifact = artifacts[0]
+    verify_server_artifact(artifact, artifact.stem)
+    return artifact
+
+
+def resolve_server_artifact(arguments: argparse.Namespace, config: dict[str, Any]) -> Path:
+    if arguments.server_jar is not None:
+        if arguments.offline:
+            cache_directory = validate_cache_directory(
+                arguments.cache_dir if arguments.cache_dir is not None else default_cache_directory()
+            )
+            expected_sha1 = cached_server_artifact(cache_directory, config["version"]).stem
+        else:
+            expected_sha1 = resolve_server_download(config)["sha1"]
+        verify_server_artifact(arguments.server_jar, expected_sha1)
+        print(f"Using verified Minecraft server artifact: {arguments.server_jar}", file=sys.stderr)
+        return arguments.server_jar
+
+    cache_directory = validate_cache_directory(
+        arguments.cache_dir if arguments.cache_dir is not None else default_cache_directory()
+    )
+    if arguments.offline:
+        artifact = cached_server_artifact(cache_directory, config["version"])
+        print(f"Using cached Minecraft server artifact: {artifact}", file=sys.stderr)
+        return artifact
+
+    download = resolve_server_download(config)
+    artifact = cache_path(cache_directory, config["version"], download["sha1"])
+    if artifact.exists():
+        try:
+            verify_server_artifact(artifact, download["sha1"])
+        except GeneratorError:
+            artifact.unlink()
+        else:
+            print(f"Using verified cached Minecraft server artifact: {artifact}", file=sys.stderr)
+            return artifact
+
+    download_server_artifact(download["url"], artifact, download["sha1"])
+    print(f"Downloaded verified Minecraft server artifact: {artifact}", file=sys.stderr)
+    return artifact
 
 
 def validate_manifest(manifest: Any) -> list[dict[str, Any]]:
@@ -351,8 +504,17 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--server-jar",
         type=Path,
-        required=True,
-        help="Official Minecraft server artifact for the configured version.",
+        help="Use an already-downloaded Minecraft server artifact instead of the cache.",
+    )
+    parser.add_argument(
+        "--cache-dir",
+        type=Path,
+        help="External directory used to cache verified Minecraft server artifacts.",
+    )
+    parser.add_argument(
+        "--offline",
+        action="store_true",
+        help="Use the single verified artifact already cached for the configured version.",
     )
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
@@ -366,8 +528,9 @@ def main() -> int:
         config = validate_config(read_json(arguments.config))
         advancements = validate_manifest(read_json(arguments.manifest))
         overrides = load_overrides(arguments.overrides_dir, advancements)
+        server_jar = resolve_server_artifact(arguments, config)
         vanilla_advancements = read_vanilla_advancements(
-            arguments.server_jar, config["version"], advancements
+            server_jar, config["version"], advancements
         )
         outputs = expected_outputs(advancements, vanilla_advancements, overrides)
 
