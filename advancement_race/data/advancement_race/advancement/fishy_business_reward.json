@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "cod": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "item": {
+          "items": "minecraft:cod"
+        }
+      }
+    },
+    "pufferfish": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "item": {
+          "items": "minecraft:pufferfish"
+        }
+      }
+    },
+    "salmon": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "item": {
+          "items": "minecraft:salmon"
+        }
+      }
+    },
+    "tropical_fish": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "item": {
+          "items": "minecraft:tropical_fish"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cod",
+      "tropical_fish",
+      "pufferfish",
+      "salmon"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_fishy_business"
+  }
+}

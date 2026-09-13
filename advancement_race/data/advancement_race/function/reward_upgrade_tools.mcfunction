@@ -1,0 +1,2 @@
+data modify storage advancement_race:runtime scoring set value {counter:"#upgrade_tools_count",base_score:100,advancement:"minecraft:story/upgrade_tools",title:"advancements.story.upgrade_tools.title"}
+function advancement_race:scoring/score

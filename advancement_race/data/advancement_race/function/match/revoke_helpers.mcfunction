@@ -1,0 +1,10 @@
+advancement revoke @s only advancement_race:stone_age_reward
+advancement revoke @s only advancement_race:a_seedy_place_reward
+advancement revoke @s only advancement_race:monster_hunter_reward
+advancement revoke @s only advancement_race:upgrade_tools_reward
+advancement revoke @s only advancement_race:smelt_iron_reward
+advancement revoke @s only advancement_race:lava_bucket_reward
+advancement revoke @s only advancement_race:enter_the_nether_reward
+advancement revoke @s only advancement_race:sleep_in_bed_reward
+advancement revoke @s only advancement_race:fishy_business_reward
+advancement revoke @s only advancement_race:trade_reward

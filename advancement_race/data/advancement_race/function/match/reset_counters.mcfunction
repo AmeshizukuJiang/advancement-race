@@ -1,0 +1,10 @@
+scoreboard players set #stone_age_count race_state 0
+scoreboard players set #a_seedy_place_count race_state 0
+scoreboard players set #monster_hunter_count race_state 0
+scoreboard players set #upgrade_tools_count race_state 0
+scoreboard players set #smelt_iron_count race_state 0
+scoreboard players set #lava_bucket_count race_state 0
+scoreboard players set #enter_the_nether_count race_state 0
+scoreboard players set #sleep_in_bed_count race_state 0
+scoreboard players set #fishy_business_count race_state 0
+scoreboard players set #trade_count race_state 0

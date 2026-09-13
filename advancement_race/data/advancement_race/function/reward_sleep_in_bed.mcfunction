@@ -1,0 +1,2 @@
+data modify storage advancement_race:runtime scoring set value {counter:"#sleep_in_bed_count",base_score:100,advancement:"minecraft:adventure/sleep_in_bed",title:"advancements.adventure.sleep_in_bed.title"}
+function advancement_race:scoring/score

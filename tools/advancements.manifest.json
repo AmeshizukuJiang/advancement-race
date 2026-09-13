@@ -27,6 +27,69 @@
       "base_score": 200,
       "title_translate": "advancements.adventure.kill_a_mob.title",
       "category": "adventure"
+    },
+    {
+      "key": "upgrade_tools",
+      "vanilla_id": "minecraft:story/upgrade_tools",
+      "helper_id": "advancement_race:upgrade_tools_reward",
+      "counter": "#upgrade_tools_count",
+      "base_score": 100,
+      "title_translate": "advancements.story.upgrade_tools.title",
+      "category": "story"
+    },
+    {
+      "key": "smelt_iron",
+      "vanilla_id": "minecraft:story/smelt_iron",
+      "helper_id": "advancement_race:smelt_iron_reward",
+      "counter": "#smelt_iron_count",
+      "base_score": 150,
+      "title_translate": "advancements.story.smelt_iron.title",
+      "category": "story"
+    },
+    {
+      "key": "lava_bucket",
+      "vanilla_id": "minecraft:story/lava_bucket",
+      "helper_id": "advancement_race:lava_bucket_reward",
+      "counter": "#lava_bucket_count",
+      "base_score": 200,
+      "title_translate": "advancements.story.lava_bucket.title",
+      "category": "story"
+    },
+    {
+      "key": "enter_the_nether",
+      "vanilla_id": "minecraft:story/enter_the_nether",
+      "helper_id": "advancement_race:enter_the_nether_reward",
+      "counter": "#enter_the_nether_count",
+      "base_score": 300,
+      "title_translate": "advancements.story.enter_the_nether.title",
+      "category": "story"
+    },
+    {
+      "key": "sleep_in_bed",
+      "vanilla_id": "minecraft:adventure/sleep_in_bed",
+      "helper_id": "advancement_race:sleep_in_bed_reward",
+      "counter": "#sleep_in_bed_count",
+      "base_score": 100,
+      "title_translate": "advancements.adventure.sleep_in_bed.title",
+      "category": "adventure"
+    },
+    {
+      "key": "fishy_business",
+      "vanilla_id": "minecraft:husbandry/fishy_business",
+      "helper_id": "advancement_race:fishy_business_reward",
+      "counter": "#fishy_business_count",
+      "base_score": 150,
+      "title_translate": "advancements.husbandry.fishy_business.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "trade",
+      "vanilla_id": "minecraft:adventure/trade",
+      "helper_id": "advancement_race:trade_reward",
+      "counter": "#trade_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.trade.title",
+      "category": "adventure"
     }
   ]
 }

@@ -4,9 +4,7 @@ execute unless data storage advancement_race:state order_objectives run scoreboa
 execute unless data storage advancement_race:state order_objectives run scoreboard objectives add race_place dummy "Race Place"
 execute unless data storage advancement_race:state order_objectives run scoreboard objectives add race_award dummy "Race Award"
 data modify storage advancement_race:state order_objectives set value 1b
-scoreboard players add #stone_age_count race_state 0
-scoreboard players add #a_seedy_place_count race_state 0
-scoreboard players add #monster_hunter_count race_state 0
+function advancement_race:scoring/initialize_counters
 scoreboard players set #score_percent race_state 100
 scoreboard players set #match_active race_state 0
 execute unless data storage advancement_race:state event_objectives run scoreboard objectives add race_participant dummy "Race Participant"
