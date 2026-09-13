@@ -2,10 +2,10 @@
   "parent": "minecraft:story/form_obsidian",
   "criteria": {
     "entered_nether": {
-      "trigger": "minecraft:changed_dimension",
       "conditions": {
         "to": "minecraft:the_nether"
-      }
+      },
+      "trigger": "minecraft:changed_dimension"
     }
   },
   "requirements": [

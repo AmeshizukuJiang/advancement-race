@@ -2,14 +2,14 @@
   "parent": "minecraft:story/upgrade_tools",
   "criteria": {
     "iron": {
-      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": "minecraft:iron_ingot"
           }
         ]
-      }
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
