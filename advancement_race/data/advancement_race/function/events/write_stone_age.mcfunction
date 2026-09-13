@@ -1,0 +1,1 @@
+$data modify storage advancement_race:match events[$(event_index)] set value {sequence:$(sequence),player_uuid:$(player_uuid),player_name:"$(player_name)",advancement:"minecraft:story/mine_stone",place:$(place),points:$(points)}
