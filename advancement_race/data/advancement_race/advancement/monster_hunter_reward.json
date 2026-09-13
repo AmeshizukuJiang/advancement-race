@@ -1,0 +1,17 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "kill_a_mob": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [{
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {"minecraft:entity_type": "#advancement_race:monster_hunter_targets"}
+        }]
+      }
+    }
+  },
+  "requirements": [["kill_a_mob"]],
+  "rewards": {"function": "advancement_race:reward_monster_hunter"}
+}
