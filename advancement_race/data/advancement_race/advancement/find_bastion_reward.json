@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:nether/root",
+  "criteria": {
+    "bastion": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "structures": "minecraft:bastion_remnant"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "requirements": [
+    [
+      "bastion"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_find_bastion"
+  }
+}

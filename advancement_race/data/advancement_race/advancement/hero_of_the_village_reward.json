@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:adventure/voluntary_exile",
+  "criteria": {
+    "hero_of_the_village": {
+      "trigger": "minecraft:hero_of_the_village"
+    }
+  },
+  "requirements": [
+    [
+      "hero_of_the_village"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_hero_of_the_village"
+  }
+}

@@ -90,6 +90,276 @@
       "base_score": 200,
       "title_translate": "advancements.adventure.trade.title",
       "category": "adventure"
+    },
+    {
+      "key": "obtain_armor",
+      "vanilla_id": "minecraft:story/obtain_armor",
+      "helper_id": "advancement_race:obtain_armor_reward",
+      "counter": "#obtain_armor_count",
+      "base_score": 150,
+      "title_translate": "advancements.story.obtain_armor.title",
+      "category": "story"
+    },
+    {
+      "key": "mine_diamond",
+      "vanilla_id": "minecraft:story/mine_diamond",
+      "helper_id": "advancement_race:mine_diamond_reward",
+      "counter": "#mine_diamond_count",
+      "base_score": 250,
+      "title_translate": "advancements.story.mine_diamond.title",
+      "category": "story"
+    },
+    {
+      "key": "deflect_arrow",
+      "vanilla_id": "minecraft:story/deflect_arrow",
+      "helper_id": "advancement_race:deflect_arrow_reward",
+      "counter": "#deflect_arrow_count",
+      "base_score": 200,
+      "title_translate": "advancements.story.deflect_arrow.title",
+      "category": "story"
+    },
+    {
+      "key": "enchant_item",
+      "vanilla_id": "minecraft:story/enchant_item",
+      "helper_id": "advancement_race:enchant_item_reward",
+      "counter": "#enchant_item_count",
+      "base_score": 250,
+      "title_translate": "advancements.story.enchant_item.title",
+      "category": "story"
+    },
+    {
+      "key": "follow_ender_eye",
+      "vanilla_id": "minecraft:story/follow_ender_eye",
+      "helper_id": "advancement_race:follow_ender_eye_reward",
+      "counter": "#follow_ender_eye_count",
+      "base_score": 350,
+      "title_translate": "advancements.story.follow_ender_eye.title",
+      "category": "story"
+    },
+    {
+      "key": "enter_the_end",
+      "vanilla_id": "minecraft:story/enter_the_end",
+      "helper_id": "advancement_race:enter_the_end_reward",
+      "counter": "#enter_the_end_count",
+      "base_score": 400,
+      "title_translate": "advancements.story.enter_the_end.title",
+      "category": "story"
+    },
+    {
+      "key": "obtain_blaze_rod",
+      "vanilla_id": "minecraft:nether/obtain_blaze_rod",
+      "helper_id": "advancement_race:obtain_blaze_rod_reward",
+      "counter": "#obtain_blaze_rod_count",
+      "base_score": 250,
+      "title_translate": "advancements.nether.obtain_blaze_rod.title",
+      "category": "nether"
+    },
+    {
+      "key": "find_fortress",
+      "vanilla_id": "minecraft:nether/find_fortress",
+      "helper_id": "advancement_race:find_fortress_reward",
+      "counter": "#find_fortress_count",
+      "base_score": 250,
+      "title_translate": "advancements.nether.find_fortress.title",
+      "category": "nether"
+    },
+    {
+      "key": "find_bastion",
+      "vanilla_id": "minecraft:nether/find_bastion",
+      "helper_id": "advancement_race:find_bastion_reward",
+      "counter": "#find_bastion_count",
+      "base_score": 300,
+      "title_translate": "advancements.nether.find_bastion.title",
+      "category": "nether"
+    },
+    {
+      "key": "obtain_crying_obsidian",
+      "vanilla_id": "minecraft:nether/obtain_crying_obsidian",
+      "helper_id": "advancement_race:obtain_crying_obsidian_reward",
+      "counter": "#obtain_crying_obsidian_count",
+      "base_score": 200,
+      "title_translate": "advancements.nether.obtain_crying_obsidian.title",
+      "category": "nether"
+    },
+    {
+      "key": "brew_potion",
+      "vanilla_id": "minecraft:nether/brew_potion",
+      "helper_id": "advancement_race:brew_potion_reward",
+      "counter": "#brew_potion_count",
+      "base_score": 200,
+      "title_translate": "advancements.nether.brew_potion.title",
+      "category": "nether"
+    },
+    {
+      "key": "ride_strider",
+      "vanilla_id": "minecraft:nether/ride_strider",
+      "helper_id": "advancement_race:ride_strider_reward",
+      "counter": "#ride_strider_count",
+      "base_score": 250,
+      "title_translate": "advancements.nether.ride_strider.title",
+      "category": "nether"
+    },
+    {
+      "key": "charge_respawn_anchor",
+      "vanilla_id": "minecraft:nether/charge_respawn_anchor",
+      "helper_id": "advancement_race:charge_respawn_anchor_reward",
+      "counter": "#charge_respawn_anchor_count",
+      "base_score": 200,
+      "title_translate": "advancements.nether.charge_respawn_anchor.title",
+      "category": "nether"
+    },
+    {
+      "key": "return_to_sender",
+      "vanilla_id": "minecraft:nether/return_to_sender",
+      "helper_id": "advancement_race:return_to_sender_reward",
+      "counter": "#return_to_sender_count",
+      "base_score": 350,
+      "title_translate": "advancements.nether.return_to_sender.title",
+      "category": "nether"
+    },
+    {
+      "key": "shoot_arrow",
+      "vanilla_id": "minecraft:adventure/shoot_arrow",
+      "helper_id": "advancement_race:shoot_arrow_reward",
+      "counter": "#shoot_arrow_count",
+      "base_score": 100,
+      "title_translate": "advancements.adventure.shoot_arrow.title",
+      "category": "adventure"
+    },
+    {
+      "key": "ol_betsy",
+      "vanilla_id": "minecraft:adventure/ol_betsy",
+      "helper_id": "advancement_race:ol_betsy_reward",
+      "counter": "#ol_betsy_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.ol_betsy.title",
+      "category": "adventure"
+    },
+    {
+      "key": "throw_trident",
+      "vanilla_id": "minecraft:adventure/throw_trident",
+      "helper_id": "advancement_race:throw_trident_reward",
+      "counter": "#throw_trident_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.throw_trident.title",
+      "category": "adventure"
+    },
+    {
+      "key": "totem_of_undying",
+      "vanilla_id": "minecraft:adventure/totem_of_undying",
+      "helper_id": "advancement_race:totem_of_undying_reward",
+      "counter": "#totem_of_undying_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.totem_of_undying.title",
+      "category": "adventure"
+    },
+    {
+      "key": "summon_iron_golem",
+      "vanilla_id": "minecraft:adventure/summon_iron_golem",
+      "helper_id": "advancement_race:summon_iron_golem_reward",
+      "counter": "#summon_iron_golem_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.summon_iron_golem.title",
+      "category": "adventure"
+    },
+    {
+      "key": "very_very_frightening",
+      "vanilla_id": "minecraft:adventure/very_very_frightening",
+      "helper_id": "advancement_race:very_very_frightening_reward",
+      "counter": "#very_very_frightening_count",
+      "base_score": 400,
+      "title_translate": "advancements.adventure.very_very_frightening.title",
+      "category": "adventure"
+    },
+    {
+      "key": "hero_of_the_village",
+      "vanilla_id": "minecraft:adventure/hero_of_the_village",
+      "helper_id": "advancement_race:hero_of_the_village_reward",
+      "counter": "#hero_of_the_village_count",
+      "base_score": 350,
+      "title_translate": "advancements.adventure.hero_of_the_village.title",
+      "category": "adventure"
+    },
+    {
+      "key": "avoid_vibration",
+      "vanilla_id": "minecraft:adventure/avoid_vibration",
+      "helper_id": "advancement_race:avoid_vibration_reward",
+      "counter": "#avoid_vibration_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.avoid_vibration.title",
+      "category": "adventure"
+    },
+    {
+      "key": "tame_an_animal",
+      "vanilla_id": "minecraft:husbandry/tame_an_animal",
+      "helper_id": "advancement_race:tame_an_animal_reward",
+      "counter": "#tame_an_animal_count",
+      "base_score": 150,
+      "title_translate": "advancements.husbandry.tame_an_animal.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "breed_an_animal",
+      "vanilla_id": "minecraft:husbandry/breed_an_animal",
+      "helper_id": "advancement_race:breed_an_animal_reward",
+      "counter": "#breed_an_animal_count",
+      "base_score": 150,
+      "title_translate": "advancements.husbandry.breed_an_animal.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "tactical_fishing",
+      "vanilla_id": "minecraft:husbandry/tactical_fishing",
+      "helper_id": "advancement_race:tactical_fishing_reward",
+      "counter": "#tactical_fishing_count",
+      "base_score": 200,
+      "title_translate": "advancements.husbandry.tactical_fishing.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "safely_harvest_honey",
+      "vanilla_id": "minecraft:husbandry/safely_harvest_honey",
+      "helper_id": "advancement_race:safely_harvest_honey_reward",
+      "counter": "#safely_harvest_honey_count",
+      "base_score": 200,
+      "title_translate": "advancements.husbandry.safely_harvest_honey.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "axolotl_in_a_bucket",
+      "vanilla_id": "minecraft:husbandry/axolotl_in_a_bucket",
+      "helper_id": "advancement_race:axolotl_in_a_bucket_reward",
+      "counter": "#axolotl_in_a_bucket_count",
+      "base_score": 200,
+      "title_translate": "advancements.husbandry.axolotl_in_a_bucket.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "kill_dragon",
+      "vanilla_id": "minecraft:end/kill_dragon",
+      "helper_id": "advancement_race:kill_dragon_reward",
+      "counter": "#kill_dragon_count",
+      "base_score": 600,
+      "title_translate": "advancements.end.kill_dragon.title",
+      "category": "end"
+    },
+    {
+      "key": "enter_end_gateway",
+      "vanilla_id": "minecraft:end/enter_end_gateway",
+      "helper_id": "advancement_race:enter_end_gateway_reward",
+      "counter": "#enter_end_gateway_count",
+      "base_score": 400,
+      "title_translate": "advancements.end.enter_end_gateway.title",
+      "category": "end"
+    },
+    {
+      "key": "levitate",
+      "vanilla_id": "minecraft:end/levitate",
+      "helper_id": "advancement_race:levitate_reward",
+      "counter": "#levitate_count",
+      "base_score": 350,
+      "title_translate": "advancements.end.levitate.title",
+      "category": "end"
     }
   ]
 }
