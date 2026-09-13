@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "minecraft": {
+    "version": "26.2",
+    "artifact": "server",
+    "version_manifest_url": "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
+  }
+}

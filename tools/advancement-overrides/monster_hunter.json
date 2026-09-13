@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "key": "monster_hunter",
+  "mode": "manual_helper",
+  "manual_paths": [
+    "advancement_race/data/advancement_race/advancement/monster_hunter_reward.json",
+    "advancement_race/data/advancement_race/tags/entity_type/monster_hunter_targets.json"
+  ]
+}
