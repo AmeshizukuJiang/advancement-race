@@ -21,13 +21,17 @@
 
 ## Current Implemented State
 
-- Only Stone Age (`minecraft:story/mine_stone`) is implemented.
-- Stone Age awards by completion place: **100 / 80 / 60 / 40 / 20** points for first / second / third / fourth / fifth and later.
-- Completion announcements and Actionbar messages are implemented.
-- Participants can be registered manually for a match.
-- A Stone Age event ledger is stored in Storage. Each event records sequence, player UUID, registered in-match name, advancement ID, place, and points.
+- Three scored advancement prototypes are implemented:
+  - Stone Age (`minecraft:story/mine_stone`), base score **100**.
+  - A Seedy Place (`minecraft:husbandry/plant_seed`), base score **100**.
+  - Monster Hunter (`minecraft:adventure/kill_a_mob`), base score **200**.
+- A shared scoring core applies the confirmed completion-order multipliers: **100% / 80% / 60% / 40% / 20%** for first / second / third / fourth / fifth and later. It preserves the all-chat announcement and Actionbar notification for each advancement.
+- Each advancement has its own completion counter. `race_place`, `race_award`, and `race_points` retain their defined semantics below.
+- A Storage event ledger records sequence, player UUID, registered in-match name, advancement ID, place, and awarded points.
+- A minimal Match Lifecycle is implemented: participants can be registered while idle; starting locks the roster and enables scoring only for registered players; ending archives the match snapshot under `history.matches` while retaining the current match snapshot; resetting prepares a new match without clearing archived history. Registering revokes the participant's helper advancements so they can trigger in the next match.
+- `tools/advancements.manifest.json` is a static metadata prototype for these three advancements. It does not generate datapack files and is not read by runtime datapack logic.
 
-Do not assume other advancements, a complete match lifecycle, final rankings, or written books are already implemented.
+Do not assume generator-based advancement support, 100+ advancement coverage, historical query tools, settlement, final rankings, or written book reports are implemented.
 
 ## Important Variable Semantics
 
@@ -52,6 +56,7 @@ Do not assume other advancements, a complete match lifecycle, final rankings, or
 Use **Plan → Implement → Review → Manual Minecraft Test → Commit**.
 
 - Minecraft runtime behavior must be manually tested by the user.
+- For manual Minecraft tests, default to using `LowiroLimited`, `Alex`, and `Steve`. `LowiroLimited` is the user's real game player; `Alex` and `Steve` are Carpet fake players for development testing. Design tests to cover requirements with these three players first. Suggest additional fake players only when a test genuinely requires more independent players. This is a development/testing convention only: it must not become a data pack runtime dependency, and player names must not be hard-coded into data pack logic.
 - Do not commit until the user confirms the Minecraft test passed.
 - Discuss significant architecture changes before implementing them.
 - Do not expand the current stage for future requirements.
