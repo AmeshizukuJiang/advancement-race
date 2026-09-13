@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime lobby_book.participants[$(roster_index)] run function advancement_race:lobby_book/copy_roster_entry with storage advancement_race:runtime lobby_book_work
+$execute if data storage advancement_race:runtime lobby_book.participants[$(roster_index)] run scoreboard players add #lobby_book_roster_index race_state 1
+$execute if data storage advancement_race:runtime lobby_book.participants[$(roster_index)] run execute store result storage advancement_race:runtime lobby_book_work.roster_index int 1 run scoreboard players get #lobby_book_roster_index race_state
+$execute if data storage advancement_race:runtime lobby_book.participants[$(roster_index)] run function advancement_race:lobby_book/build_roster_entries with storage advancement_race:runtime lobby_book_work

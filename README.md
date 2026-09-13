@@ -1,0 +1,52 @@
+# Advancement Race
+
+Advancement Race is a vanilla Minecraft Java Edition **26.2** data pack and
+framework for multiplayer races based on vanilla advancements. Each configured
+advancement awards points according to its base score and the order in which
+players complete it.
+
+## Current status — v0.9.3
+
+**Lobby Book and complete player interaction flow**
+
+The project currently provides:
+
+- Advancement scoring with per-advancement base scores and completion-order
+  awards.
+- A generator pipeline and static advancement manifest for maintaining the
+  generated helper advancements and reward functions.
+- Match lifecycle operations for preparing, registering, starting, ending, and
+  resetting matches.
+- A persistent Storage event ledger and archived match history.
+- Lobby, live Status, and final Result books for player-facing views.
+- Participant-majority voting to end an active match.
+
+## Typical match flow
+
+```text
+Lobby → Register → Start → Status → Vote End → Result
+```
+
+1. Prepare a lobby, then register players with the existing administrator
+   registration function and its explicit player-name argument.
+2. Start the match. The roster is locked and only registered participants can
+   score.
+3. Players can request a Status Book after the current status has been
+   calculated.
+4. Registered participants may vote to end the match; a strict majority ends
+   it.
+5. After the match ends, calculate its result and issue each participant a
+   Result Book.
+
+Carpet is useful for development and manual testing, but it is not a runtime
+dependency of the released data pack.
+
+## Development notes
+
+The event ledger and archived matches are the historical source of truth.
+Scoreboards are real-time working values, while Lobby, Status, and Result books
+are read-only presentation layers.
+
+Generated runtime files are tracked in Git. Change their manifest or generator
+input, regenerate them, and run the generator's `--check` mode rather than
+editing generated files by hand.

@@ -21,25 +21,29 @@
 
 ## Current Implemented State
 
-- Ten scored advancement prototypes are implemented:
+- Forty scored vanilla advancements are implemented. The original ten include:
   - Stone Age (`minecraft:story/mine_stone`), base score **100**.
   - A Seedy Place (`minecraft:husbandry/plant_seed`), base score **100**.
   - Monster Hunter (`minecraft:adventure/kill_a_mob`), base score **200**.
-- Getting an Upgrade (`minecraft:story/upgrade_tools`), base score **100**.
-- Acquire Hardware (`minecraft:story/smelt_iron`), base score **150**.
-- Hot Stuff (`minecraft:story/lava_bucket`), base score **200**.
-- We Need to Go Deeper (`minecraft:story/enter_the_nether`), base score **300**.
-- Sweet Dreams (`minecraft:adventure/sleep_in_bed`), base score **100**.
-- Fishy Business (`minecraft:husbandry/fishy_business`), base score **150**.
-- What a Deal! (`minecraft:adventure/trade`), base score **200**.
+  - Getting an Upgrade (`minecraft:story/upgrade_tools`), base score **100**.
+  - Acquire Hardware (`minecraft:story/smelt_iron`), base score **150**.
+  - Hot Stuff (`minecraft:story/lava_bucket`), base score **200**.
+  - We Need to Go Deeper (`minecraft:story/enter_the_nether`), base score **300**.
+  - Sweet Dreams (`minecraft:adventure/sleep_in_bed`), base score **100**.
+  - Fishy Business (`minecraft:husbandry/fishy_business`), base score **150**.
+  - What a Deal! (`minecraft:adventure/trade`), base score **200**.
 - The shared scoring core is unchanged. It applies the confirmed completion-order multipliers: **100% / 80% / 60% / 40% / 20%** for first / second / third / fourth / fifth and later, and preserves the all-chat announcement and Actionbar notification for each advancement.
 - Each advancement has its own completion counter. `race_place`, `race_award`, and `race_points` retain their defined semantics below.
 - A Storage event ledger records sequence, player UUID, registered in-match name, advancement ID, place, and awarded points.
 - A minimal Match Lifecycle is unchanged: participants can be registered while idle; starting locks the roster and enables scoring only for registered players; ending archives the match snapshot under `history.matches` while retaining the current match snapshot; resetting prepares a new match without clearing archived history.
 - Counter initialization, counter reset, and helper revocation are each maintained by a dedicated shared function. Registering revokes a participant's helpers so they can trigger in the next match.
-- `tools/advancements.manifest.json` is a static metadata prototype for all ten advancements. It does not generate datapack files and is not read by runtime datapack logic.
+- `tools/advancements.manifest.json` contains static metadata for the current forty advancements. Runtime Storage does not duplicate this configuration.
+- `tools/generate_advancements.py` uses the manifest and a verified Mojang Minecraft 26.2 server artifact to generate the helper advancements, reward functions, and counter aggregate functions. Generated runtime files remain tracked in Git; the downloaded artifact cache remains outside the repository.
+- Result calculation and the personal Result Book read ended-match history through their dedicated runtime result data.
+- Status calculation and the personal Status Book read the active match through dedicated runtime status data.
+- The Lobby Book presents the prepared roster and the caller's registration state. A registered-participant majority may end an active match through the separate end-vote feature.
 
-Do not assume a generator, 100+ advancement automatic generation, historical query tools or query books, settlement, final rankings, or written book reports are implemented.
+Do not assume 100+ advancement catalog coverage, automatic expansion beyond the manifest, leaderboards, query books, or settlement reports are implemented.
 
 ## Important Variable Semantics
 
@@ -55,8 +59,8 @@ Do not assume a generator, 100+ advancement automatic generation, historical que
 - Configure a base score for each scored advancement.
 - Target completion-order award tiers: **100% / 80% / 60% / 40% / 20%** for first / second / third / fourth / fifth and later. Confirm rule changes with the user.
 - Preserve player × advancement completion history.
-- Add match lifecycle operations: start, end, reset, and settlement.
-- Generate a final leaderboard and a written book report for each player.
+- Extend the implemented lifecycle with settlement only after its player-visible behavior is designed.
+- Generate leaderboard and richer multi-player book reports beyond the existing personal Result, Status, and Lobby books.
 - Once the data model is established, use a manifest and generator to maintain 100+ helper advancements.
 
 ## Development Workflow
@@ -70,6 +74,20 @@ Use **Plan → Implement → Review → Manual Minecraft Test → Commit**.
 - Do not expand the current stage for future requirements.
 - Avoid unrelated refactoring.
 - Internal implementation details may be chosen independently when they do not change product behavior or create significant migration or compatibility consequences.
+
+## Minecraft 26.2 Syntax and Data Rules
+
+- For nested NBT paths, use dot notation such as `result_request.match_id`; do not separate nested fields with spaces.
+- Validate actual Minecraft command syntax before relying on a new Storage, function-macro, or written-book JSON form. When uncertain, first create a minimal test function or command.
+- Written-book components must be tested in-game. In particular, do not emit invalid empty component lists such as `extra:[]`; an empty roster page should omit `extra` instead.
+- The event ledger is the historical source of truth. Lobby, Status, and Result Books are read-only presentation layers and must never become a data source.
+- Do not change `history.matches` or the event schema merely to make a UI feature easier. Keep UI code isolated from scoring, event recording, and Match Lifecycle behavior.
+
+## Generated Runtime Files
+
+- Do not hand-edit generated helper advancements, reward functions, or generated counter aggregate functions.
+- Update the manifest or generator input, regenerate the runtime files, and run the generator with `--check` to prevent drift.
+- Keep manually maintained overrides, including the Monster Hunter override, outside the generated-file boundary.
 
 ## Decision Boundary
 

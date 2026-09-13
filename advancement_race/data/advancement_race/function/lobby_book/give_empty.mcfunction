@@ -1,0 +1,3 @@
+data modify storage advancement_race:runtime lobby_book set value {status:"ready",match_status:"idle",prepared:1b,participants:[],player_count:0,pages:[{raw:"Advancement Race Lobby\nStatus: Ready\nPlayers: 0\nYou: Not registered"},{raw:{text:"Lobby Roster (0)"}}]}
+data modify storage advancement_race:runtime lobby_book.player_uuid set from entity @s UUID
+give @s minecraft:written_book[written_book_content={pages:[{raw:"Advancement Race Lobby\nStatus: Ready\nPlayers: 0\nYou: Not registered"},{raw:{text:"Lobby Roster (0)"}}],author:"Advancement Race",title:{raw:"Advancement Race Lobby"},resolved:1b}] 1
