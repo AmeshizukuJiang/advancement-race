@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime status.participants[$(participant_index)] run function advancement_race:status_book/find_participant_step with storage advancement_race:runtime status_book_work
+$execute if data storage advancement_race:runtime status.participants[$(participant_index)] run scoreboard players add #status_book_participant_index race_state 1
+$execute if data storage advancement_race:runtime status.participants[$(participant_index)] run execute store result storage advancement_race:runtime status_book_work.participant_index int 1 run scoreboard players get #status_book_participant_index race_state
+$execute if data storage advancement_race:runtime status.participants[$(participant_index)] run function advancement_race:status_book/find_participant with storage advancement_race:runtime status_book_work

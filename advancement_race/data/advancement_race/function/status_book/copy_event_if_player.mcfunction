@@ -1,0 +1,1 @@
+$execute if data storage advancement_race:runtime {status_book_work:{event:{player_name:"$(player_name)"}}} run data modify storage advancement_race:runtime status_book.events append from storage advancement_race:runtime status_book_work.event

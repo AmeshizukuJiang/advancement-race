@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime status_book.pages set value [{raw:{text:"Advancement Race Status\nMatch #$(match_id)\nPlayer: $(player_name)\nCurrent Points: $(points)\nCurrent Rank: No score yet\nCompleted: $(completed)"}}]
