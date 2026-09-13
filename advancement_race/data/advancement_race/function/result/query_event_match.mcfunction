@@ -1,0 +1,1 @@
+$execute if data storage advancement_race:runtime {result_work:{query_event:{advancement:"$(query_advancement)"}}} run data modify storage advancement_race:runtime result.query.records append from storage advancement_race:runtime result_work.query_event

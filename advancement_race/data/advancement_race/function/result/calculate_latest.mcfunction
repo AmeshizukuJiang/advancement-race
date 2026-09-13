@@ -1,0 +1,2 @@
+data remove storage advancement_race:runtime result_request.match_id
+function advancement_race:result/calculate

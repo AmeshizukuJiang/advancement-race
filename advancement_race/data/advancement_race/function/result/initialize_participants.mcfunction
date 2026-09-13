@@ -1,0 +1,7 @@
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run data modify storage advancement_race:runtime result.participants[$(participant_index)].points set value 0
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run data modify storage advancement_race:runtime result.participants[$(participant_index)].completed set value 0
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run data modify storage advancement_race:runtime result.participants[$(participant_index)].first_sequence set value 0
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run data modify storage advancement_race:runtime result.participants[$(participant_index)].rank set value 0
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run scoreboard players add #result_participant_index race_state 1
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run execute store result storage advancement_race:runtime result_work.participant_index int 1 run scoreboard players get #result_participant_index race_state
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run function advancement_race:result/initialize_participants with storage advancement_race:runtime result_work
