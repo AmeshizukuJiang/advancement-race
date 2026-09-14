@@ -1,1 +1,1 @@
-$data modify storage advancement_race:runtime lobby_book.pages set value [{raw:{text:"Advancement Race Lobby\nStatus: Ready\nPlayers: $(player_count)\nYou: Registered"}}]
+$data modify storage advancement_race:runtime lobby_book.pages set value [{raw:{text:"Advancement Race\n",color:"#8A5A00",bold:true,extra:[{text:"Lobby Ready\n\n",color:"#2E6B35",bold:false},{text:"Players: $(player_count)\n",color:"#555555",bold:false},{text:"You: Registered\n\n",color:"#2E6B35",bold:false},{text:"Waiting for the host to start the match.",color:"#555555",bold:false}]}}]

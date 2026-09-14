@@ -5,4 +5,5 @@ execute store result storage advancement_race:match id int 1 run scoreboard play
 data modify storage advancement_race:match status set value "active"
 data modify storage advancement_race:match prepared set value 0b
 scoreboard players set #match_active race_state 1
-tellraw @a [{"text":"Advancement Race match has started."}]
+tellraw @a [{"text":"Advancement Race","color":"gold","bold":true},{"text":" | Match #","color":"gray","bold":false},{"storage":"advancement_race:match","nbt":"id","color":"gold"},{"text":" has started!","color":"green"}]
+tellraw @a [{"text":"Use ","color":"gray"},{"text":"/trigger race_menu","color":"gold","click_event":{"action":"run_command","command":"/trigger race_menu"},"hover_event":{"action":"show_text","value":{"text":"Open the race menu","color":"yellow"}}},{"text":" for Status and Vote End.","color":"gray"}]

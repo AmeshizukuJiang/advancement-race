@@ -17,3 +17,6 @@ execute unless data storage advancement_race:match prepared run data modify stor
 execute unless data storage advancement_race:history matches run data modify storage advancement_race:history matches set value []
 execute unless data storage advancement_race:state next_match_id run data modify storage advancement_race:state next_match_id set value 0
 execute if data storage advancement_race:match {status:"active"} run scoreboard players set #match_active race_state 1
+scoreboard objectives add race_menu trigger "Race Menu"
+scoreboard players set @a race_menu 0
+scoreboard players enable @a race_menu

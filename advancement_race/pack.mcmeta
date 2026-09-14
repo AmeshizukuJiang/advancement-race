@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "Advancement Race - Phase 1: pack skeleton",
+    "description": "Advancement Race v0.10.0-beta.2 - Multiplayer advancement scoring",
     "min_format": [107, 1],
     "max_format": 107
   }

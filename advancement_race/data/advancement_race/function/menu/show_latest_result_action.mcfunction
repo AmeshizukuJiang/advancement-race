@@ -1,0 +1,1 @@
+tellraw @s [{"text":"[Open Latest Result Book]","color":"gold","bold":true,"click_event":{"action":"run_command","command":"/trigger race_menu set 5"},"hover_event":{"action":"show_text","value":{"text":"View the latest completed match","color":"yellow"}}}]

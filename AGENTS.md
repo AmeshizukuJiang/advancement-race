@@ -45,6 +45,8 @@
 - Result calculation and the personal Result Book read ended-match history through their dedicated runtime result data.
 - Status calculation and the personal Status Book read the active match through dedicated runtime status data.
 - The Lobby Book presents the prepared roster and the caller's registration state. A registered-participant majority may end an active match through the separate end-vote feature.
+- The normal-player entry point is `/trigger race_menu`. It presents state-appropriate Lobby, Status, Vote End, and Result actions without exposing internal functions.
+- Status and Result detail pages render vanilla-localized advancement titles through a generated presentation mapping and place two completion records on each detail page.
 
 Do not assume automatic expansion beyond the manifest, leaderboards, query books, or settlement reports are implemented.
 
@@ -97,6 +99,7 @@ Use **Plan → Implement → Review → Manual Minecraft Test → Commit**.
 - Do not hand-edit generated helper advancements, reward functions, or generated counter aggregate functions.
 - Update the manifest or generator input, regenerate the runtime files, and run the generator with `--check` to prevent drift.
 - Keep manually maintained overrides, including the Monster Hunter override, outside the generated-file boundary.
+- The generated advancement-title mapping is presentation-only. It must be derived from Mojang advancement `display.title.translate` values and must not be copied into events or match history.
 
 ## Decision Boundary
 

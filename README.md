@@ -1,59 +1,94 @@
 # Advancement Race
 
-Advancement Race is a vanilla Minecraft Java Edition **26.2** data pack and
-framework for multiplayer races based on vanilla advancements. Each configured
-advancement awards points according to its base score and the order in which
-players complete it.
+Advancement Race is a vanilla Minecraft Java Edition **26.2** data pack for
+multiplayer races based on vanilla advancements. Each advancement has a base
+score, and players receive fewer points when other players complete that same
+advancement first.
 
-## Current development status — v0.10.0-beta.1
+## Current development status — v0.10.0-beta.2
 
-**121-advancement catalog engineering expansion — Minecraft 26.2 reload verified**
+**Player UI / UX Polish — implementation ready for Minecraft testing**
 
-Minecraft 26.2 loaded the expanded data pack without datapack, function, or
-advancement JSON errors. Representative newly added advancements were manually
-completed and detected successfully. Exhaustive gameplay validation of all 121
-advancements is intentionally deferred to the Release Candidate phase, using
-repeated four-player multiplayer testing.
+The scored catalog contains all **121** non-root gameplay advancements from
+Story, Nether, End, Adventure, and Husbandry. Recipe advancements and the five
+tab roots are excluded. Minecraft 26.2 successfully loaded the complete catalog
+in Beta.1; exhaustive real-gameplay catalog testing remains planned for the
+Release Candidate phase.
 
-The project currently provides:
+Beta.2 adds a normal-player menu, clearer race feedback, vote progress,
+localized advancement titles in books, and book layouts sized for the full
+catalog. These Beta.2 presentation changes still require Minecraft 26.2 manual
+verification before release.
 
-- Advancement scoring with per-advancement base scores and completion-order
-  awards.
-- All 121 non-root gameplay advancements in the five standard vanilla tabs
-  (Story, Nether, End, Adventure, and Husbandry) are configured as scored
-  catalog entries. Their helper conditions are copied from the verified
-  Minecraft 26.2 server artifact; recipe and tab-root advancements are not
-  included.
-- A generator pipeline and static advancement manifest maintain generated
-  helper advancements, reward functions, and counter aggregate functions.
-- Match lifecycle operations for preparing, registering, starting, ending, and
-  resetting matches.
-- A persistent Storage event ledger and archived match history.
-- Lobby, live Status, and final Result books for player-facing views.
-- Participant-majority voting to end an active match.
-- Read-only administrator inspection and validation functions for match, vote,
-  and runtime presentation-cache diagnostics.
+## Player workflow
 
-## Typical match flow
+Players use one command throughout the race:
 
-```text
-Lobby → Register → Start → Status → Vote End → Result
+```mcfunction
+/trigger race_menu
 ```
 
-1. Prepare a lobby, then register players with the existing administrator
-   registration function and its explicit player-name argument.
-2. Start the match. The roster is locked and only registered participants can
-   score.
-3. Players can request a fresh Status Book for the active match.
-4. Registered participants may vote to end the match; a strict majority ends
-   it.
-5. After the match ends, issue each participant a Result Book for the latest
-   ended match.
+The menu shows the current match state and only the actions relevant at that
+time:
 
-## Public book commands
+1. **Lobby:** view the Lobby Book, registration state, and current roster.
+2. **Active match:** view a fresh Status Book or vote to end the match.
+3. **Ended match:** view the latest personal Result Book.
 
-Use these public entry points during normal play. They validate the applicable
-match state and calculate a fresh presentation snapshot before issuing a book.
+Registration remains host/admin controlled in Beta.2. An unregistered player
+should ask the host to add them; `/trigger race_menu` does not self-register a
+player.
+
+## Host / admin workflow
+
+Prepare a new lobby:
+
+```mcfunction
+/function advancement_race:match/reset
+```
+
+Register each player with the name that should be recorded in race history:
+
+```mcfunction
+/function advancement_race:match/register {player:"@a[name=LowiroLimited]",name:"LowiroLimited"}
+```
+
+Start the prepared match:
+
+```mcfunction
+/function advancement_race:match/start
+```
+
+The roster locks when the match starts. During the race, registered players can
+vote to end through `/trigger race_menu`; a strict majority invokes the existing
+match-end flow. The host may also end the match directly:
+
+```mcfunction
+/function advancement_race:match/end
+```
+
+Read-only administrator diagnostics remain available under
+`advancement_race:admin/inspect_*` and `advancement_race:admin/validate`.
+
+## Race feedback and books
+
+- Chat announces each scoring event globally with the player, localized
+  advancement title, Advancement Place, and awarded points.
+- The global Actionbar provides a compact scoring update and current total.
+- The Lobby Book shows registration state and roster.
+- The Status Book shows live points, Current Rank, and completed advancements.
+- The Result Book shows Final Points, Final Rank, and completed advancements.
+- Status and Result detail pages preserve event sequence, Advancement Place,
+  and actual awarded points while fitting two records per page.
+
+Advancement titles use the player's Minecraft language through vanilla
+translation keys. Match history continues to store stable vanilla advancement
+IDs rather than localized text.
+
+## Developer / debug functions
+
+Normal players should not use internal function paths. The following remain
+available for development and diagnostics:
 
 ```mcfunction
 /function advancement_race:book/lobby
@@ -62,29 +97,25 @@ match state and calculate a fresh presentation snapshot before issuing a book.
 /function advancement_race:book/result_match {match_id:1}
 ```
 
-`book/lobby` is available only for a prepared lobby. `book/status` is available
-only during an active match. `book/result_latest` uses the most recently ended
-match, while `book/result_match` selects a specific archived ended match.
+Lower-level `status/calculate`, `result/calculate_*`, and `*_book/give`
+functions work with temporary presentation data. They are implementation and
+debug interfaces, not the normal player workflow.
 
-The lower-level `status/calculate`, `result/calculate_*`, and `*_book/give`
-functions remain available for development and debugging. They operate on
-runtime presentation caches and are not the recommended normal-play workflow.
-
-Carpet is useful for development and manual testing, but it is not a runtime
-dependency of the released data pack.
+Carpet may be used to create fake players for development testing, but it is
+not a runtime dependency.
 
 ## Development notes
 
 The event ledger and archived matches are the historical source of truth.
 Scoreboards are real-time working values, while Lobby, Status, and Result books
-are read-only presentation layers.
+are presentation layers.
 
 Generated runtime files are tracked in Git. Change their manifest or generator
-input, regenerate them, and run the generator's `--check` mode rather than
-editing generated files by hand.
+input, regenerate them, and use `--check` rather than editing generated files by
+hand.
 
-For a full catalog integrity check against the cached Mojang-verified Minecraft
-26.2 server artifact, run:
+For a full catalog and generated-output check against the cached
+Mojang-verified Minecraft 26.2 server artifact, run:
 
 ```text
 python tools/validate_catalog.py --offline

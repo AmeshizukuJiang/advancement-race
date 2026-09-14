@@ -9,7 +9,7 @@ execute if score @s race_place matches 4 run scoreboard players set #score_multi
 scoreboard players operation @s race_award *= #score_multiplier race_state
 scoreboard players operation @s race_award /= #score_percent race_state
 scoreboard players operation @s race_points += @s race_award
-$tellraw @a [{"selector":"@s"},{"text":" completed "},{"translate":"$(title)"},{"text":" — place "},{"score":{"name":"@s","objective":"race_place"}},{"text":"; earned "},{"score":{"name":"@s","objective":"race_award"}},{"text":" points."}]
-$title @a actionbar [{"selector":"@s"},{"text":" completed "},{"translate":"$(title)"},{"text":" — place "},{"score":{"name":"@s","objective":"race_place"}},{"text":"; earned "},{"score":{"name":"@s","objective":"race_award"}},{"text":" points."}]
+$tellraw @a [{"text":"[Race] ","color":"gold","bold":true},{"selector":"@s","color":"white","bold":false},{"text":" completed ","color":"gray"},{"translate":"$(title)","color":"green"},{"text":" | Advancement Place: ","color":"gray"},{"score":{"name":"@s","objective":"race_place"},"color":"aqua"},{"text":" | +","color":"gray"},{"score":{"name":"@s","objective":"race_award"},"color":"yellow"},{"text":" Points","color":"yellow"}]
+$title @a actionbar [{"translate":"$(title)","color":"green"},{"text":" | ","color":"dark_gray"},{"selector":"@s","color":"white"},{"text":" +","color":"yellow"},{"score":{"name":"@s","objective":"race_award"},"color":"yellow"},{"text":" | Total: ","color":"gray"},{"score":{"name":"@s","objective":"race_points"},"color":"aqua"}]
 $data modify storage advancement_race:runtime advancement set value "$(advancement)"
 function advancement_race:events/record_event

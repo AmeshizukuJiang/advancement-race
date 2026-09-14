@@ -6,7 +6,7 @@ data modify storage advancement_race:runtime status_book_work.player_uuid set fr
 scoreboard players set #status_book_participant_index race_state 0
 data modify storage advancement_race:runtime status_book_work.participant_index set value 0
 function advancement_race:status_book/find_participant with storage advancement_race:runtime status_book_work
-execute unless data storage advancement_race:runtime status_book.participant run tellraw @s [{"text":"Cannot create status book: you are not a participant in the active match."}]
+execute unless data storage advancement_race:runtime status_book.participant run tellraw @s [{"text":"You are not a registered participant in the active match.","color":"red"}]
 execute if data storage advancement_race:runtime status_book.participant run function advancement_race:status_book/copy_events
 execute if data storage advancement_race:runtime status_book.participant run function advancement_race:status_book/build_pages
 execute if data storage advancement_race:runtime status_book.participant run function advancement_race:status_book/give_item with storage advancement_race:runtime status_book

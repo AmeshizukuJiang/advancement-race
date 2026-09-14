@@ -17,6 +17,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FUNCTION_ROOT = REPO_ROOT / "advancement_race" / "data" / "advancement_race" / "function"
 ADVANCEMENT_ROOT = REPO_ROOT / "advancement_race" / "data" / "advancement_race" / "advancement"
+TITLE_MAPPING_PATH = FUNCTION_ROOT / "presentation" / "resolve_advancement_title.mcfunction"
 GAMEPLAY_CATEGORIES = {"adventure", "end", "husbandry", "nether", "story"}
 EXPECTED_GAMEPLAY_ADVANCEMENTS = 121
 EXPECTED_MANUAL_OVERRIDE_KEYS = {"monster_hunter"}
@@ -168,6 +169,47 @@ def validate_generated_path_sets(
     return errors
 
 
+def validate_title_mapping_source_integrity(
+    advancements: list[dict[str, Any]], catalog: dict[str, dict[str, Any]]
+) -> list[str]:
+    if not TITLE_MAPPING_PATH.is_file():
+        return [f"Missing generated title mapping: {TITLE_MAPPING_PATH.relative_to(REPO_ROOT)}"]
+
+    actual_lines = {
+        line
+        for line in TITLE_MAPPING_PATH.read_text(encoding="utf-8").splitlines()
+        if line.startswith("execute if data storage advancement_race:runtime ")
+    }
+    expected_lines: set[str] = set()
+    for advancement in advancements:
+        vanilla = catalog.get(advancement["vanilla_id"])
+        if vanilla is None:
+            continue
+        title = vanilla.get("display", {}).get("title")
+        if not isinstance(title, dict) or not isinstance(title.get("translate"), str):
+            continue
+        advancement_id_literal = json.dumps(advancement["vanilla_id"], ensure_ascii=False)
+        title_literal = json.dumps(title["translate"], ensure_ascii=False)
+        expected_lines.add(
+            "execute if data storage advancement_race:runtime "
+            f"{{presentation:{{advancement:{advancement_id_literal}}}}} "
+            "run data modify storage advancement_race:runtime presentation.title_translate "
+            f"set value {title_literal}"
+        )
+
+    errors: list[str] = []
+    for line in sorted(expected_lines - actual_lines):
+        errors.append(f"Generated title mapping is missing source entry: {line}")
+    for line in sorted(actual_lines - expected_lines):
+        errors.append(f"Generated title mapping contains unexpected entry: {line}")
+    if len(actual_lines) != EXPECTED_GAMEPLAY_ADVANCEMENTS:
+        errors.append(
+            f"Generated title mapping has {len(actual_lines)} entries; "
+            f"expected {EXPECTED_GAMEPLAY_ADVANCEMENTS}."
+        )
+    return errors
+
+
 def validate_json_files() -> list[str]:
     errors: list[str] = []
     paths = [REPO_ROOT / "tools" / "advancements.manifest.json"]
@@ -220,6 +262,7 @@ def main() -> int:
         vanilla_advancements = generator.read_vanilla_advancements(server_jar, config["version"], advancements)
         errors.extend(validate_helper_source_integrity(generator, advancements, vanilla_advancements, overrides))
         errors.extend(validate_generated_path_sets(generator, advancements))
+        errors.extend(validate_title_mapping_source_integrity(advancements, catalog))
         errors.extend(generator.check_outputs(generator.expected_outputs(advancements, vanilla_advancements, overrides)))
         errors.extend(validate_json_files())
         errors.extend(validate_function_references())
