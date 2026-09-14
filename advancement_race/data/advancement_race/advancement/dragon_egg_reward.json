@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:end/kill_dragon",
+  "criteria": {
+    "dragon_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:dragon_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "dragon_egg"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_dragon_egg"
+  }
+}

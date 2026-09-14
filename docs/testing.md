@@ -93,3 +93,22 @@ These items are presentation-layer improvements and are not classified as issues
 ## Result
 
 v0.9.4 passed stabilization testing. Core gameplay loop, scoring, event ledger, lifecycle, vote ending, books, and history persistence were verified in Minecraft 26.2.
+
+# v0.10.0-beta.1 Catalog Expansion Test Record
+
+## Scope
+
+- The scored catalog was expanded from 40 to all 121 approved non-root gameplay advancements in the five standard vanilla tabs.
+- The scoring algorithm, Match Lifecycle, event ledger, `history.matches` schema, vote system, and Lobby, Status, and Result Book architecture were not changed in Beta.1.
+
+## Engineering Verification
+
+- Manifest completeness and catalog validation passed against the Mojang-verified Minecraft 26.2 server artifact.
+- The generator's offline `--check` passed for all managed outputs.
+- JSON validation, function-reference validation, and `git diff --check` passed.
+- Minecraft 26.2 `/reload` completed without datapack, function, or advancement JSON loading errors.
+- Representative newly added advancements were manually completed and detected successfully.
+
+## Deferred Release Candidate Coverage
+
+Exhaustive gameplay validation of all 121 advancements is intentionally deferred to the Release Candidate phase. That phase will use repeated real multiplayer progression testing with four human players. This deferral does not weaken or simplify any copied vanilla advancement criteria.

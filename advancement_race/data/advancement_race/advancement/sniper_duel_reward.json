@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:adventure/shoot_arrow",
+  "criteria": {
+    "killed_skeleton": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:distance": {
+                "horizontal": {
+                  "min": 50.0
+                }
+              },
+              "minecraft:entity_type": "minecraft:skeleton"
+            }
+          }
+        ],
+        "killing_blow": {
+          "tags": [
+            {
+              "expected": true,
+              "id": "minecraft:is_projectile"
+            }
+          ]
+        }
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "requirements": [
+    [
+      "killed_skeleton"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_sniper_duel"
+  }
+}

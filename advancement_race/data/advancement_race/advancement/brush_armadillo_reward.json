@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "brush_armadillo": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:armadillo"
+            }
+          }
+        ],
+        "item": {
+          "items": "minecraft:brush"
+        }
+      },
+      "trigger": "minecraft:player_interacted_with_entity"
+    }
+  },
+  "requirements": [
+    [
+      "brush_armadillo"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_brush_armadillo"
+  }
+}

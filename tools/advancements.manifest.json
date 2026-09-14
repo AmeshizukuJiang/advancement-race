@@ -360,6 +360,735 @@
       "base_score": 350,
       "title_translate": "advancements.end.levitate.title",
       "category": "end"
+    },
+    {
+      "key": "adventuring_time",
+      "vanilla_id": "minecraft:adventure/adventuring_time",
+      "helper_id": "advancement_race:adventuring_time_reward",
+      "counter": "#adventuring_time_count",
+      "base_score": 700,
+      "title_translate": "advancements.adventure.adventuring_time.title",
+      "category": "adventure"
+    },
+    {
+      "key": "arbalistic",
+      "vanilla_id": "minecraft:adventure/arbalistic",
+      "helper_id": "advancement_race:arbalistic_reward",
+      "counter": "#arbalistic_count",
+      "base_score": 400,
+      "title_translate": "advancements.adventure.arbalistic.title",
+      "category": "adventure"
+    },
+    {
+      "key": "blowback",
+      "vanilla_id": "minecraft:adventure/blowback",
+      "helper_id": "advancement_race:blowback_reward",
+      "counter": "#blowback_count",
+      "base_score": 350,
+      "title_translate": "advancements.adventure.blowback.title",
+      "category": "adventure"
+    },
+    {
+      "key": "brush_armadillo",
+      "vanilla_id": "minecraft:adventure/brush_armadillo",
+      "helper_id": "advancement_race:brush_armadillo_reward",
+      "counter": "#brush_armadillo_count",
+      "base_score": 150,
+      "title_translate": "advancements.adventure.brush_armadillo.title",
+      "category": "adventure"
+    },
+    {
+      "key": "bullseye",
+      "vanilla_id": "minecraft:adventure/bullseye",
+      "helper_id": "advancement_race:bullseye_reward",
+      "counter": "#bullseye_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.bullseye.title",
+      "category": "adventure"
+    },
+    {
+      "key": "craft_decorated_pot_using_only_sherds",
+      "vanilla_id": "minecraft:adventure/craft_decorated_pot_using_only_sherds",
+      "helper_id": "advancement_race:craft_decorated_pot_using_only_sherds_reward",
+      "counter": "#craft_decorated_pot_using_only_sherds_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.craft_decorated_pot_using_only_sherds.title",
+      "category": "adventure"
+    },
+    {
+      "key": "crafters_crafting_crafters",
+      "vanilla_id": "minecraft:adventure/crafters_crafting_crafters",
+      "helper_id": "advancement_race:crafters_crafting_crafters_reward",
+      "counter": "#crafters_crafting_crafters_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.crafters_crafting_crafters.title",
+      "category": "adventure"
+    },
+    {
+      "key": "fall_from_world_height",
+      "vanilla_id": "minecraft:adventure/fall_from_world_height",
+      "helper_id": "advancement_race:fall_from_world_height_reward",
+      "counter": "#fall_from_world_height_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.fall_from_world_height.title",
+      "category": "adventure"
+    },
+    {
+      "key": "heart_transplanter",
+      "vanilla_id": "minecraft:adventure/heart_transplanter",
+      "helper_id": "advancement_race:heart_transplanter_reward",
+      "counter": "#heart_transplanter_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.heart_transplanter.title",
+      "category": "adventure"
+    },
+    {
+      "key": "honey_block_slide",
+      "vanilla_id": "minecraft:adventure/honey_block_slide",
+      "helper_id": "advancement_race:honey_block_slide_reward",
+      "counter": "#honey_block_slide_count",
+      "base_score": 150,
+      "title_translate": "advancements.adventure.honey_block_slide.title",
+      "category": "adventure"
+    },
+    {
+      "key": "kill_all_mobs",
+      "vanilla_id": "minecraft:adventure/kill_all_mobs",
+      "helper_id": "advancement_race:kill_all_mobs_reward",
+      "counter": "#kill_all_mobs_count",
+      "base_score": 700,
+      "title_translate": "advancements.adventure.kill_all_mobs.title",
+      "category": "adventure"
+    },
+    {
+      "key": "kill_mob_near_sculk_catalyst",
+      "vanilla_id": "minecraft:adventure/kill_mob_near_sculk_catalyst",
+      "helper_id": "advancement_race:kill_mob_near_sculk_catalyst_reward",
+      "counter": "#kill_mob_near_sculk_catalyst_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.kill_mob_near_sculk_catalyst.title",
+      "category": "adventure"
+    },
+    {
+      "key": "lighten_up",
+      "vanilla_id": "minecraft:adventure/lighten_up",
+      "helper_id": "advancement_race:lighten_up_reward",
+      "counter": "#lighten_up_count",
+      "base_score": 150,
+      "title_translate": "advancements.adventure.lighten_up.title",
+      "category": "adventure"
+    },
+    {
+      "key": "lightning_rod_with_villager_no_fire",
+      "vanilla_id": "minecraft:adventure/lightning_rod_with_villager_no_fire",
+      "helper_id": "advancement_race:lightning_rod_with_villager_no_fire_reward",
+      "counter": "#lightning_rod_with_villager_no_fire_count",
+      "base_score": 350,
+      "title_translate": "advancements.adventure.lightning_rod_with_villager_no_fire.title",
+      "category": "adventure"
+    },
+    {
+      "key": "minecraft_trials_edition",
+      "vanilla_id": "minecraft:adventure/minecraft_trials_edition",
+      "helper_id": "advancement_race:minecraft_trials_edition_reward",
+      "counter": "#minecraft_trials_edition_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.minecraft_trials_edition.title",
+      "category": "adventure"
+    },
+    {
+      "key": "overoverkill",
+      "vanilla_id": "minecraft:adventure/overoverkill",
+      "helper_id": "advancement_race:overoverkill_reward",
+      "counter": "#overoverkill_count",
+      "base_score": 400,
+      "title_translate": "advancements.adventure.overoverkill.title",
+      "category": "adventure"
+    },
+    {
+      "key": "play_jukebox_in_meadows",
+      "vanilla_id": "minecraft:adventure/play_jukebox_in_meadows",
+      "helper_id": "advancement_race:play_jukebox_in_meadows_reward",
+      "counter": "#play_jukebox_in_meadows_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.play_jukebox_in_meadows.title",
+      "category": "adventure"
+    },
+    {
+      "key": "read_power_of_chiseled_bookshelf",
+      "vanilla_id": "minecraft:adventure/read_power_of_chiseled_bookshelf",
+      "helper_id": "advancement_race:read_power_of_chiseled_bookshelf_reward",
+      "counter": "#read_power_of_chiseled_bookshelf_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.read_power_from_chiseled_bookshelf.title",
+      "category": "adventure"
+    },
+    {
+      "key": "revaulting",
+      "vanilla_id": "minecraft:adventure/revaulting",
+      "helper_id": "advancement_race:revaulting_reward",
+      "counter": "#revaulting_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.revaulting.title",
+      "category": "adventure"
+    },
+    {
+      "key": "salvage_sherd",
+      "vanilla_id": "minecraft:adventure/salvage_sherd",
+      "helper_id": "advancement_race:salvage_sherd_reward",
+      "counter": "#salvage_sherd_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.salvage_sherd.title",
+      "category": "adventure"
+    },
+    {
+      "key": "sniper_duel",
+      "vanilla_id": "minecraft:adventure/sniper_duel",
+      "helper_id": "advancement_race:sniper_duel_reward",
+      "counter": "#sniper_duel_count",
+      "base_score": 350,
+      "title_translate": "advancements.adventure.sniper_duel.title",
+      "category": "adventure"
+    },
+    {
+      "key": "spear_many_mobs",
+      "vanilla_id": "minecraft:adventure/spear_many_mobs",
+      "helper_id": "advancement_race:spear_many_mobs_reward",
+      "counter": "#spear_many_mobs_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.spear_many_mobs.title",
+      "category": "adventure"
+    },
+    {
+      "key": "spyglass_at_dragon",
+      "vanilla_id": "minecraft:adventure/spyglass_at_dragon",
+      "helper_id": "advancement_race:spyglass_at_dragon_reward",
+      "counter": "#spyglass_at_dragon_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.spyglass_at_dragon.title",
+      "category": "adventure"
+    },
+    {
+      "key": "spyglass_at_ghast",
+      "vanilla_id": "minecraft:adventure/spyglass_at_ghast",
+      "helper_id": "advancement_race:spyglass_at_ghast_reward",
+      "counter": "#spyglass_at_ghast_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.spyglass_at_ghast.title",
+      "category": "adventure"
+    },
+    {
+      "key": "spyglass_at_parrot",
+      "vanilla_id": "minecraft:adventure/spyglass_at_parrot",
+      "helper_id": "advancement_race:spyglass_at_parrot_reward",
+      "counter": "#spyglass_at_parrot_count",
+      "base_score": 150,
+      "title_translate": "advancements.adventure.spyglass_at_parrot.title",
+      "category": "adventure"
+    },
+    {
+      "key": "trade_at_world_height",
+      "vanilla_id": "minecraft:adventure/trade_at_world_height",
+      "helper_id": "advancement_race:trade_at_world_height_reward",
+      "counter": "#trade_at_world_height_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.trade_at_world_height.title",
+      "category": "adventure"
+    },
+    {
+      "key": "trim_with_all_exclusive_armor_patterns",
+      "vanilla_id": "minecraft:adventure/trim_with_all_exclusive_armor_patterns",
+      "helper_id": "advancement_race:trim_with_all_exclusive_armor_patterns_reward",
+      "counter": "#trim_with_all_exclusive_armor_patterns_count",
+      "base_score": 600,
+      "title_translate": "advancements.adventure.trim_with_all_exclusive_armor_patterns.title",
+      "category": "adventure"
+    },
+    {
+      "key": "trim_with_any_armor_pattern",
+      "vanilla_id": "minecraft:adventure/trim_with_any_armor_pattern",
+      "helper_id": "advancement_race:trim_with_any_armor_pattern_reward",
+      "counter": "#trim_with_any_armor_pattern_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.trim_with_any_armor_pattern.title",
+      "category": "adventure"
+    },
+    {
+      "key": "two_birds_one_arrow",
+      "vanilla_id": "minecraft:adventure/two_birds_one_arrow",
+      "helper_id": "advancement_race:two_birds_one_arrow_reward",
+      "counter": "#two_birds_one_arrow_count",
+      "base_score": 350,
+      "title_translate": "advancements.adventure.two_birds_one_arrow.title",
+      "category": "adventure"
+    },
+    {
+      "key": "under_lock_and_key",
+      "vanilla_id": "minecraft:adventure/under_lock_and_key",
+      "helper_id": "advancement_race:under_lock_and_key_reward",
+      "counter": "#under_lock_and_key_count",
+      "base_score": 200,
+      "title_translate": "advancements.adventure.under_lock_and_key.title",
+      "category": "adventure"
+    },
+    {
+      "key": "use_lodestone",
+      "vanilla_id": "minecraft:adventure/use_lodestone",
+      "helper_id": "advancement_race:use_lodestone_reward",
+      "counter": "#use_lodestone_count",
+      "base_score": 250,
+      "title_translate": "advancements.adventure.use_lodestone.title",
+      "category": "adventure"
+    },
+    {
+      "key": "voluntary_exile",
+      "vanilla_id": "minecraft:adventure/voluntary_exile",
+      "helper_id": "advancement_race:voluntary_exile_reward",
+      "counter": "#voluntary_exile_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.voluntary_exile.title",
+      "category": "adventure"
+    },
+    {
+      "key": "walk_on_powder_snow_with_leather_boots",
+      "vanilla_id": "minecraft:adventure/walk_on_powder_snow_with_leather_boots",
+      "helper_id": "advancement_race:walk_on_powder_snow_with_leather_boots_reward",
+      "counter": "#walk_on_powder_snow_with_leather_boots_count",
+      "base_score": 150,
+      "title_translate": "advancements.adventure.walk_on_powder_snow_with_leather_boots.title",
+      "category": "adventure"
+    },
+    {
+      "key": "who_needs_rockets",
+      "vanilla_id": "minecraft:adventure/who_needs_rockets",
+      "helper_id": "advancement_race:who_needs_rockets_reward",
+      "counter": "#who_needs_rockets_count",
+      "base_score": 350,
+      "title_translate": "advancements.adventure.who_needs_rockets.title",
+      "category": "adventure"
+    },
+    {
+      "key": "whos_the_pillager_now",
+      "vanilla_id": "minecraft:adventure/whos_the_pillager_now",
+      "helper_id": "advancement_race:whos_the_pillager_now_reward",
+      "counter": "#whos_the_pillager_now_count",
+      "base_score": 300,
+      "title_translate": "advancements.adventure.whos_the_pillager_now.title",
+      "category": "adventure"
+    },
+    {
+      "key": "dragon_breath",
+      "vanilla_id": "minecraft:end/dragon_breath",
+      "helper_id": "advancement_race:dragon_breath_reward",
+      "counter": "#dragon_breath_count",
+      "base_score": 350,
+      "title_translate": "advancements.end.dragon_breath.title",
+      "category": "end"
+    },
+    {
+      "key": "dragon_egg",
+      "vanilla_id": "minecraft:end/dragon_egg",
+      "helper_id": "advancement_race:dragon_egg_reward",
+      "counter": "#dragon_egg_count",
+      "base_score": 500,
+      "title_translate": "advancements.end.dragon_egg.title",
+      "category": "end"
+    },
+    {
+      "key": "elytra",
+      "vanilla_id": "minecraft:end/elytra",
+      "helper_id": "advancement_race:elytra_reward",
+      "counter": "#elytra_count",
+      "base_score": 400,
+      "title_translate": "advancements.end.elytra.title",
+      "category": "end"
+    },
+    {
+      "key": "find_end_city",
+      "vanilla_id": "minecraft:end/find_end_city",
+      "helper_id": "advancement_race:find_end_city_reward",
+      "counter": "#find_end_city_count",
+      "base_score": 350,
+      "title_translate": "advancements.end.find_end_city.title",
+      "category": "end"
+    },
+    {
+      "key": "respawn_dragon",
+      "vanilla_id": "minecraft:end/respawn_dragon",
+      "helper_id": "advancement_race:respawn_dragon_reward",
+      "counter": "#respawn_dragon_count",
+      "base_score": 500,
+      "title_translate": "advancements.end.respawn_dragon.title",
+      "category": "end"
+    },
+    {
+      "key": "allay_deliver_cake_to_note_block",
+      "vanilla_id": "minecraft:husbandry/allay_deliver_cake_to_note_block",
+      "helper_id": "advancement_race:allay_deliver_cake_to_note_block_reward",
+      "counter": "#allay_deliver_cake_to_note_block_count",
+      "base_score": 250,
+      "title_translate": "advancements.husbandry.allay_deliver_cake_to_note_block.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "allay_deliver_item_to_player",
+      "vanilla_id": "minecraft:husbandry/allay_deliver_item_to_player",
+      "helper_id": "advancement_race:allay_deliver_item_to_player_reward",
+      "counter": "#allay_deliver_item_to_player_count",
+      "base_score": 200,
+      "title_translate": "advancements.husbandry.allay_deliver_item_to_player.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "balanced_diet",
+      "vanilla_id": "minecraft:husbandry/balanced_diet",
+      "helper_id": "advancement_race:balanced_diet_reward",
+      "counter": "#balanced_diet_count",
+      "base_score": 700,
+      "title_translate": "advancements.husbandry.balanced_diet.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "bred_all_animals",
+      "vanilla_id": "minecraft:husbandry/bred_all_animals",
+      "helper_id": "advancement_race:bred_all_animals_reward",
+      "counter": "#bred_all_animals_count",
+      "base_score": 700,
+      "title_translate": "advancements.husbandry.breed_all_animals.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "complete_catalogue",
+      "vanilla_id": "minecraft:husbandry/complete_catalogue",
+      "helper_id": "advancement_race:complete_catalogue_reward",
+      "counter": "#complete_catalogue_count",
+      "base_score": 500,
+      "title_translate": "advancements.husbandry.complete_catalogue.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "feed_snifflet",
+      "vanilla_id": "minecraft:husbandry/feed_snifflet",
+      "helper_id": "advancement_race:feed_snifflet_reward",
+      "counter": "#feed_snifflet_count",
+      "base_score": 200,
+      "title_translate": "advancements.husbandry.feed_snifflet.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "froglights",
+      "vanilla_id": "minecraft:husbandry/froglights",
+      "helper_id": "advancement_race:froglights_reward",
+      "counter": "#froglights_count",
+      "base_score": 500,
+      "title_translate": "advancements.husbandry.froglights.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "kill_axolotl_target",
+      "vanilla_id": "minecraft:husbandry/kill_axolotl_target",
+      "helper_id": "advancement_race:kill_axolotl_target_reward",
+      "counter": "#kill_axolotl_target_count",
+      "base_score": 250,
+      "title_translate": "advancements.husbandry.kill_axolotl_target.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "leash_all_frog_variants",
+      "vanilla_id": "minecraft:husbandry/leash_all_frog_variants",
+      "helper_id": "advancement_race:leash_all_frog_variants_reward",
+      "counter": "#leash_all_frog_variants_count",
+      "base_score": 250,
+      "title_translate": "advancements.husbandry.leash_all_frog_variants.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "make_a_sign_glow",
+      "vanilla_id": "minecraft:husbandry/make_a_sign_glow",
+      "helper_id": "advancement_race:make_a_sign_glow_reward",
+      "counter": "#make_a_sign_glow_count",
+      "base_score": 100,
+      "title_translate": "advancements.husbandry.make_a_sign_glow.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "obtain_netherite_hoe",
+      "vanilla_id": "minecraft:husbandry/obtain_netherite_hoe",
+      "helper_id": "advancement_race:obtain_netherite_hoe_reward",
+      "counter": "#obtain_netherite_hoe_count",
+      "base_score": 450,
+      "title_translate": "advancements.husbandry.netherite_hoe.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "obtain_sniffer_egg",
+      "vanilla_id": "minecraft:husbandry/obtain_sniffer_egg",
+      "helper_id": "advancement_race:obtain_sniffer_egg_reward",
+      "counter": "#obtain_sniffer_egg_count",
+      "base_score": 300,
+      "title_translate": "advancements.husbandry.obtain_sniffer_egg.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "place_dried_ghast_in_water",
+      "vanilla_id": "minecraft:husbandry/place_dried_ghast_in_water",
+      "helper_id": "advancement_race:place_dried_ghast_in_water_reward",
+      "counter": "#place_dried_ghast_in_water_count",
+      "base_score": 200,
+      "title_translate": "advancements.husbandry.place_dried_ghast_in_water.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "plant_any_sniffer_seed",
+      "vanilla_id": "minecraft:husbandry/plant_any_sniffer_seed",
+      "helper_id": "advancement_race:plant_any_sniffer_seed_reward",
+      "counter": "#plant_any_sniffer_seed_count",
+      "base_score": 250,
+      "title_translate": "advancements.husbandry.plant_any_sniffer_seed.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "remove_wolf_armor",
+      "vanilla_id": "minecraft:husbandry/remove_wolf_armor",
+      "helper_id": "advancement_race:remove_wolf_armor_reward",
+      "counter": "#remove_wolf_armor_count",
+      "base_score": 150,
+      "title_translate": "advancements.husbandry.remove_wolf_armor.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "repair_wolf_armor",
+      "vanilla_id": "minecraft:husbandry/repair_wolf_armor",
+      "helper_id": "advancement_race:repair_wolf_armor_reward",
+      "counter": "#repair_wolf_armor_count",
+      "base_score": 150,
+      "title_translate": "advancements.husbandry.repair_wolf_armor.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "ride_a_boat_with_a_goat",
+      "vanilla_id": "minecraft:husbandry/ride_a_boat_with_a_goat",
+      "helper_id": "advancement_race:ride_a_boat_with_a_goat_reward",
+      "counter": "#ride_a_boat_with_a_goat_count",
+      "base_score": 300,
+      "title_translate": "advancements.husbandry.ride_a_boat_with_a_goat.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "silk_touch_nest",
+      "vanilla_id": "minecraft:husbandry/silk_touch_nest",
+      "helper_id": "advancement_race:silk_touch_nest_reward",
+      "counter": "#silk_touch_nest_count",
+      "base_score": 250,
+      "title_translate": "advancements.husbandry.silk_touch_nest.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "tadpole_in_a_bucket",
+      "vanilla_id": "minecraft:husbandry/tadpole_in_a_bucket",
+      "helper_id": "advancement_race:tadpole_in_a_bucket_reward",
+      "counter": "#tadpole_in_a_bucket_count",
+      "base_score": 200,
+      "title_translate": "advancements.husbandry.tadpole_in_a_bucket.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "uh_oh",
+      "vanilla_id": "minecraft:husbandry/uh_oh",
+      "helper_id": "advancement_race:uh_oh_reward",
+      "counter": "#uh_oh_count",
+      "base_score": 250,
+      "title_translate": "advancements.husbandry.uh_oh.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "wax_off",
+      "vanilla_id": "minecraft:husbandry/wax_off",
+      "helper_id": "advancement_race:wax_off_reward",
+      "counter": "#wax_off_count",
+      "base_score": 100,
+      "title_translate": "advancements.husbandry.wax_off.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "wax_on",
+      "vanilla_id": "minecraft:husbandry/wax_on",
+      "helper_id": "advancement_race:wax_on_reward",
+      "counter": "#wax_on_count",
+      "base_score": 100,
+      "title_translate": "advancements.husbandry.wax_on.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "whole_pack",
+      "vanilla_id": "minecraft:husbandry/whole_pack",
+      "helper_id": "advancement_race:whole_pack_reward",
+      "counter": "#whole_pack_count",
+      "base_score": 500,
+      "title_translate": "advancements.husbandry.whole_pack.title",
+      "category": "husbandry"
+    },
+    {
+      "key": "all_effects",
+      "vanilla_id": "minecraft:nether/all_effects",
+      "helper_id": "advancement_race:all_effects_reward",
+      "counter": "#all_effects_count",
+      "base_score": 700,
+      "title_translate": "advancements.nether.all_effects.title",
+      "category": "nether"
+    },
+    {
+      "key": "all_potions",
+      "vanilla_id": "minecraft:nether/all_potions",
+      "helper_id": "advancement_race:all_potions_reward",
+      "counter": "#all_potions_count",
+      "base_score": 500,
+      "title_translate": "advancements.nether.all_potions.title",
+      "category": "nether"
+    },
+    {
+      "key": "create_beacon",
+      "vanilla_id": "minecraft:nether/create_beacon",
+      "helper_id": "advancement_race:create_beacon_reward",
+      "counter": "#create_beacon_count",
+      "base_score": 300,
+      "title_translate": "advancements.nether.create_beacon.title",
+      "category": "nether"
+    },
+    {
+      "key": "create_full_beacon",
+      "vanilla_id": "minecraft:nether/create_full_beacon",
+      "helper_id": "advancement_race:create_full_beacon_reward",
+      "counter": "#create_full_beacon_count",
+      "base_score": 500,
+      "title_translate": "advancements.nether.create_full_beacon.title",
+      "category": "nether"
+    },
+    {
+      "key": "distract_piglin",
+      "vanilla_id": "minecraft:nether/distract_piglin",
+      "helper_id": "advancement_race:distract_piglin_reward",
+      "counter": "#distract_piglin_count",
+      "base_score": 150,
+      "title_translate": "advancements.nether.distract_piglin.title",
+      "category": "nether"
+    },
+    {
+      "key": "explore_nether",
+      "vanilla_id": "minecraft:nether/explore_nether",
+      "helper_id": "advancement_race:explore_nether_reward",
+      "counter": "#explore_nether_count",
+      "base_score": 500,
+      "title_translate": "advancements.nether.explore_nether.title",
+      "category": "nether"
+    },
+    {
+      "key": "fast_travel",
+      "vanilla_id": "minecraft:nether/fast_travel",
+      "helper_id": "advancement_race:fast_travel_reward",
+      "counter": "#fast_travel_count",
+      "base_score": 400,
+      "title_translate": "advancements.nether.fast_travel.title",
+      "category": "nether"
+    },
+    {
+      "key": "get_wither_skull",
+      "vanilla_id": "minecraft:nether/get_wither_skull",
+      "helper_id": "advancement_race:get_wither_skull_reward",
+      "counter": "#get_wither_skull_count",
+      "base_score": 300,
+      "title_translate": "advancements.nether.get_wither_skull.title",
+      "category": "nether"
+    },
+    {
+      "key": "loot_bastion",
+      "vanilla_id": "minecraft:nether/loot_bastion",
+      "helper_id": "advancement_race:loot_bastion_reward",
+      "counter": "#loot_bastion_count",
+      "base_score": 300,
+      "title_translate": "advancements.nether.loot_bastion.title",
+      "category": "nether"
+    },
+    {
+      "key": "netherite_armor",
+      "vanilla_id": "minecraft:nether/netherite_armor",
+      "helper_id": "advancement_race:netherite_armor_reward",
+      "counter": "#netherite_armor_count",
+      "base_score": 600,
+      "title_translate": "advancements.nether.netherite_armor.title",
+      "category": "nether"
+    },
+    {
+      "key": "obtain_ancient_debris",
+      "vanilla_id": "minecraft:nether/obtain_ancient_debris",
+      "helper_id": "advancement_race:obtain_ancient_debris_reward",
+      "counter": "#obtain_ancient_debris_count",
+      "base_score": 300,
+      "title_translate": "advancements.nether.obtain_ancient_debris.title",
+      "category": "nether"
+    },
+    {
+      "key": "ride_strider_in_overworld_lava",
+      "vanilla_id": "minecraft:nether/ride_strider_in_overworld_lava",
+      "helper_id": "advancement_race:ride_strider_in_overworld_lava_reward",
+      "counter": "#ride_strider_in_overworld_lava_count",
+      "base_score": 400,
+      "title_translate": "advancements.nether.ride_strider_in_overworld_lava.title",
+      "category": "nether"
+    },
+    {
+      "key": "summon_wither",
+      "vanilla_id": "minecraft:nether/summon_wither",
+      "helper_id": "advancement_race:summon_wither_reward",
+      "counter": "#summon_wither_count",
+      "base_score": 400,
+      "title_translate": "advancements.nether.summon_wither.title",
+      "category": "nether"
+    },
+    {
+      "key": "uneasy_alliance",
+      "vanilla_id": "minecraft:nether/uneasy_alliance",
+      "helper_id": "advancement_race:uneasy_alliance_reward",
+      "counter": "#uneasy_alliance_count",
+      "base_score": 600,
+      "title_translate": "advancements.nether.uneasy_alliance.title",
+      "category": "nether"
+    },
+    {
+      "key": "cure_zombie_villager",
+      "vanilla_id": "minecraft:story/cure_zombie_villager",
+      "helper_id": "advancement_race:cure_zombie_villager_reward",
+      "counter": "#cure_zombie_villager_count",
+      "base_score": 300,
+      "title_translate": "advancements.story.cure_zombie_villager.title",
+      "category": "story"
+    },
+    {
+      "key": "form_obsidian",
+      "vanilla_id": "minecraft:story/form_obsidian",
+      "helper_id": "advancement_race:form_obsidian_reward",
+      "counter": "#form_obsidian_count",
+      "base_score": 100,
+      "title_translate": "advancements.story.form_obsidian.title",
+      "category": "story"
+    },
+    {
+      "key": "iron_tools",
+      "vanilla_id": "minecraft:story/iron_tools",
+      "helper_id": "advancement_race:iron_tools_reward",
+      "counter": "#iron_tools_count",
+      "base_score": 150,
+      "title_translate": "advancements.story.iron_tools.title",
+      "category": "story"
+    },
+    {
+      "key": "shiny_gear",
+      "vanilla_id": "minecraft:story/shiny_gear",
+      "helper_id": "advancement_race:shiny_gear_reward",
+      "counter": "#shiny_gear_count",
+      "base_score": 250,
+      "title_translate": "advancements.story.shiny_gear.title",
+      "category": "story"
     }
   ]
 }

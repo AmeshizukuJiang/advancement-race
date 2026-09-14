@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:nether/summon_wither",
+  "criteria": {
+    "beacon": {
+      "conditions": {
+        "level": {
+          "min": 1
+        }
+      },
+      "trigger": "minecraft:construct_beacon"
+    }
+  },
+  "requirements": [
+    [
+      "beacon"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_create_beacon"
+  }
+}

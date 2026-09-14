@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "crafter_crafted_crafter": {
+      "conditions": {
+        "recipe_id": "minecraft:crafter"
+      },
+      "trigger": "minecraft:crafter_recipe_crafted"
+    }
+  },
+  "requirements": [
+    [
+      "crafter_crafted_crafter"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_crafters_crafting_crafters"
+  }
+}

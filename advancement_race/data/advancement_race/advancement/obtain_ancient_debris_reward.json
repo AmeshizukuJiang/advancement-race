@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:nether/root",
+  "criteria": {
+    "ancient_debris": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:ancient_debris"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "ancient_debris"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_obtain_ancient_debris"
+  }
+}

@@ -5,16 +5,27 @@ framework for multiplayer races based on vanilla advancements. Each configured
 advancement awards points according to its base score and the order in which
 players complete it.
 
-## Current status — v0.9.4
+## Current development status — v0.10.0-beta.1
 
-**Observability, diagnostics and validation tools**
+**121-advancement catalog engineering expansion — Minecraft 26.2 reload verified**
+
+Minecraft 26.2 loaded the expanded data pack without datapack, function, or
+advancement JSON errors. Representative newly added advancements were manually
+completed and detected successfully. Exhaustive gameplay validation of all 121
+advancements is intentionally deferred to the Release Candidate phase, using
+repeated four-player multiplayer testing.
 
 The project currently provides:
 
 - Advancement scoring with per-advancement base scores and completion-order
   awards.
-- A generator pipeline and static advancement manifest for maintaining the
-  generated helper advancements and reward functions.
+- All 121 non-root gameplay advancements in the five standard vanilla tabs
+  (Story, Nether, End, Adventure, and Husbandry) are configured as scored
+  catalog entries. Their helper conditions are copied from the verified
+  Minecraft 26.2 server artifact; recipe and tab-root advancements are not
+  included.
+- A generator pipeline and static advancement manifest maintain generated
+  helper advancements, reward functions, and counter aggregate functions.
 - Match lifecycle operations for preparing, registering, starting, ending, and
   resetting matches.
 - A persistent Storage event ledger and archived match history.
@@ -71,3 +82,11 @@ are read-only presentation layers.
 Generated runtime files are tracked in Git. Change their manifest or generator
 input, regenerate them, and run the generator's `--check` mode rather than
 editing generated files by hand.
+
+For a full catalog integrity check against the cached Mojang-verified Minecraft
+26.2 server artifact, run:
+
+```text
+python tools/validate_catalog.py --offline
+python tools/generate_advancements.py --offline --check
+```

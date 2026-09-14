@@ -1,0 +1,29 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "minecraft_trials_edition": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "structures": "minecraft:trial_chambers"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "requirements": [
+    [
+      "minecraft_trials_edition"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_minecraft_trials_edition"
+  }
+}

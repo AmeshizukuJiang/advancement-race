@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "obtain_sniffer_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sniffer_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_sniffer_egg"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_obtain_sniffer_egg"
+  }
+}

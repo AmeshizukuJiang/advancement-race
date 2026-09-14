@@ -1,0 +1,39 @@
+{
+  "parent": "minecraft:adventure/minecraft_trials_edition",
+  "criteria": {
+    "overoverkill": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "direct_entity": {
+              "minecraft:entity_type": "minecraft:player",
+              "minecraft:equipment": {
+                "mainhand": {
+                  "items": "minecraft:mace"
+                }
+              }
+            },
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:mace_smash"
+              }
+            ]
+          },
+          "dealt": {
+            "min": 100.0
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "requirements": [
+    [
+      "overoverkill"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_overoverkill"
+  }
+}

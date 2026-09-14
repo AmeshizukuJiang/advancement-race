@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:adventure/kill_a_mob",
+  "criteria": {
+    "kill_mob_near_sculk_catalyst": {
+      "trigger": "minecraft:kill_mob_near_sculk_catalyst"
+    }
+  },
+  "requirements": [
+    [
+      "kill_mob_near_sculk_catalyst"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_kill_mob_near_sculk_catalyst"
+  }
+}

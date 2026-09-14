@@ -21,7 +21,10 @@
 
 ## Current Implemented State
 
-- Forty scored vanilla advancements are implemented. The original ten include:
+- All **121** non-root gameplay advancements in the five standard vanilla tabs
+  (Story, Nether, End, Adventure, and Husbandry) are configured as scored
+  catalog entries. Recipe unlocks and the five tab roots are excluded. The
+  original ten include:
   - Stone Age (`minecraft:story/mine_stone`), base score **100**.
   - A Seedy Place (`minecraft:husbandry/plant_seed`), base score **100**.
   - Monster Hunter (`minecraft:adventure/kill_a_mob`), base score **200**.
@@ -37,13 +40,13 @@
 - A Storage event ledger records sequence, player UUID, registered in-match name, advancement ID, place, and awarded points.
 - A minimal Match Lifecycle is unchanged: participants can be registered while idle; starting locks the roster and enables scoring only for registered players; ending archives the match snapshot under `history.matches` while retaining the current match snapshot; resetting prepares a new match without clearing archived history.
 - Counter initialization, counter reset, and helper revocation are each maintained by a dedicated shared function. Registering revokes a participant's helpers so they can trigger in the next match.
-- `tools/advancements.manifest.json` contains static metadata for the current forty advancements. Runtime Storage does not duplicate this configuration.
+- `tools/advancements.manifest.json` contains static metadata for all 121 scored advancements. Runtime Storage does not duplicate this configuration.
 - `tools/generate_advancements.py` uses the manifest and a verified Mojang Minecraft 26.2 server artifact to generate the helper advancements, reward functions, and counter aggregate functions. Generated runtime files remain tracked in Git; the downloaded artifact cache remains outside the repository.
 - Result calculation and the personal Result Book read ended-match history through their dedicated runtime result data.
 - Status calculation and the personal Status Book read the active match through dedicated runtime status data.
 - The Lobby Book presents the prepared roster and the caller's registration state. A registered-participant majority may end an active match through the separate end-vote feature.
 
-Do not assume 100+ advancement catalog coverage, automatic expansion beyond the manifest, leaderboards, query books, or settlement reports are implemented.
+Do not assume automatic expansion beyond the manifest, leaderboards, query books, or settlement reports are implemented.
 
 ## Important Variable Semantics
 
@@ -61,7 +64,7 @@ Do not assume 100+ advancement catalog coverage, automatic expansion beyond the 
 - Preserve player × advancement completion history.
 - Extend the implemented lifecycle with settlement only after its player-visible behavior is designed.
 - Generate leaderboard and richer multi-player book reports beyond the existing personal Result, Status, and Lobby books.
-- Once the data model is established, use a manifest and generator to maintain 100+ helper advancements.
+- Use the manifest and generator to maintain the 121-advancement catalog and future catalog changes.
 
 ## Development Workflow
 

@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:end/kill_dragon",
+  "criteria": {
+    "summoned_dragon": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:ender_dragon"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:summoned_entity"
+    }
+  },
+  "requirements": [
+    [
+      "summoned_dragon"
+    ]
+  ],
+  "rewards": {
+    "function": "advancement_race:reward_respawn_dragon"
+  }
+}
