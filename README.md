@@ -5,9 +5,9 @@ framework for multiplayer races based on vanilla advancements. Each configured
 advancement awards points according to its base score and the order in which
 players complete it.
 
-## Current status — v0.9.3
+## Current status — v0.9.4
 
-**Lobby Book and complete player interaction flow**
+**Observability, diagnostics and validation tools**
 
 The project currently provides:
 
@@ -20,6 +20,8 @@ The project currently provides:
 - A persistent Storage event ledger and archived match history.
 - Lobby, live Status, and final Result books for player-facing views.
 - Participant-majority voting to end an active match.
+- Read-only administrator inspection and validation functions for match, vote,
+  and runtime presentation-cache diagnostics.
 
 ## Typical match flow
 

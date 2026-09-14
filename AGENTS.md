@@ -83,6 +83,12 @@ Use **Plan → Implement → Review → Manual Minecraft Test → Commit**.
 - The event ledger is the historical source of truth. Lobby, Status, and Result Books are read-only presentation layers and must never become a data source.
 - Do not change `history.matches` or the event schema merely to make a UI feature easier. Keep UI code isolated from scoring, event recording, and Match Lifecycle behavior.
 
+## Admin Diagnostics and Test Tools
+
+- `admin/inspect_*` and `admin/validate` are read-only diagnostic functions. They must not write Storage or alter match, event, history, vote, scoring, or lifecycle facts.
+- `admin/validate` reports `PASS` for verified invariants, `WARN` for normal absence or deliberate read-only limits, and `FAIL` for detected inconsistencies. A WARN is not an automatic repair request.
+- Debug diagnostics must never mutate fact data. Any explicit development-only injection tool belongs under `admin/test`, stays outside normal match entry points, and must not be used to repair or simulate production facts.
+
 ## Generated Runtime Files
 
 - Do not hand-edit generated helper advancements, reward functions, or generated counter aggregate functions.
