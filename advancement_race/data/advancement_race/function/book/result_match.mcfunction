@@ -1,0 +1,5 @@
+$execute unless data storage advancement_race:history matches[{id:$(match_id),status:"ended"}] run tellraw @s [{"text":"Cannot create result book: requested ended match was not found."}]
+$execute if data storage advancement_race:history matches[{id:$(match_id),status:"ended"}] run data modify storage advancement_race:runtime result_request.match_id set value $(match_id)
+$execute if data storage advancement_race:history matches[{id:$(match_id),status:"ended"}] run function advancement_race:result/calculate
+$execute if data storage advancement_race:history matches[{id:$(match_id),status:"ended"}] if data storage advancement_race:runtime {result:{status:"ready",match_id:$(match_id)}} run function advancement_race:result_book/give
+$execute if data storage advancement_race:history matches[{id:$(match_id),status:"ended"}] unless data storage advancement_race:runtime {result:{status:"ready",match_id:$(match_id)}} run tellraw @s [{"text":"Cannot create result book: requested ended match was not found."}]

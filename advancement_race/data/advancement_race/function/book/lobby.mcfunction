@@ -1,0 +1,1 @@
+function advancement_race:lobby_book/give

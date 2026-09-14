@@ -33,12 +33,31 @@ Lobby → Register → Start → Status → Vote End → Result
    registration function and its explicit player-name argument.
 2. Start the match. The roster is locked and only registered participants can
    score.
-3. Players can request a Status Book after the current status has been
-   calculated.
+3. Players can request a fresh Status Book for the active match.
 4. Registered participants may vote to end the match; a strict majority ends
    it.
-5. After the match ends, calculate its result and issue each participant a
-   Result Book.
+5. After the match ends, issue each participant a Result Book for the latest
+   ended match.
+
+## Public book commands
+
+Use these public entry points during normal play. They validate the applicable
+match state and calculate a fresh presentation snapshot before issuing a book.
+
+```mcfunction
+/function advancement_race:book/lobby
+/function advancement_race:book/status
+/function advancement_race:book/result_latest
+/function advancement_race:book/result_match {match_id:1}
+```
+
+`book/lobby` is available only for a prepared lobby. `book/status` is available
+only during an active match. `book/result_latest` uses the most recently ended
+match, while `book/result_match` selects a specific archived ended match.
+
+The lower-level `status/calculate`, `result/calculate_*`, and `*_book/give`
+functions remain available for development and debugging. They operate on
+runtime presentation caches and are not the recommended normal-play workflow.
 
 Carpet is useful for development and manual testing, but it is not a runtime
 dependency of the released data pack.
