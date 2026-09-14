@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime browser_work.pages set value [{raw:{text:"Previous Races\n",color:"#8A5A00",bold:true,extra:[{text:"Newest first · Page $(page_number) / $(total_pages)\n",color:"#555555",bold:false}]}}]

@@ -1,0 +1,5 @@
+$execute if score #history_row race_state matches 0..7 if score #history_index race_state matches 0.. if data storage advancement_race:history matches[$(history_index)] run function advancement_race:history_book/build_entry with storage advancement_race:runtime browser_work
+execute if score #history_row race_state matches 0..7 if score #history_index race_state matches 0.. run scoreboard players add #history_row race_state 1
+execute if score #history_row race_state matches 1..8 if score #history_index race_state matches 0.. run scoreboard players remove #history_index race_state 1
+execute if score #history_row race_state matches 1..7 if score #history_index race_state matches 0.. run execute store result storage advancement_race:runtime browser_work.history_index int 1 run scoreboard players get #history_index race_state
+execute if score #history_row race_state matches 1..7 if score #history_index race_state matches 0.. run function advancement_race:history_book/build_entries with storage advancement_race:runtime browser_work

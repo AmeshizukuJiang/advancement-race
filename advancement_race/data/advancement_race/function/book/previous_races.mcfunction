@@ -1,0 +1,1 @@
+function advancement_race:history_book/open

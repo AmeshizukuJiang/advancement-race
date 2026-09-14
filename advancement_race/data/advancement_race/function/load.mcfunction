@@ -18,5 +18,8 @@ execute unless data storage advancement_race:history matches run data modify sto
 execute unless data storage advancement_race:state next_match_id run data modify storage advancement_race:state next_match_id set value 0
 execute if data storage advancement_race:match {status:"active"} run scoreboard players set #match_active race_state 1
 scoreboard objectives add race_menu trigger "Race Menu"
+scoreboard objectives add race_browser dummy "Race Browser"
 scoreboard players set @a race_menu 0
 scoreboard players enable @a race_menu
+scoreboard players reset @a race_browser
+data remove storage advancement_race:runtime browser

@@ -1,0 +1,1 @@
+tellraw @s [{"text":"[Previous Races]","color":"dark_aqua","bold":true,"click_event":{"action":"run_command","command":"/trigger race_menu set 6"},"hover_event":{"action":"show_text","value":{"text":"Browse completed race history","color":"yellow"}}}]
