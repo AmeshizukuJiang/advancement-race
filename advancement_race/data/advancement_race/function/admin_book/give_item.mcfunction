@@ -1,0 +1,1 @@
+$give @s minecraft:written_book[minecraft:custom_data={advancement_race:{admin_book:1b,kind:"admin_book",schema:1}},minecraft:written_book_content={title:"Advancement Race Admin",author:"Advancement Race",pages:$(pages)}] 1
