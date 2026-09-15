@@ -1,0 +1,2 @@
+$data modify storage advancement_race:runtime advancement_results_work.event set from storage advancement_race:runtime advancement_results_source.events[$(event_index)]
+function advancement_race:advancement_results/copy_event_if_advancement with storage advancement_race:runtime advancement_results_work

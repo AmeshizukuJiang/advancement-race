@@ -1,0 +1,2 @@
+$execute if data storage advancement_race:runtime browser_work{action:{kind:"info_center_select_match",match_id:$(match_id)}} if data storage advancement_race:history matches[{id:$(match_id),status:"ended"}] run scoreboard players set #browser_dispatched race_state 1
+$execute if data storage advancement_race:runtime browser_work{action:{kind:"info_center_select_match",match_id:$(match_id)}} if data storage advancement_race:history matches[{id:$(match_id),status:"ended"}] run function advancement_race:info_center/history_match/open {match_id:$(match_id)}

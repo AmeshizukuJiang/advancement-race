@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime standings_book.pages append value {raw:{text:"Advancement Race\n",color:"#8A5A00",bold:true,extra:[{text:"Final Standings\n",color:"#2E6B35",bold:false},{text:"Match #$(match_id) · Page $(page_number)\n",color:"#555555",bold:false}]}}

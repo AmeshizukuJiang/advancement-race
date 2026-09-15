@@ -1,4 +1,14 @@
 execute if data storage advancement_race:runtime browser_work{action:{kind:"history_page"}} run function advancement_race:browser/action/history_page
 execute if data storage advancement_race:runtime browser_work{action:{kind:"select_match"}} run function advancement_race:browser/action/select_match
 execute if data storage advancement_race:runtime browser_work{action:{kind:"my_result"}} run function advancement_race:browser/action/my_result
+execute if data storage advancement_race:runtime browser_work{action:{kind:"final_standings"}} run function advancement_race:browser/action/final_standings
+execute if data storage advancement_race:runtime browser_work{action:{kind:"participant_detail"}} run function advancement_race:browser/action/participant_detail
+execute if data storage advancement_race:runtime browser_work{action:{kind:"advancement_index"}} run function advancement_race:browser/action/advancement_index
+execute if data storage advancement_race:runtime browser_work{action:{kind:"advancement_category"}} run function advancement_race:browser/action/advancement_category
+execute if data storage advancement_race:runtime browser_work{action:{kind:"advancement_results"}} run function advancement_race:browser/action/advancement_results
+execute if data storage advancement_race:runtime browser_work{action:{kind:"vote_end_confirm"}} run function advancement_race:browser/action/vote_end_confirm
+execute if data storage advancement_race:runtime browser_work{action:{kind:"advancement_detail"}} run function advancement_race:browser/action/advancement_detail
+execute if data storage advancement_race:runtime browser_work{action:{kind:"participant_detail_chat"}} run function advancement_race:browser/action/participant_detail_chat
+execute if data storage advancement_race:runtime browser_work{action:{kind:"info_center_history_page"}} run function advancement_race:browser/action/info_center_history_page
+execute if data storage advancement_race:runtime browser_work{action:{kind:"info_center_select_match"}} run function advancement_race:browser/action/info_center_select_match
 execute if score #browser_dispatched race_state matches 0 run function advancement_race:browser/stale

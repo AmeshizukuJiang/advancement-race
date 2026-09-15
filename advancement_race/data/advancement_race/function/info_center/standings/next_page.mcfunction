@@ -1,0 +1,4 @@
+scoreboard players set #info_center_standings_entries race_state 0
+scoreboard players add #info_center_standings_page_number race_state 1
+execute store result storage advancement_race:runtime info_center_standings_work.page_number int 1 run scoreboard players get #info_center_standings_page_number race_state
+function advancement_race:info_center/standings/append_page with storage advancement_race:runtime info_center_standings_work

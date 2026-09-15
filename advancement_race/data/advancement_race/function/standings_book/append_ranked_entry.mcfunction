@@ -1,0 +1,3 @@
+$data modify storage advancement_race:runtime standings_book.pages[-1].raw.extra append value {text:"\n#$(rank) ",color:"#666666",bold:false}
+$data modify storage advancement_race:runtime standings_book.pages[-1].raw.extra append value {text:"$(name)",color:"#006B73",bold:true,underlined:true,click_event:{action:"run_command",command:"/trigger race_menu set $(action_code)"},hover_event:{action:"show_text",value:{text:"Open participant detail",color:"#8A6500"}}}
+$data modify storage advancement_race:runtime standings_book.pages[-1].raw.extra append value {text:"\n$(points) Points · $(completed) Completed",color:"#2B2B2B",bold:false}

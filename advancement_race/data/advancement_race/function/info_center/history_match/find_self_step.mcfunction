@@ -1,0 +1,3 @@
+$data modify storage advancement_race:runtime info_center_history_work.candidate set from storage advancement_race:runtime result.participants[$(participant_index)]
+data modify storage advancement_race:runtime info_center_history_work.candidate_uuid set from storage advancement_race:runtime info_center_history_work.candidate.uuid
+function advancement_race:info_center/history_match/match_self with storage advancement_race:runtime info_center_history_work

@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime advancement_results.events[$(page_index)] run function advancement_race:advancement_results/build_event_page with storage advancement_race:runtime advancement_results_work
+$execute if data storage advancement_race:runtime advancement_results.events[$(page_index)] run scoreboard players add #advancement_results_page_index race_state 1
+$execute if data storage advancement_race:runtime advancement_results.events[$(page_index)] run execute store result storage advancement_race:runtime advancement_results_work.page_index int 1 run scoreboard players get #advancement_results_page_index race_state
+$execute if data storage advancement_race:runtime advancement_results.events[$(page_index)] run function advancement_race:advancement_results/build_event_pages with storage advancement_race:runtime advancement_results_work

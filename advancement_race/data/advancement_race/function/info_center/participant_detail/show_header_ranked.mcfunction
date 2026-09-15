@@ -1,0 +1,1 @@
+$tellraw @s [{"text":"$(name)","color":"#8A5A00","bold":true},{"text":"\n$(rank_label) Rank: #$(rank)","color":"#006B73","bold":false},{"text":"\nPoints: $(points)","color":"#8A6500","bold":false},{"text":"\nCompleted: $(completed)","color":"#2E6B35","bold":false}]

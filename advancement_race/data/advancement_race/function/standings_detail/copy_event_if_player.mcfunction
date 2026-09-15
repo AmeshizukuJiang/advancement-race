@@ -1,0 +1,1 @@
+$execute if data storage advancement_race:runtime {standings_detail_work:{event:{player_uuid:$(player_uuid)}}} run data modify storage advancement_race:runtime standings_detail.events append from storage advancement_race:runtime standings_detail_work.event

@@ -1,0 +1,5 @@
+$data modify storage advancement_race:runtime advancement_detail_work.event set from storage advancement_race:runtime advancement_detail.events[$(event_index)]
+data modify storage advancement_race:runtime advancement_detail_work.player_name set from storage advancement_race:runtime advancement_detail_work.event.player_name
+data modify storage advancement_race:runtime advancement_detail_work.place set from storage advancement_race:runtime advancement_detail_work.event.place
+data modify storage advancement_race:runtime advancement_detail_work.points set from storage advancement_race:runtime advancement_detail_work.event.points
+function advancement_race:info_center/advancement_detail/show_event_line with storage advancement_race:runtime advancement_detail_work

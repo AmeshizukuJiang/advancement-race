@@ -1,0 +1,1 @@
+$tellraw @s [{"text":"$(name)","color":"#8A5A00","bold":true},{"text":"\nNo score yet","color":"#555555","bold":false},{"text":"\nPoints: 0","color":"#8A6500","bold":false},{"text":"\nCompleted: $(completed)","color":"#2E6B35","bold":false}]

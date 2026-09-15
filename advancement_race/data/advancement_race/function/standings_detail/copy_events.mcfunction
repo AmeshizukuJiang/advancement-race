@@ -1,0 +1,4 @@
+data modify storage advancement_race:runtime standings_detail_work.player_uuid set from storage advancement_race:runtime standings_detail.player_uuid
+scoreboard players set #standings_detail_event_index race_state 0
+data modify storage advancement_race:runtime standings_detail_work.event_index set value 0
+function advancement_race:standings_detail/copy_events_loop with storage advancement_race:runtime standings_detail_work

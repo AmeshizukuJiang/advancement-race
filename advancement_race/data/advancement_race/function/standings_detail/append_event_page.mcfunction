@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime standings_detail.pages append value {raw:{text:"Completed Advancements\n",color:"#8A5A00",bold:true,extra:[{text:"\n#$(sequence) ",color:"#666666",bold:false},{translate:"$(title_translate)",color:"#2B2B2B",bold:false},{text:"\nAdvancement Place: $(place)  +$(points) Points",color:"#8A6500",bold:false}]}}

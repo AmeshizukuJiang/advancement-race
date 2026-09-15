@@ -1,0 +1,3 @@
+$function advancement_race:result/calculate_match {match_id:$(match_id)}
+$execute if data storage advancement_race:runtime result{status:"ready",match_id:$(match_id)} run function advancement_race:info_center/history_match/prepare
+$execute unless data storage advancement_race:runtime result{status:"ready",match_id:$(match_id)} run tellraw @s [{"text":"That completed race is no longer available.","color":"#9B2226"}]

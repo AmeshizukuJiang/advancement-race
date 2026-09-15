@@ -1,0 +1,3 @@
+data modify storage advancement_race:runtime advancement_index_request set value {}
+data modify storage advancement_race:runtime advancement_index_request.match_id set from storage advancement_race:runtime browser_work.action.match_id
+function advancement_race:browser/action/advancement_index_validate with storage advancement_race:runtime advancement_index_request

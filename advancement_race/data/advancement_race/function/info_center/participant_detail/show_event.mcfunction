@@ -1,0 +1,9 @@
+$data modify storage advancement_race:runtime participant_detail_work.event set from storage advancement_race:runtime participant_detail.events[$(event_index)]
+data modify storage advancement_race:runtime participant_detail_work.sequence set from storage advancement_race:runtime participant_detail_work.event.sequence
+data modify storage advancement_race:runtime participant_detail_work.advancement set from storage advancement_race:runtime participant_detail_work.event.advancement
+data modify storage advancement_race:runtime participant_detail_work.place set from storage advancement_race:runtime participant_detail_work.event.place
+data modify storage advancement_race:runtime participant_detail_work.points set from storage advancement_race:runtime participant_detail_work.event.points
+data modify storage advancement_race:runtime presentation.advancement set from storage advancement_race:runtime participant_detail_work.advancement
+function advancement_race:presentation/resolve_advancement_title
+data modify storage advancement_race:runtime participant_detail_work.title_translate set from storage advancement_race:runtime presentation.title_translate
+function advancement_race:info_center/participant_detail/show_event_line with storage advancement_race:runtime participant_detail_work

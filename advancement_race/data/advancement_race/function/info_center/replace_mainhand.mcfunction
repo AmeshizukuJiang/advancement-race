@@ -1,0 +1,1 @@
+$item replace entity @s weapon.mainhand with minecraft:written_book[minecraft:custom_data={advancement_race:{ui_book:1b,kind:"info_center",schema:1}},minecraft:written_book_content={title:"Advancement Race Info Center",author:"Advancement Race",pages:$(pages)}] 1

@@ -1,0 +1,6 @@
+execute if score #info_center_standings_rank race_state <= #info_center_standings_count race_state run scoreboard players set #info_center_standings_scan race_state 0
+execute if score #info_center_standings_rank race_state <= #info_center_standings_count race_state run data modify storage advancement_race:runtime info_center_standings_work.participant_index set value 0
+execute if score #info_center_standings_rank race_state <= #info_center_standings_count race_state run function advancement_race:info_center/standings/scan with storage advancement_race:runtime info_center_standings_work
+execute if score #info_center_standings_rank race_state <= #info_center_standings_count race_state run scoreboard players add #info_center_standings_rank race_state 1
+execute if score #info_center_standings_rank race_state <= #info_center_standings_count race_state run execute store result storage advancement_race:runtime info_center_standings_work.rank int 1 run scoreboard players get #info_center_standings_rank race_state
+execute if score #info_center_standings_rank race_state <= #info_center_standings_count race_state run function advancement_race:info_center/standings/build_ranks with storage advancement_race:runtime info_center_standings_work

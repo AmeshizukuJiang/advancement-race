@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run function advancement_race:info_center/history_match/find_self_step with storage advancement_race:runtime info_center_history_work
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run scoreboard players add #info_center_history_self_index race_state 1
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run execute store result storage advancement_race:runtime info_center_history_work.participant_index int 1 run scoreboard players get #info_center_history_self_index race_state
+$execute if data storage advancement_race:runtime result.participants[$(participant_index)] run function advancement_race:info_center/history_match/find_self with storage advancement_race:runtime info_center_history_work

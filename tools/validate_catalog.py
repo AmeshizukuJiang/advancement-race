@@ -20,6 +20,13 @@ ADVANCEMENT_ROOT = REPO_ROOT / "advancement_race" / "data" / "advancement_race" 
 TITLE_MAPPING_PATH = FUNCTION_ROOT / "presentation" / "resolve_advancement_title.mcfunction"
 GAMEPLAY_CATEGORIES = {"adventure", "end", "husbandry", "nether", "story"}
 EXPECTED_GAMEPLAY_ADVANCEMENTS = 121
+EXPECTED_CATEGORY_COUNTS = {
+    "story": 15,
+    "nether": 22,
+    "end": 8,
+    "adventure": 46,
+    "husbandry": 30,
+}
 EXPECTED_MANUAL_OVERRIDE_KEYS = {"monster_hunter"}
 FUNCTION_REFERENCE = re.compile(r"\bfunction\s+advancement_race:([a-z0-9_/-]+)")
 
@@ -97,6 +104,15 @@ def validate_manifest_metadata(
             f"expected {EXPECTED_GAMEPLAY_ADVANCEMENTS}."
         )
 
+    category_counts = {
+        category: sum(1 for advancement in advancements if advancement["category"] == category)
+        for category in EXPECTED_CATEGORY_COUNTS
+    }
+    if category_counts != EXPECTED_CATEGORY_COUNTS:
+        errors.append(
+            f"Manifest category counts are {category_counts}; expected {EXPECTED_CATEGORY_COUNTS}."
+        )
+
     for advancement in advancements:
         vanilla = catalog.get(advancement["vanilla_id"])
         if vanilla is None:
@@ -157,6 +173,20 @@ def validate_generated_path_sets(
     actual_helpers = set(ADVANCEMENT_ROOT.rglob("*.json"))
     expected_rewards = {generator.reward_output_path(advancement) for advancement in advancements}
     actual_rewards = set(FUNCTION_ROOT.glob("reward_*.mcfunction"))
+    expected_index_files = {
+        generator.advancement_index_output_path(category)
+        for category in generator.ADVANCEMENT_INDEX_CATEGORIES
+    }
+    actual_index_files = set(
+        (FUNCTION_ROOT / "presentation" / "advancement_index").glob("*.mcfunction")
+    )
+    expected_info_center_files = {
+        generator.info_center_advancement_output_path(category)
+        for category in generator.ADVANCEMENT_INDEX_CATEGORIES
+    }
+    actual_info_center_files = set(
+        (FUNCTION_ROOT / "presentation" / "info_center_advancements").glob("*.mcfunction")
+    )
 
     for path in sorted(expected_helpers - actual_helpers):
         errors.append(f"Missing helper advancement: {path.relative_to(REPO_ROOT)}")
@@ -166,6 +196,14 @@ def validate_generated_path_sets(
         errors.append(f"Missing reward function: {path.relative_to(REPO_ROOT)}")
     for path in sorted(actual_rewards - expected_rewards):
         errors.append(f"Unexpected reward function: {path.relative_to(REPO_ROOT)}")
+    for path in sorted(expected_index_files - actual_index_files):
+        errors.append(f"Missing generated advancement index: {path.relative_to(REPO_ROOT)}")
+    for path in sorted(actual_index_files - expected_index_files):
+        errors.append(f"Unexpected generated advancement index: {path.relative_to(REPO_ROOT)}")
+    for path in sorted(expected_info_center_files - actual_info_center_files):
+        errors.append(f"Missing generated Info Center advancement list: {path.relative_to(REPO_ROOT)}")
+    for path in sorted(actual_info_center_files - expected_info_center_files):
+        errors.append(f"Unexpected generated Info Center advancement list: {path.relative_to(REPO_ROOT)}")
     return errors
 
 

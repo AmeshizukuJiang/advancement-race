@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime standings_book.participants[$(detect_index)] run function advancement_race:standings_book/detect_score_step with storage advancement_race:runtime standings_book_work
+$execute if data storage advancement_race:runtime standings_book.participants[$(detect_index)] run scoreboard players add #standings_book_detect_index race_state 1
+$execute if data storage advancement_race:runtime standings_book.participants[$(detect_index)] run execute store result storage advancement_race:runtime standings_book_work.detect_index int 1 run scoreboard players get #standings_book_detect_index race_state
+$execute if data storage advancement_race:runtime standings_book.participants[$(detect_index)] run function advancement_race:standings_book/detect_scores with storage advancement_race:runtime standings_book_work

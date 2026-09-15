@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime info_center.participants[$(roster_index)] run function advancement_race:info_center/append_roster_step with storage advancement_race:runtime info_center_work
+$execute if data storage advancement_race:runtime info_center.participants[$(roster_index)] run scoreboard players add #info_center_roster_index race_state 1
+$execute if data storage advancement_race:runtime info_center.participants[$(roster_index)] run execute store result storage advancement_race:runtime info_center_work.roster_index int 1 run scoreboard players get #info_center_roster_index race_state
+$execute if data storage advancement_race:runtime info_center.participants[$(roster_index)] run function advancement_race:info_center/append_roster_loop with storage advancement_race:runtime info_center_work

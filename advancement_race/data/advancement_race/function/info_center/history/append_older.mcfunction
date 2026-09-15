@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime info_center.pages[0].raw.extra append value {text:"  [Older]",color:"#006B73",bold:true,underlined:true,click_event:{action:"run_command",command:"/trigger race_menu set $(navigation_action)"}}

@@ -1,0 +1,4 @@
+scoreboard players set #advancement_category_entries_on_page race_state 0
+scoreboard players add #advancement_category_page_number race_state 1
+execute store result storage advancement_race:runtime advancement_category_work.page_number int 1 run scoreboard players get #advancement_category_page_number race_state
+function advancement_race:advancement_category_book/append_page with storage advancement_race:runtime advancement_category_work

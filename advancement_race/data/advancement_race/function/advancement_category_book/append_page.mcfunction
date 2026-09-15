@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime advancement_category_book.pages append value {raw:{text:"Advancement Race\n",color:"#8A5A00",bold:true,extra:[{text:"$(category_title) Advancements\n",color:"#2E6B35",bold:false},{text:"$(category_count) entries · Page $(page_number)\n",color:"#555555",bold:false}]}}

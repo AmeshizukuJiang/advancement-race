@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime advancement_results.pages append value {raw:{text:"Completed Players\n",color:"#8A5A00",bold:true,extra:[{translate:"$(title_translate)",color:"#2B2B2B",bold:false},{text:"\n\n#$(place) $(player_name)",color:"#006B73",bold:true},{text:"\n+$(points) Points",color:"#8A6500",bold:false}]}}

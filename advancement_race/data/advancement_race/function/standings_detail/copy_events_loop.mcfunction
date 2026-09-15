@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime standings.events[$(event_index)] run function advancement_race:standings_detail/copy_event_step with storage advancement_race:runtime standings_detail_work
+$execute if data storage advancement_race:runtime standings.events[$(event_index)] run scoreboard players add #standings_detail_event_index race_state 1
+$execute if data storage advancement_race:runtime standings.events[$(event_index)] run execute store result storage advancement_race:runtime standings_detail_work.event_index int 1 run scoreboard players get #standings_detail_event_index race_state
+$execute if data storage advancement_race:runtime standings.events[$(event_index)] run function advancement_race:standings_detail/copy_events_loop with storage advancement_race:runtime standings_detail_work

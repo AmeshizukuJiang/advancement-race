@@ -1,0 +1,6 @@
+execute if data storage advancement_race:runtime advancement_results{mode:"live"} run function advancement_race:advancement_results/build_live_summary with storage advancement_race:runtime advancement_results
+execute if data storage advancement_race:runtime advancement_results{mode:"final"} run function advancement_race:advancement_results/build_final_summary with storage advancement_race:runtime advancement_results
+scoreboard players set #advancement_results_page_index race_state 0
+scoreboard players set #advancement_results_page_slot race_state 0
+data modify storage advancement_race:runtime advancement_results_work.page_index set value 0
+function advancement_race:advancement_results/build_event_pages with storage advancement_race:runtime advancement_results_work

@@ -1,0 +1,13 @@
+execute if score #info_center_standings_entries race_state matches 5.. run function advancement_race:info_center/standings/next_page
+data modify storage advancement_race:runtime browser_work.pending_action set value {kind:"participant_detail_chat",participant_index:0}
+data modify storage advancement_race:runtime browser_work.pending_action.participant_index set from storage advancement_race:runtime info_center_standings_work.participant_index
+function advancement_race:browser/session/add_action
+data modify storage advancement_race:runtime info_center_standings_work.action_code set from storage advancement_race:runtime browser_work.action_code
+data modify storage advancement_race:runtime info_center_standings_work.name set from storage advancement_race:runtime info_center_standings_work.candidate.name
+data modify storage advancement_race:runtime info_center_standings_work.points set from storage advancement_race:runtime info_center_standings_work.candidate.points
+data modify storage advancement_race:runtime info_center_standings_work.rank set from storage advancement_race:runtime info_center_standings_work.candidate.rank
+data modify storage advancement_race:runtime info_center_standings_work.completed set from storage advancement_race:runtime info_center_standings_work.candidate.completed
+execute store result score #info_center_standings_points race_state run data get storage advancement_race:runtime info_center_standings_work.points
+execute if score #info_center_standings_points race_state matches 0 run function advancement_race:info_center/standings/append_no_score with storage advancement_race:runtime info_center_standings_work
+execute unless score #info_center_standings_points race_state matches 0 run function advancement_race:info_center/standings/append_ranked with storage advancement_race:runtime info_center_standings_work
+scoreboard players add #info_center_standings_entries race_state 1

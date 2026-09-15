@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime info_center.pages[0].raw.extra append value {text:"\nMatch #$(id)",color:"#006B73",bold:true,underlined:true,click_event:{action:"run_command",command:"/trigger race_menu set $(action_code)"},hover_event:{action:"show_text",value:{text:"$(participant_count) participants · $(event_count) scoring events",color:"#8A6500"}}}

@@ -1,0 +1,2 @@
+data modify storage advancement_race:runtime advancement_category_book.pages[-1].raw.extra append value {text:"\n• ",color:"#666666",bold:false}
+$data modify storage advancement_race:runtime advancement_category_book.pages[-1].raw.extra append value {translate:"$(title_translate)",color:"#006B73",bold:false,underlined:true,click_event:{action:"run_command",command:"/trigger race_menu set $(action_code)"},hover_event:{action:"show_text",value:{text:"Open advancement results",color:"#8A6500"}}}

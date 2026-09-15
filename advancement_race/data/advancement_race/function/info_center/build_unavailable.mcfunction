@@ -1,0 +1,2 @@
+data modify storage advancement_race:runtime info_center.pages set value [{raw:{text:"Advancement Race\n",color:"#8A5A00",bold:true,extra:[{text:"Info Center unavailable\n\n",color:"#9B2226",bold:false},{text:"The match state could not be read. Ask the host for help.",color:"#2B2B2B",bold:false},{text:"\n\n[Refresh]",color:"#8A6500",bold:true,underlined:true,click_event:{action:"run_command",command:"/trigger race_menu"}}]}}]
+data modify storage advancement_race:runtime info_center.status set value "ready"

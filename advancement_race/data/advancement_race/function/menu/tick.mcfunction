@@ -1,10 +1,6 @@
-execute as @a[scores={race_menu=2}] run function advancement_race:book/lobby
-execute as @a[scores={race_menu=3}] run function advancement_race:book/status
-execute as @a[scores={race_menu=4}] run function advancement_race:vote/end
-execute as @a[scores={race_menu=5}] run function advancement_race:book/result_latest
-execute as @a[scores={race_menu=6}] run function advancement_race:book/previous_races
-execute as @a[scores={race_menu=1}] run function advancement_race:menu/open
-execute as @a[scores={race_menu=7..999}] run function advancement_race:menu/open
+execute as @a[scores={race_menu=1..8}] run function advancement_race:menu/open
+execute as @a[scores={race_menu=9}] run function advancement_race:info_center/history/open
+execute as @a[scores={race_menu=10..999}] run function advancement_race:menu/open
 execute as @a[scores={race_menu=1000..}] run function advancement_race:browser/dispatch_dynamic
 scoreboard players set @a race_menu 0
 scoreboard players enable @a race_menu

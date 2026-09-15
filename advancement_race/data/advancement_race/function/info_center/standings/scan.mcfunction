@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime info_center.standings_participants[$(participant_index)] run function advancement_race:info_center/standings/scan_step with storage advancement_race:runtime info_center_standings_work
+$execute if data storage advancement_race:runtime info_center.standings_participants[$(participant_index)] run scoreboard players add #info_center_standings_scan race_state 1
+$execute if data storage advancement_race:runtime info_center.standings_participants[$(participant_index)] run execute store result storage advancement_race:runtime info_center_standings_work.participant_index int 1 run scoreboard players get #info_center_standings_scan race_state
+$execute if data storage advancement_race:runtime info_center.standings_participants[$(participant_index)] run function advancement_race:info_center/standings/scan with storage advancement_race:runtime info_center_standings_work

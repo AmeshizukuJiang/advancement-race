@@ -1,0 +1,4 @@
+scoreboard players set #info_center_category_entries race_state 0
+scoreboard players add #info_center_category_page race_state 1
+execute store result storage advancement_race:runtime info_center_work.category_page int 1 run scoreboard players get #info_center_category_page race_state
+function advancement_race:info_center/advancement_browser/append_page with storage advancement_race:runtime info_center_work

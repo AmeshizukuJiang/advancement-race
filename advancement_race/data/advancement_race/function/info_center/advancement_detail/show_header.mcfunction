@@ -1,0 +1,1 @@
+$tellraw @s [{"translate":"$(title_translate)","color":"#8A5A00","bold":true},{"text":"\nBase Score (100%): $(base_score)","color":"#8A6500","bold":false},{"text":"\nCompleted: $(completed_count) / $(roster_count)","color":"#2E6B35","bold":false}]
