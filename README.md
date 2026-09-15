@@ -5,20 +5,39 @@ multiplayer races based on vanilla advancements. Each advancement has a base
 score, and players receive fewer points when other players complete that same
 advancement first.
 
-## Current development status — v0.10.0-beta.2
+## Current release — v1.0.0
 
-**Player UI / UX Polish — implementation ready for Minecraft testing**
+**Stable release — complete multiplayer flow and full gameplay catalog**
 
 The scored catalog contains all **121** non-root gameplay advancements from
 Story, Nether, End, Adventure, and Husbandry. Recipe advancements and the five
-tab roots are excluded. Minecraft 26.2 successfully loaded the complete catalog
-in Beta.1; exhaustive real-gameplay catalog testing remains planned for the
-Release Candidate phase.
+tab roots are excluded. Catalog integrity is validated against the verified
+Minecraft 26.2 server artifact, and the complete generated catalog loads
+successfully in Minecraft 26.2.
 
-Beta.2 adds a normal-player menu, clearer race feedback, vote progress,
-localized advancement titles in books, and book layouts sized for the full
-catalog. These Beta.2 presentation changes still require Minecraft 26.2 manual
-verification before release.
+The Beta and Release Candidate series added a unified Info Center, localized
+advancement information, live and final standings, participant and advancement
+details, Previous Races, stale-safe navigation, and an administrator control
+book. v1.0.0 passed four rounds of Minecraft 26.2 server testing: two normal
+gameplay sessions, a Creative-mode trigger pass, and an
+`/advancement grant everything` stress test. This validation does not claim
+that every advancement was completed through its full natural progression.
+
+## Installation
+
+Copy the complete [`advancement_race`](advancement_race) directory—the folder
+that directly contains `pack.mcmeta` and `data/`—into the world's `datapacks`
+directory. The resulting layout should be:
+
+```text
+<world>/datapacks/advancement_race/pack.mcmeta
+<world>/datapacks/advancement_race/data/
+```
+
+If distributing it as a zip, `pack.mcmeta` and `data/` must be at the root of
+the zip rather than inside an extra wrapper directory. Start or reload the
+world, then confirm `/reload` reports no data pack, function, or advancement
+loading errors.
 
 ## Player workflow
 
@@ -28,14 +47,17 @@ Players use one command throughout the race:
 /trigger race_menu
 ```
 
-The menu shows the current match state and only the actions relevant at that
-time:
+This opens or refreshes a single marked Info Center book. It shows the current
+match state and only the actions relevant at that time:
 
-1. **Lobby:** view the Lobby Book, registration state, and current roster.
-2. **Active match:** view a fresh Status Book or vote to end the match.
-3. **Ended match:** view the latest personal Result Book.
+1. **Lobby:** view registration state, the current roster, and the next step.
+2. **Active match:** view personal status, Live Standings, the Advancement
+   Index, participant/advancement details, and the confirmed vote-to-end flow.
+3. **Ended or idle state:** open Previous Races and browse archived matches,
+   including personal results, Final Standings, participant details, and
+   advancement completion details.
 
-Registration remains host/admin controlled in Beta.2. An unregistered player
+Registration remains host/admin controlled. An unregistered player
 should ask the host to add them; `/trigger race_menu` does not self-register a
 player.
 
@@ -69,17 +91,32 @@ match-end flow. The host may also end the match directly:
 
 Read-only administrator diagnostics remain available under
 `advancement_race:admin/inspect_*` and `advancement_race:admin/validate`.
+Administrators can obtain the control book with:
+
+```mcfunction
+/function advancement_race:admin_book/give
+```
+
+The Admin Book provides organized lifecycle, registration-template,
+diagnostic, validation, and player-UI shortcuts. It is a convenience UI, not a
+permission boundary; Minecraft still enforces the permissions required by each
+command.
 
 ## Race feedback and books
 
 - Chat announces each scoring event globally with the player, localized
   advancement title, Advancement Place, and awarded points.
 - The global Actionbar provides a compact scoring update and current total.
-- The Lobby Book shows registration state and roster.
-- The Status Book shows live points, Current Rank, and completed advancements.
-- The Result Book shows Final Points, Final Rank, and completed advancements.
-- Status and Result detail pages preserve event sequence, Advancement Place,
-  and actual awarded points while fitting two records per page.
+- The unified Info Center shows lobby state, live status, final results,
+  standings, advancement categories, and archived matches.
+- Live and final participant details show points, rank, completion count, and
+  that participant's events.
+- Advancement details show the base score, completion count, finishers, place,
+  and awarded points.
+- Detail pages preserve event sequence, Advancement Place, and actual awarded
+  points while using vanilla-localized advancement titles.
+- Dynamic historical details reconstruct and validate the selected match before
+  reading their temporary result cache.
 
 Advancement titles use the player's Minecraft language through vanilla
 translation keys. Match history continues to store stable vanilla advancement
@@ -87,8 +124,9 @@ IDs rather than localized text.
 
 ## Developer / debug functions
 
-Normal players should not use internal function paths. The following remain
-available for development and diagnostics:
+Normal players should use `/trigger race_menu`, not internal function paths.
+The following legacy public wrappers remain available for development and
+diagnostics:
 
 ```mcfunction
 /function advancement_race:book/lobby

@@ -1,0 +1,2 @@
+$function advancement_race:result/calculate_match {match_id:$(match_id)}
+$execute if data storage advancement_race:runtime result{status:"ready",match_id:$(match_id)} if data storage advancement_race:runtime result.participants[$(participant_index)] run data modify storage advancement_race:runtime participant_detail.participant set from storage advancement_race:runtime result.participants[$(participant_index)]

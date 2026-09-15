@@ -5,7 +5,7 @@
 - Target Minecraft Java Edition **26.2**, Data Pack version **107.1**.
 - Build a multiplayer Advancement Race as a vanilla data pack.
 - Players earn points for completing vanilla advancements. Each advancement has a base score, and awards depend on completion order.
-- Long-term goal: support 100+ vanilla advancements, show a final leaderboard, and give each player a written book with their race results.
+- v1.0 supports all 121 approved vanilla gameplay advancements and provides live/final standings plus written Info Center views. Future work should extend this verified foundation only through approved player-facing requirements.
 
 ## Runtime Constraints
 
@@ -45,10 +45,12 @@
 - Result calculation and the personal Result Book read ended-match history through their dedicated runtime result data.
 - Status calculation and the personal Status Book read the active match through dedicated runtime status data.
 - The Lobby Book presents the prepared roster and the caller's registration state. A registered-participant majority may end an active match through the separate end-vote feature.
-- The normal-player entry point is `/trigger race_menu`. It presents state-appropriate Lobby, Status, Vote End, and Result actions without exposing internal functions.
-- Status and Result detail pages render vanilla-localized advancement titles through a generated presentation mapping and place two completion records on each detail page.
+- The normal-player entry point is `/trigger race_menu`. It opens or refreshes a unified Info Center with state-appropriate Lobby, Status, confirmed Vote End, Result, Live/Final Standings, Advancement Index, Participant Detail, Advancement Detail, and Previous Races views without exposing internal functions.
+- Historical Info Center views reconstruct the selected archived match through the Result calculation layer. Dynamic historical detail reads must be explicitly bound to the selected `match_id`; never trust whichever global presentation cache was populated most recently.
+- Status, Result, Participant Detail, and Advancement Detail views render vanilla-localized advancement titles through a generated presentation mapping. UUID is the identity key; stored names are presentation only.
+- The Admin Book is available through `/function advancement_race:admin_book/give` and organizes existing lifecycle, registration-template, diagnostic, validation, and player-UI commands. It is a convenience UI and not a permission boundary.
 
-Do not assume automatic expansion beyond the manifest, leaderboards, query books, or settlement reports are implemented.
+Do not assume automatic expansion beyond the manifest, cross-match/global leaderboards, settlement reports, or query systems beyond the implemented Info Center are available.
 
 ## Important Variable Semantics
 
@@ -65,7 +67,7 @@ Do not assume automatic expansion beyond the manifest, leaderboards, query books
 - Target completion-order award tiers: **100% / 80% / 60% / 40% / 20%** for first / second / third / fourth / fifth and later. Confirm rule changes with the user.
 - Preserve player × advancement completion history.
 - Extend the implemented lifecycle with settlement only after its player-visible behavior is designed.
-- Generate leaderboard and richer multi-player book reports beyond the existing personal Result, Status, and Lobby books.
+- Extend the implemented live/final standings and participant/advancement views only when a concrete player-facing need is approved.
 - Use the manifest and generator to maintain the 121-advancement catalog and future catalog changes.
 
 ## Development Workflow

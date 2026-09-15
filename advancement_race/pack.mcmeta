@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "Advancement Race v0.10.0-beta.2 - Multiplayer advancement scoring",
+    "description": "Advancement Race v1.0.0 - Multiplayer advancement racing",
     "min_format": [107, 1],
     "max_format": 107
   }

@@ -112,3 +112,73 @@ v0.9.4 passed stabilization testing. Core gameplay loop, scoring, event ledger, 
 ## Deferred Release Candidate Coverage
 
 Exhaustive gameplay validation of all 121 advancements is intentionally deferred to the Release Candidate phase. That phase will use repeated real multiplayer progression testing with four human players. This deferral does not weaken or simplify any copied vanilla advancement criteria.
+
+# v0.10.0 Beta UI and Browser Validation Record
+
+## Beta.2 — Player UI and Race Navigation
+
+Minecraft 26.2 manual testing passed for the player-facing race navigation,
+book generation, localized advancement titles, scoring feedback, vote progress,
+and the dark book palette. Written-book component forms and page layouts were
+verified in game, including the two-completion-record detail layout.
+
+## Beta.3 — Previous Races and Stale-safe Browser Navigation
+
+The race browser foundation, Previous Races navigation, archived-match routing,
+and stale-action rejection were manually tested in Minecraft 26.2. Old browser
+actions were rejected after their context became invalid, while fresh
+navigation continued to open the intended match. Real non-OP client validation
+of `/trigger race_menu` remained deferred because the available test environment
+could not reproduce that client role; permission behavior was not claimed as
+verified by this test.
+
+## Beta.4 — Unified Info Center and Player Views
+
+Staged Minecraft 26.2 tests passed for UUID-based Status/Result identity,
+single-book Info Center replacement, current and archived navigation, live and
+final standings, participant details, Advancement Index categories, and
+advancement completion details. Tests also covered marked-book inventory
+cleanup and event filtering. Display names remained presentation data while
+participant and event matching used UUIDs.
+
+## Beta.5 — Administrator Control Book
+
+The Admin Book loaded and opened successfully in Minecraft 26.2 after validating
+the written-book command form. Its contents, lifecycle confirmation pages,
+registration command template, read-only inspection/validation links, and
+player-UI shortcuts were manually exercised. Existing Minecraft command
+permissions remained the actual authorization boundary.
+
+## Coverage Boundary
+
+The Beta.2–Beta.5 work primarily changed and tested presentation and navigation.
+Catalog validation, generator offline checks, JSON/function-reference checks,
+and Minecraft `/reload` checks continued to pass during these stages. These UI
+tests do not claim that all 121 vanilla advancements have been naturally
+completed. Exhaustive natural-trigger and four-player progression coverage
+remains a Release Candidate test objective.
+
+# v1.0.0 Release Validation Record
+
+The release candidate completed four rounds of Minecraft 26.2 real-server
+testing:
+
+1. Normal gameplay session — passed.
+2. Second normal gameplay session — passed.
+3. Creative-mode advancement triggering — passed.
+4. `/advancement grant everything` catalog stress test — passed.
+
+The stress test confirmed that multiple advancement scoring events processed
+within the same tick still received distinct deterministic place and sequence
+values. Final Standings and the unified Info Center displayed the resulting
+scores and completion counts correctly.
+
+The historical Info Center shared-result-cache correction was also manually
+validated. Historical Participant Detail and Advancement Detail remained bound
+to the selected archived match instead of consuming another request's most
+recent presentation cache.
+
+These tests verify release loading, the multiplayer gameplay loop, scoring and
+event ordering under stress, historical detail isolation, and the principal
+player/admin presentation paths. They do not claim that all 121 advancements
+were completed through their full natural vanilla progression.
