@@ -1,0 +1,1 @@
+$execute if data storage advancement_race:match {status:"active",mode:"cooperative_border",cooperative:{challenges:{relay:{status:"active"}}}} unless data storage advancement_race:match cooperative.challenges.relay{$(field):1b} run function advancement_race:cooperative/challenges/relay/mark {field:"$(field)",label:"$(label)"}

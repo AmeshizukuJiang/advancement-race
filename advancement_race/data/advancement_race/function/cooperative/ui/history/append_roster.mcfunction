@@ -1,0 +1,4 @@
+$execute if data storage advancement_race:runtime coop_history.participants[$(participant_index)] run function advancement_race:cooperative/ui/history/append_roster_step with storage advancement_race:runtime coop_history_work
+$execute if data storage advancement_race:runtime coop_history.participants[$(participant_index)] run scoreboard players add #coop_history_participant_index race_state 1
+$execute if data storage advancement_race:runtime coop_history.participants[$(participant_index)] run execute store result storage advancement_race:runtime coop_history_work.participant_index int 1 run scoreboard players get #coop_history_participant_index race_state
+$execute if data storage advancement_race:runtime coop_history.participants[$(participant_index)] run function advancement_race:cooperative/ui/history/append_roster with storage advancement_race:runtime coop_history_work

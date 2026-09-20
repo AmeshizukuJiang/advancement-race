@@ -1,0 +1,1 @@
+function advancement_race:cooperative/border/restore_apply with storage advancement_race:match cooperative.border.previous

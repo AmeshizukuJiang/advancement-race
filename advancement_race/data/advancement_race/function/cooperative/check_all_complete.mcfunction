@@ -1,0 +1,4 @@
+execute store result score #coop_vanilla_completed race_state run data get storage advancement_race:match cooperative.vanilla_completed
+execute store result score #coop_challenge_completed race_state run data get storage advancement_race:match cooperative.challenge_completed
+execute if score #coop_vanilla_completed race_state matches 121.. if score #coop_challenge_completed race_state matches 2.. run data modify storage advancement_race:match end_reason set value "all_goals_completed"
+execute if score #coop_vanilla_completed race_state matches 121.. if score #coop_challenge_completed race_state matches 2.. run function advancement_race:match/end_apply

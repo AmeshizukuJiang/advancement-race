@@ -1,3 +1,5 @@
+execute unless data storage advancement_race:match mode run data modify storage advancement_race:match mode set value "competitive"
+execute if data storage advancement_race:match {mode:"cooperative_border"} run function advancement_race:cooperative/end
 data modify storage advancement_race:match status set value "ended"
 scoreboard players set #match_active race_state 0
 data modify storage advancement_race:history matches append from storage advancement_race:match

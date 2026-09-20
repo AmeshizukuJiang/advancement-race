@@ -1,5 +1,6 @@
 {
   "values": [
-    "advancement_race:menu/tick"
+    "advancement_race:menu/tick",
+    "advancement_race:cooperative/tick"
   ]
 }

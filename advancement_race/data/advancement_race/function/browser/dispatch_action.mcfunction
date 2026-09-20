@@ -11,4 +11,9 @@ execute if data storage advancement_race:runtime browser_work{action:{kind:"adva
 execute if data storage advancement_race:runtime browser_work{action:{kind:"participant_detail_chat"}} run function advancement_race:browser/action/participant_detail_chat
 execute if data storage advancement_race:runtime browser_work{action:{kind:"info_center_history_page"}} run function advancement_race:browser/action/info_center_history_page
 execute if data storage advancement_race:runtime browser_work{action:{kind:"info_center_select_match"}} run function advancement_race:browser/action/info_center_select_match
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_supply_iron"}} run function advancement_race:browser/action/coop_supply_iron
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_supply_gold"}} run function advancement_race:browser/action/coop_supply_gold
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_supply_diamond"}} run function advancement_race:browser/action/coop_supply_diamond
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_supply_obsidian"}} run function advancement_race:browser/action/coop_supply_obsidian
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_relay_start"}} run function advancement_race:browser/action/coop_relay_start
 execute if score #browser_dispatched race_state matches 0 run function advancement_race:browser/stale

@@ -1,0 +1,3 @@
+execute unless data storage advancement_race:match {status:"active",mode:"cooperative_border"} run tellraw @s [{"text":"Supply submission is available only during an active Cooperative Border match.","color":"red"}]
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} unless score @s race_participant matches 0.. run tellraw @s [{"text":"Only registered team members may submit supplies.","color":"red"}]
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. run function advancement_race:cooperative/challenges/supply/prepare {item:"minecraft:diamond",field:"diamond",target_field:"diamond_target",label:"Diamonds"}

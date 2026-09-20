@@ -14,6 +14,7 @@ execute unless data storage advancement_race:match events run data modify storag
 execute unless data storage advancement_race:match status run data modify storage advancement_race:match status set value "idle"
 execute unless data storage advancement_race:match id run data modify storage advancement_race:match id set value 0
 execute unless data storage advancement_race:match prepared run data modify storage advancement_race:match prepared set value 0b
+execute if data storage advancement_race:match {status:"idle",prepared:1b} unless data storage advancement_race:match mode run data modify storage advancement_race:match mode set value "competitive"
 execute unless data storage advancement_race:history matches run data modify storage advancement_race:history matches set value []
 execute unless data storage advancement_race:state next_match_id run data modify storage advancement_race:state next_match_id set value 0
 execute if data storage advancement_race:match {status:"active"} run scoreboard players set #match_active race_state 1
@@ -23,3 +24,4 @@ scoreboard players set @a race_menu 0
 scoreboard players enable @a race_menu
 scoreboard players reset @a race_browser
 data remove storage advancement_race:runtime browser
+function advancement_race:cooperative/load

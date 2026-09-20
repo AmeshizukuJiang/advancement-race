@@ -1,3 +1,4 @@
-$function advancement_race:result/calculate_match {match_id:$(match_id)}
-$execute if data storage advancement_race:runtime result{status:"ready",match_id:$(match_id)} run function advancement_race:info_center/history_match/prepare
-$execute unless data storage advancement_race:runtime result{status:"ready",match_id:$(match_id)} run tellraw @s [{"text":"That completed race is no longer available.","color":"#9B2226"}]
+$execute if data storage advancement_race:history matches[{id:$(match_id),status:"ended",mode:"cooperative_border"}] run function advancement_race:cooperative/ui/history/open {match_id:$(match_id)}
+$execute unless data storage advancement_race:history matches[{id:$(match_id),status:"ended",mode:"cooperative_border"}] run function advancement_race:result/calculate_match {match_id:$(match_id)}
+$execute unless data storage advancement_race:history matches[{id:$(match_id),status:"ended",mode:"cooperative_border"}] if data storage advancement_race:runtime result{status:"ready",match_id:$(match_id)} run function advancement_race:info_center/history_match/prepare
+$execute unless data storage advancement_race:history matches[{id:$(match_id),status:"ended",mode:"cooperative_border"}] unless data storage advancement_race:runtime result{status:"ready",match_id:$(match_id)} run tellraw @s [{"text":"That completed race is no longer available.","color":"#9B2226"}]

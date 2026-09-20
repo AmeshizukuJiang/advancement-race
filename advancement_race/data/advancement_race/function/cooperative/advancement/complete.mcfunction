@@ -1,0 +1,1 @@
+$execute unless data storage advancement_race:match cooperative.completed[{id:"$(advancement)"}] run function advancement_race:cooperative/advancement/prepare {advancement:"$(advancement)",title:"$(title)"}

@@ -12,4 +12,5 @@ execute if score #vote_is_new race_state matches 1 run tellraw @s [{"text":"Vote
 execute if score #vote_is_new race_state matches 1 run scoreboard players operation #vote_doubled race_state = #vote_count race_state
 execute if score #vote_is_new race_state matches 1 run scoreboard players operation #vote_doubled race_state *= #vote_two race_state
 execute if score #vote_is_new race_state matches 1 if score #vote_doubled race_state > #vote_participant_count race_state run tellraw @a [{"text":"End Vote passed: ","color":"gold","bold":true},{"score":{"name":"#vote_count","objective":"race_state"},"color":"yellow","bold":false},{"text":" / ","color":"gray"},{"score":{"name":"#vote_required","objective":"race_state"},"color":"yellow"},{"text":" Required","color":"gray"}]
+execute if score #vote_is_new race_state matches 1 if score #vote_doubled race_state > #vote_participant_count race_state run data modify storage advancement_race:match end_reason set value "vote"
 execute if score #vote_is_new race_state matches 1 if score #vote_doubled race_state > #vote_participant_count race_state run function advancement_race:match/end
