@@ -1,0 +1,3 @@
+advancement revoke @s only advancement_race_coop:challenge/three_realm_finale_warden
+advancement revoke @s only advancement_race_coop:challenge/three_realm_finale_wither
+advancement revoke @s only advancement_race_coop:challenge/three_realm_finale_dragon

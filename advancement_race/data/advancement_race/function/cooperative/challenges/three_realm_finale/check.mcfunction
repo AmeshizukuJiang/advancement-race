@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match cooperative.challenges.three_realm_finale{status:"active",warden:1b,wither:1b,dragon:1b} run function advancement_race:cooperative/challenges/three_realm_finale/complete

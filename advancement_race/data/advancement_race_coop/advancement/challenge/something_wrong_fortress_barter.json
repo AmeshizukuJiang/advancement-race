@@ -1,0 +1,14 @@
+{
+  "criteria": {
+    "barter": {
+      "trigger": "minecraft:thrown_item_picked_up_by_player",
+      "conditions": {
+        "entity": [{"condition":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:entity_type":"minecraft:piglin"}}],
+        "item": {"items":"#advancement_race:piglin_barter_outputs"},
+        "player": [{"condition":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:location":{"structures":"minecraft:fortress"}}}]
+      }
+    }
+  },
+  "requirements": [["barter"]],
+  "rewards": {"function":"advancement_race:cooperative/challenges/something_is_wrong/fortress_barter"}
+}

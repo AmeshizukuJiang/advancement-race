@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "pickup": {
+      "trigger": "minecraft:thrown_item_picked_up_by_player",
+      "conditions": {
+        "item": {
+          "items": "minecraft:powder_snow_bucket"
+        },
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "biomes": "minecraft:desert"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["pickup"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/injustice_in_june/trigger"
+  }
+}

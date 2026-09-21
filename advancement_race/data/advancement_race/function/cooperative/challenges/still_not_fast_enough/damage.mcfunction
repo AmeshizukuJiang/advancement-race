@@ -1,0 +1,2 @@
+advancement revoke @s only advancement_race_coop:challenge/still_not_fast_enough
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.still_not_fast_enough{status:"active"} run function advancement_race:cooperative/challenges/still_not_fast_enough/verify_owner with storage advancement_race:match cooperative.challenges.still_not_fast_enough

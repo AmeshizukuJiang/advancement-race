@@ -5,7 +5,7 @@
 - Target Minecraft Java Edition **26.2**, Data Pack version **107.1**.
 - Build a multiplayer Advancement Race as a vanilla data pack.
 - Players earn points for completing vanilla advancements. Each advancement has a base score, and awards depend on completion order.
-- v1.0 supports all 121 approved vanilla gameplay advancements and provides live/final standings plus written Info Center views. Future work should extend this verified foundation only through approved player-facing requirements.
+- v1.0 supports all 121 approved vanilla gameplay advancements and provides live/final standings plus written Info Center views. The v1.1 release-candidate worktree adds the approved Cooperative Border mode while preserving Competitive behavior.
 
 ## Runtime Constraints
 
@@ -49,6 +49,10 @@
 - Historical Info Center views reconstruct the selected archived match through the Result calculation layer. Dynamic historical detail reads must be explicitly bound to the selected `match_id`; never trust whichever global presentation cache was populated most recently.
 - Status, Result, Participant Detail, and Advancement Detail views render vanilla-localized advancement titles through a generated presentation mapping. UUID is the identity key; stored names are presentation only.
 - The Admin Book is available through `/function advancement_race:admin_book/give` and organizes existing lifecycle, registration-template, diagnostic, validation, and player-UI commands. It is a convenience UI and not a permission boundary.
+- Cooperative Border uses one registered team, independent Cooperative rewards for all 121 vanilla advancements, synchronized World Borders in all three dimensions, N0–N18 difficulty profiles, 29 cumulative custom challenges unlocked at N3/N6/N9/N15, and optional modifiers with a separate Challenge Rating.
+- Cooperative match rules are snapshotted under optional match rule fields. Old v1.0 history without `mode` remains Competitive; do not require schema migration for those archives.
+- The Cooperative Info Center has separate Vanilla and Challenge indexes. Historical Cooperative views must read the selected archived match and expose the complete archived challenge catalog, never the current match cache.
+- Browser actions that mutate challenge state must validate the current Info Center session and active Cooperative match before dispatch. A stale book must never start, bind, reset, or submit a challenge action.
 
 Do not assume automatic expansion beyond the manifest, cross-match/global leaderboards, settlement reports, or query systems beyond the implemented Info Center are available.
 
@@ -102,6 +106,7 @@ Use **Plan → Implement → Review → Manual Minecraft Test → Commit**.
 - Update the manifest or generator input, regenerate the runtime files, and run the generator with `--check` to prevent drift.
 - Keep manually maintained overrides, including the Monster Hunter override, outside the generated-file boundary.
 - The generated advancement-title mapping is presentation-only. It must be derived from Mojang advancement `display.title.translate` values and must not be copied into events or match history.
+- `tools/cooperative.config.json`, `tools/cooperative_rewards.manifest.json`, and `tools/generate_cooperative_config.py` own the generated Cooperative configuration, Flowers Beyond helpers, and Cooperative UI index/history files. Run the Cooperative validator and generator `--check` after changing them.
 
 ## Decision Boundary
 

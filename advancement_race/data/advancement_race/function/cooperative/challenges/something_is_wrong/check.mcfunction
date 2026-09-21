@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match cooperative.challenges.something_is_wrong{status:"active",fortress_barter:1b,bastion_blaze:1b} run function advancement_race:cooperative/challenges/something_is_wrong/complete

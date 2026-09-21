@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "kill_bound_shulker": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:shulker",
+              "minecraft:location": {
+                "dimension": "minecraft:overworld"
+              },
+              "minecraft:nbt": "{Tags:[\"advancement_race_n15_crusade_overworld_shulker\"]}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["kill_bound_shulker"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/foreign_crusade/overworld_shulker"
+  }
+}

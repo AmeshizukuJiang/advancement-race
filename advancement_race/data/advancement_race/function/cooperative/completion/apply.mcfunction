@@ -9,5 +9,6 @@ function advancement_race:cooperative/events/record
 data modify storage advancement_race:match cooperative.completed append from storage advancement_race:runtime cooperative_event
 function advancement_race:cooperative/border/add_reward
 execute if data storage advancement_race:runtime cooperative_completion{kind:"vanilla_advancement"} run function advancement_race:cooperative/completion/announce_vanilla with storage advancement_race:runtime cooperative_completion
-execute if data storage advancement_race:runtime cooperative_completion{kind:"challenge"} run function advancement_race:cooperative/completion/announce_challenge with storage advancement_race:runtime cooperative_completion
+execute if data storage advancement_race:runtime cooperative_completion{kind:"challenge"} if score #coop_border_delta race_state matches 0.. run function advancement_race:cooperative/completion/announce_challenge with storage advancement_race:runtime cooperative_completion
+execute if data storage advancement_race:runtime cooperative_completion{kind:"challenge"} if score #coop_border_delta race_state matches ..-1 run function advancement_race:cooperative/completion/announce_challenge_negative with storage advancement_race:runtime cooperative_completion
 function advancement_race:cooperative/check_all_complete

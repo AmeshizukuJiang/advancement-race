@@ -1,0 +1,2 @@
+advancement revoke @s only advancement_race_coop:challenge/three_realm_finale_dragon
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.three_realm_finale{status:"active",dragon:0b} run function advancement_race:cooperative/challenges/three_realm_finale/mark {field:"dragon",label:"Ender Dragon"}

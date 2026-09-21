@@ -1,0 +1,2 @@
+advancement revoke @s only advancement_race_coop:challenge/underwater_furnace
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.underwater_furnace{status:"active"} at @s if predicate advancement_race:in_ocean_monument run function advancement_race:cooperative/challenges/underwater_furnace/complete

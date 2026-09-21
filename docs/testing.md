@@ -182,3 +182,44 @@ These tests verify release loading, the multiplayer gameplay loop, scoring and
 event ordering under stress, historical detail isolation, and the principal
 player/admin presentation paths. They do not claim that all 121 advancements
 were completed through their full natural vanilla progression.
+
+# v1.1.0 Release Candidate Cooperative Test Record
+
+## Scope
+
+The Cooperative Border implementation was tested in staged Minecraft Java
+26.2 sessions. These tests verify mechanics and detection paths; they are not a
+claim that a complete N9 or N15 game has already been played in survival.
+
+Verified areas include:
+
+- Competitive and Cooperative mode selection, registration, start, end, reset,
+  mode switching, `/reload` recovery, and archived-match routing.
+- N0–N18 configuration, Border budgets, three-dimension Border synchronization,
+  independent Cooperative vanilla rewards, and N18 `-50 Border` challenge
+  penalties.
+- All 29 N3/N6/N9/N15 custom challenge detection and completion paths, including
+  timed attempts, binding/rebinding, failure/reset behavior, consumed supply
+  submissions, boss/entity transport objectives, and the 86-entry Flowers
+  Beyond placement list.
+- Survival, Border, Boss, and independent modifiers, including health
+  reapplication, game-rule handling, Border penalties, and strengthened boss
+  health.
+- Cooperative event ordering, exactly-once team rewards, Team Points, Border
+  deltas, Info Center indexes, challenge detail controls, completion markers,
+  and Show List output.
+- Minecraft `/reload`, generated JSON/function syntax, macros, written-book
+  components, catalog validation, and generator drift checks.
+
+The active Cooperative Info Center and Show List presentation passed manual
+inspection. The accepted RC UI limitation is that the Vote End link may be
+clipped from the Cooperative home page; voting behavior itself is unchanged.
+
+## Remaining RC Gate
+
+The stale-action guards for Eternal Slumber and Shoot Down the Moon, plus the
+complete archived Cooperative Challenge History index, were added during the
+final pre-commit review and require a short focused Minecraft retest.
+
+After that focused check, the remaining product test is a real multiplayer,
+long-form survival session used to evaluate N-level timing and reward balance.

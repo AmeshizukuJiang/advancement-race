@@ -1,0 +1,10 @@
+advancement revoke @s only advancement_race_coop:challenge/ecological_wheat
+advancement revoke @s only advancement_race_coop:challenge/ecological_beetroot
+advancement revoke @s only advancement_race_coop:challenge/ecological_carrot
+advancement revoke @s only advancement_race_coop:challenge/ecological_potato
+advancement revoke @s only advancement_race_coop:challenge/ecological_pumpkin
+advancement revoke @s only advancement_race_coop:challenge/ecological_melon
+advancement revoke @s only advancement_race_coop:challenge/ecological_torchflower
+advancement revoke @s only advancement_race_coop:challenge/ecological_pitcher
+advancement revoke @s only advancement_race_coop:challenge/ecological_cocoa
+advancement revoke @s only advancement_race_coop:challenge/ecological_nether_wart

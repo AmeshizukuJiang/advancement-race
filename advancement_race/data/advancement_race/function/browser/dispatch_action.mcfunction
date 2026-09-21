@@ -16,4 +16,23 @@ execute if data storage advancement_race:runtime browser_work{action:{kind:"coop
 execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_supply_diamond"}} run function advancement_race:browser/action/coop_supply_diamond
 execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_supply_obsidian"}} run function advancement_race:browser/action/coop_supply_obsidian
 execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_relay_start"}} run function advancement_race:browser/action/coop_relay_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_eternal_slumber_start"}} run function advancement_race:browser/action/coop_eternal_slumber_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_ecological_start"}} run function advancement_race:browser/action/coop_ecological_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_ecological_show_list"}} run function advancement_race:browser/action/coop_ecological_show_list
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_something_wrong_start"}} run function advancement_race:browser/action/coop_something_wrong_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_relay_ii_start"}} run function advancement_race:browser/action/coop_relay_ii_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_automation_iron"}} run function advancement_race:browser/action/coop_automation_iron
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_automation_dried_kelp"}} run function advancement_race:browser/action/coop_automation_dried_kelp
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_automation_fireworks"}} run function advancement_race:browser/action/coop_automation_fireworks
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_automation_honey"}} run function advancement_race:browser/action/coop_automation_honey
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_three_realm_finale_start"}} run function advancement_race:browser/action/coop_three_realm_finale_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_museum_check"}} run function advancement_race:browser/action/coop_museum_check
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_still_not_fast_enough_start"}} run function advancement_race:browser/action/coop_still_not_fast_enough_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_three_realm_merchant_start"}} run function advancement_race:browser/action/coop_three_realm_merchant_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_shoot_down_the_moon_start"}} run function advancement_race:browser/action/coop_shoot_down_the_moon_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_flowers_beyond_start"}} run function advancement_race:browser/action/coop_flowers_beyond_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_flowers_beyond_show_list"}} run function advancement_race:browser/action/coop_flowers_beyond_show_list
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_jailer_unemployed_start"}} run function advancement_race:browser/action/coop_jailer_unemployed_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_rekindle_old_dream_start"}} run function advancement_race:browser/action/coop_rekindle_old_dream_start
+execute if data storage advancement_race:runtime browser_work{action:{kind:"coop_foreign_crusade_start"}} run function advancement_race:browser/action/coop_foreign_crusade_start
 execute if score #browser_dispatched race_state matches 0 run function advancement_race:browser/stale

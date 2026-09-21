@@ -1,0 +1,3 @@
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.splendid_as_summer_flowers{status:"active"} run advancement revoke @s only advancement_race_coop:challenge/splendid_as_summer_flowers
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.splendid_as_summer_flowers{status:"active"} run tag @s add advancement_race_n3_firework_pending
+execute if entity @s[tag=advancement_race_n3_firework_pending] run schedule function advancement_race:cooperative/challenges/death/check 1t replace

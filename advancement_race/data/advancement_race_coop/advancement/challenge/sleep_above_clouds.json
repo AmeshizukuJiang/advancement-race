@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "sleep": {
+      "trigger": "minecraft:slept_in_bed",
+      "conditions": {"player":[{"condition":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:location":{"dimension":"minecraft:overworld","position":{"y":{"min":250.0}}}}}]}
+    }
+  },
+  "requirements": [["sleep"]],
+  "rewards": {"function":"advancement_race:cooperative/challenges/sleep_above_clouds/trigger"}
+}

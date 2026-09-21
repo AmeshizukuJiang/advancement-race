@@ -1,0 +1,2 @@
+$tellraw @a [{"text":"[Co-op Challenge] ","color":"aqua","bold":true},{"text":"$(title)","color":"green","bold":false},{"text":" completed by ","color":"gray"},{"selector":"@s","color":"white"},{"text":" | +$(reward) Team Points | Border $(border_delta)","color":"yellow"}]
+$title @a actionbar [{"text":"$(title)","color":"green"},{"text":" | Team +$(reward) | Border $(border_delta)","color":"aqua"}]

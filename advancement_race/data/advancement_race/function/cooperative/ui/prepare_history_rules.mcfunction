@@ -1,0 +1,3 @@
+data modify storage advancement_race:runtime cooperative_ui_rules set value {n_level:0,n_label:"Prototype",game_difficulty:"easy",game_difficulty_label:"Unknown",challenge_rating:0,risk_label:"Prototype",goal_count:123,required_custom:2,initial_border:0,maximum_border:0,shrink_milli:0,shrink_whole:0,shrink_tenths:0,survival_label:"Prototype",boss_label:"Prototype",faster_label:"?",tight_label:"?",ceiling_label:"?",regen_label:"?",sleep_label:"?",death_toll_label:"?",failure_tax_label:"?",offline_label:"?"}
+execute if data storage advancement_race:runtime coop_history.rules.cooperative.v11{schema_version:2} run function advancement_race:cooperative/ui/load_history_rules
+function advancement_race:cooperative/ui/copy_rules_to_info_center

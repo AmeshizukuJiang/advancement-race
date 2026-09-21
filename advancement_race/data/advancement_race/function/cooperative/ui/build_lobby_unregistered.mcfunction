@@ -1,6 +1,6 @@
-data modify storage advancement_race:runtime info_center.initial_border set from storage advancement_race:config cooperative.border.initial_size
-data modify storage advancement_race:runtime info_center.shrink_milli set from storage advancement_race:config cooperative.border.base_shrink_milli_per_second
-function advancement_race:cooperative/ui/prepare_rate
+function advancement_race:cooperative/setup/ensure_defaults
+function advancement_race:cooperative/ui/prepare_rules_preview
+function advancement_race:cooperative/ui/copy_rules_to_info_center
 function advancement_race:cooperative/ui/build_lobby_unregistered_pages with storage advancement_race:runtime info_center
 function advancement_race:info_center/append_roster
 data modify storage advancement_race:runtime info_center.status set value "ready"

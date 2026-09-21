@@ -1,0 +1,610 @@
+{
+  "schema_version": 1,
+  "rewards": [
+    {
+      "key": "stone_age",
+      "vanilla_id": "minecraft:story/mine_stone",
+      "tier": "T1"
+    },
+    {
+      "key": "a_seedy_place",
+      "vanilla_id": "minecraft:husbandry/plant_seed",
+      "tier": "T1"
+    },
+    {
+      "key": "monster_hunter",
+      "vanilla_id": "minecraft:adventure/kill_a_mob",
+      "tier": "T2"
+    },
+    {
+      "key": "upgrade_tools",
+      "vanilla_id": "minecraft:story/upgrade_tools",
+      "tier": "T1"
+    },
+    {
+      "key": "smelt_iron",
+      "vanilla_id": "minecraft:story/smelt_iron",
+      "tier": "T2"
+    },
+    {
+      "key": "lava_bucket",
+      "vanilla_id": "minecraft:story/lava_bucket",
+      "tier": "T2"
+    },
+    {
+      "key": "enter_the_nether",
+      "vanilla_id": "minecraft:story/enter_the_nether",
+      "tier": "T3"
+    },
+    {
+      "key": "sleep_in_bed",
+      "vanilla_id": "minecraft:adventure/sleep_in_bed",
+      "tier": "T1"
+    },
+    {
+      "key": "fishy_business",
+      "vanilla_id": "minecraft:husbandry/fishy_business",
+      "tier": "T2"
+    },
+    {
+      "key": "trade",
+      "vanilla_id": "minecraft:adventure/trade",
+      "tier": "T2"
+    },
+    {
+      "key": "obtain_armor",
+      "vanilla_id": "minecraft:story/obtain_armor",
+      "tier": "T2"
+    },
+    {
+      "key": "mine_diamond",
+      "vanilla_id": "minecraft:story/mine_diamond",
+      "tier": "T3"
+    },
+    {
+      "key": "deflect_arrow",
+      "vanilla_id": "minecraft:story/deflect_arrow",
+      "tier": "T2"
+    },
+    {
+      "key": "enchant_item",
+      "vanilla_id": "minecraft:story/enchant_item",
+      "tier": "T3"
+    },
+    {
+      "key": "follow_ender_eye",
+      "vanilla_id": "minecraft:story/follow_ender_eye",
+      "tier": "T4"
+    },
+    {
+      "key": "enter_the_end",
+      "vanilla_id": "minecraft:story/enter_the_end",
+      "tier": "T4"
+    },
+    {
+      "key": "obtain_blaze_rod",
+      "vanilla_id": "minecraft:nether/obtain_blaze_rod",
+      "tier": "T3"
+    },
+    {
+      "key": "find_fortress",
+      "vanilla_id": "minecraft:nether/find_fortress",
+      "tier": "T3"
+    },
+    {
+      "key": "find_bastion",
+      "vanilla_id": "minecraft:nether/find_bastion",
+      "tier": "T3"
+    },
+    {
+      "key": "obtain_crying_obsidian",
+      "vanilla_id": "minecraft:nether/obtain_crying_obsidian",
+      "tier": "T2"
+    },
+    {
+      "key": "brew_potion",
+      "vanilla_id": "minecraft:nether/brew_potion",
+      "tier": "T2"
+    },
+    {
+      "key": "ride_strider",
+      "vanilla_id": "minecraft:nether/ride_strider",
+      "tier": "T3"
+    },
+    {
+      "key": "charge_respawn_anchor",
+      "vanilla_id": "minecraft:nether/charge_respawn_anchor",
+      "tier": "T2"
+    },
+    {
+      "key": "return_to_sender",
+      "vanilla_id": "minecraft:nether/return_to_sender",
+      "tier": "T4"
+    },
+    {
+      "key": "shoot_arrow",
+      "vanilla_id": "minecraft:adventure/shoot_arrow",
+      "tier": "T1"
+    },
+    {
+      "key": "ol_betsy",
+      "vanilla_id": "minecraft:adventure/ol_betsy",
+      "tier": "T2"
+    },
+    {
+      "key": "throw_trident",
+      "vanilla_id": "minecraft:adventure/throw_trident",
+      "tier": "T3"
+    },
+    {
+      "key": "totem_of_undying",
+      "vanilla_id": "minecraft:adventure/totem_of_undying",
+      "tier": "T3"
+    },
+    {
+      "key": "summon_iron_golem",
+      "vanilla_id": "minecraft:adventure/summon_iron_golem",
+      "tier": "T2"
+    },
+    {
+      "key": "very_very_frightening",
+      "vanilla_id": "minecraft:adventure/very_very_frightening",
+      "tier": "T4"
+    },
+    {
+      "key": "hero_of_the_village",
+      "vanilla_id": "minecraft:adventure/hero_of_the_village",
+      "tier": "T4"
+    },
+    {
+      "key": "avoid_vibration",
+      "vanilla_id": "minecraft:adventure/avoid_vibration",
+      "tier": "T3"
+    },
+    {
+      "key": "tame_an_animal",
+      "vanilla_id": "minecraft:husbandry/tame_an_animal",
+      "tier": "T2"
+    },
+    {
+      "key": "breed_an_animal",
+      "vanilla_id": "minecraft:husbandry/breed_an_animal",
+      "tier": "T2"
+    },
+    {
+      "key": "tactical_fishing",
+      "vanilla_id": "minecraft:husbandry/tactical_fishing",
+      "tier": "T2"
+    },
+    {
+      "key": "safely_harvest_honey",
+      "vanilla_id": "minecraft:husbandry/safely_harvest_honey",
+      "tier": "T2"
+    },
+    {
+      "key": "axolotl_in_a_bucket",
+      "vanilla_id": "minecraft:husbandry/axolotl_in_a_bucket",
+      "tier": "T2"
+    },
+    {
+      "key": "kill_dragon",
+      "vanilla_id": "minecraft:end/kill_dragon",
+      "tier": "T5"
+    },
+    {
+      "key": "enter_end_gateway",
+      "vanilla_id": "minecraft:end/enter_end_gateway",
+      "tier": "T4"
+    },
+    {
+      "key": "levitate",
+      "vanilla_id": "minecraft:end/levitate",
+      "tier": "T4"
+    },
+    {
+      "key": "adventuring_time",
+      "vanilla_id": "minecraft:adventure/adventuring_time",
+      "tier": "T6"
+    },
+    {
+      "key": "arbalistic",
+      "vanilla_id": "minecraft:adventure/arbalistic",
+      "tier": "T4"
+    },
+    {
+      "key": "blowback",
+      "vanilla_id": "minecraft:adventure/blowback",
+      "tier": "T4"
+    },
+    {
+      "key": "brush_armadillo",
+      "vanilla_id": "minecraft:adventure/brush_armadillo",
+      "tier": "T2"
+    },
+    {
+      "key": "bullseye",
+      "vanilla_id": "minecraft:adventure/bullseye",
+      "tier": "T3"
+    },
+    {
+      "key": "craft_decorated_pot_using_only_sherds",
+      "vanilla_id": "minecraft:adventure/craft_decorated_pot_using_only_sherds",
+      "tier": "T2"
+    },
+    {
+      "key": "crafters_crafting_crafters",
+      "vanilla_id": "minecraft:adventure/crafters_crafting_crafters",
+      "tier": "T3"
+    },
+    {
+      "key": "fall_from_world_height",
+      "vanilla_id": "minecraft:adventure/fall_from_world_height",
+      "tier": "T2"
+    },
+    {
+      "key": "heart_transplanter",
+      "vanilla_id": "minecraft:adventure/heart_transplanter",
+      "tier": "T2"
+    },
+    {
+      "key": "honey_block_slide",
+      "vanilla_id": "minecraft:adventure/honey_block_slide",
+      "tier": "T2"
+    },
+    {
+      "key": "kill_all_mobs",
+      "vanilla_id": "minecraft:adventure/kill_all_mobs",
+      "tier": "T6"
+    },
+    {
+      "key": "kill_mob_near_sculk_catalyst",
+      "vanilla_id": "minecraft:adventure/kill_mob_near_sculk_catalyst",
+      "tier": "T3"
+    },
+    {
+      "key": "lighten_up",
+      "vanilla_id": "minecraft:adventure/lighten_up",
+      "tier": "T2"
+    },
+    {
+      "key": "lightning_rod_with_villager_no_fire",
+      "vanilla_id": "minecraft:adventure/lightning_rod_with_villager_no_fire",
+      "tier": "T4"
+    },
+    {
+      "key": "minecraft_trials_edition",
+      "vanilla_id": "minecraft:adventure/minecraft_trials_edition",
+      "tier": "T3"
+    },
+    {
+      "key": "overoverkill",
+      "vanilla_id": "minecraft:adventure/overoverkill",
+      "tier": "T4"
+    },
+    {
+      "key": "play_jukebox_in_meadows",
+      "vanilla_id": "minecraft:adventure/play_jukebox_in_meadows",
+      "tier": "T3"
+    },
+    {
+      "key": "read_power_of_chiseled_bookshelf",
+      "vanilla_id": "minecraft:adventure/read_power_of_chiseled_bookshelf",
+      "tier": "T2"
+    },
+    {
+      "key": "revaulting",
+      "vanilla_id": "minecraft:adventure/revaulting",
+      "tier": "T3"
+    },
+    {
+      "key": "salvage_sherd",
+      "vanilla_id": "minecraft:adventure/salvage_sherd",
+      "tier": "T3"
+    },
+    {
+      "key": "sniper_duel",
+      "vanilla_id": "minecraft:adventure/sniper_duel",
+      "tier": "T4"
+    },
+    {
+      "key": "spear_many_mobs",
+      "vanilla_id": "minecraft:adventure/spear_many_mobs",
+      "tier": "T3"
+    },
+    {
+      "key": "spyglass_at_dragon",
+      "vanilla_id": "minecraft:adventure/spyglass_at_dragon",
+      "tier": "T3"
+    },
+    {
+      "key": "spyglass_at_ghast",
+      "vanilla_id": "minecraft:adventure/spyglass_at_ghast",
+      "tier": "T3"
+    },
+    {
+      "key": "spyglass_at_parrot",
+      "vanilla_id": "minecraft:adventure/spyglass_at_parrot",
+      "tier": "T2"
+    },
+    {
+      "key": "trade_at_world_height",
+      "vanilla_id": "minecraft:adventure/trade_at_world_height",
+      "tier": "T3"
+    },
+    {
+      "key": "trim_with_all_exclusive_armor_patterns",
+      "vanilla_id": "minecraft:adventure/trim_with_all_exclusive_armor_patterns",
+      "tier": "T5"
+    },
+    {
+      "key": "trim_with_any_armor_pattern",
+      "vanilla_id": "minecraft:adventure/trim_with_any_armor_pattern",
+      "tier": "T3"
+    },
+    {
+      "key": "two_birds_one_arrow",
+      "vanilla_id": "minecraft:adventure/two_birds_one_arrow",
+      "tier": "T4"
+    },
+    {
+      "key": "under_lock_and_key",
+      "vanilla_id": "minecraft:adventure/under_lock_and_key",
+      "tier": "T2"
+    },
+    {
+      "key": "use_lodestone",
+      "vanilla_id": "minecraft:adventure/use_lodestone",
+      "tier": "T3"
+    },
+    {
+      "key": "voluntary_exile",
+      "vanilla_id": "minecraft:adventure/voluntary_exile",
+      "tier": "T3"
+    },
+    {
+      "key": "walk_on_powder_snow_with_leather_boots",
+      "vanilla_id": "minecraft:adventure/walk_on_powder_snow_with_leather_boots",
+      "tier": "T2"
+    },
+    {
+      "key": "who_needs_rockets",
+      "vanilla_id": "minecraft:adventure/who_needs_rockets",
+      "tier": "T4"
+    },
+    {
+      "key": "whos_the_pillager_now",
+      "vanilla_id": "minecraft:adventure/whos_the_pillager_now",
+      "tier": "T3"
+    },
+    {
+      "key": "dragon_breath",
+      "vanilla_id": "minecraft:end/dragon_breath",
+      "tier": "T4"
+    },
+    {
+      "key": "dragon_egg",
+      "vanilla_id": "minecraft:end/dragon_egg",
+      "tier": "T5"
+    },
+    {
+      "key": "elytra",
+      "vanilla_id": "minecraft:end/elytra",
+      "tier": "T4"
+    },
+    {
+      "key": "find_end_city",
+      "vanilla_id": "minecraft:end/find_end_city",
+      "tier": "T4"
+    },
+    {
+      "key": "respawn_dragon",
+      "vanilla_id": "minecraft:end/respawn_dragon",
+      "tier": "T5"
+    },
+    {
+      "key": "allay_deliver_cake_to_note_block",
+      "vanilla_id": "minecraft:husbandry/allay_deliver_cake_to_note_block",
+      "tier": "T3"
+    },
+    {
+      "key": "allay_deliver_item_to_player",
+      "vanilla_id": "minecraft:husbandry/allay_deliver_item_to_player",
+      "tier": "T2"
+    },
+    {
+      "key": "balanced_diet",
+      "vanilla_id": "minecraft:husbandry/balanced_diet",
+      "tier": "T6"
+    },
+    {
+      "key": "bred_all_animals",
+      "vanilla_id": "minecraft:husbandry/bred_all_animals",
+      "tier": "T6"
+    },
+    {
+      "key": "complete_catalogue",
+      "vanilla_id": "minecraft:husbandry/complete_catalogue",
+      "tier": "T5"
+    },
+    {
+      "key": "feed_snifflet",
+      "vanilla_id": "minecraft:husbandry/feed_snifflet",
+      "tier": "T2"
+    },
+    {
+      "key": "froglights",
+      "vanilla_id": "minecraft:husbandry/froglights",
+      "tier": "T5"
+    },
+    {
+      "key": "kill_axolotl_target",
+      "vanilla_id": "minecraft:husbandry/kill_axolotl_target",
+      "tier": "T3"
+    },
+    {
+      "key": "leash_all_frog_variants",
+      "vanilla_id": "minecraft:husbandry/leash_all_frog_variants",
+      "tier": "T3"
+    },
+    {
+      "key": "make_a_sign_glow",
+      "vanilla_id": "minecraft:husbandry/make_a_sign_glow",
+      "tier": "T1"
+    },
+    {
+      "key": "obtain_netherite_hoe",
+      "vanilla_id": "minecraft:husbandry/obtain_netherite_hoe",
+      "tier": "T5"
+    },
+    {
+      "key": "obtain_sniffer_egg",
+      "vanilla_id": "minecraft:husbandry/obtain_sniffer_egg",
+      "tier": "T3"
+    },
+    {
+      "key": "place_dried_ghast_in_water",
+      "vanilla_id": "minecraft:husbandry/place_dried_ghast_in_water",
+      "tier": "T2"
+    },
+    {
+      "key": "plant_any_sniffer_seed",
+      "vanilla_id": "minecraft:husbandry/plant_any_sniffer_seed",
+      "tier": "T3"
+    },
+    {
+      "key": "remove_wolf_armor",
+      "vanilla_id": "minecraft:husbandry/remove_wolf_armor",
+      "tier": "T2"
+    },
+    {
+      "key": "repair_wolf_armor",
+      "vanilla_id": "minecraft:husbandry/repair_wolf_armor",
+      "tier": "T2"
+    },
+    {
+      "key": "ride_a_boat_with_a_goat",
+      "vanilla_id": "minecraft:husbandry/ride_a_boat_with_a_goat",
+      "tier": "T3"
+    },
+    {
+      "key": "silk_touch_nest",
+      "vanilla_id": "minecraft:husbandry/silk_touch_nest",
+      "tier": "T3"
+    },
+    {
+      "key": "tadpole_in_a_bucket",
+      "vanilla_id": "minecraft:husbandry/tadpole_in_a_bucket",
+      "tier": "T2"
+    },
+    {
+      "key": "uh_oh",
+      "vanilla_id": "minecraft:husbandry/uh_oh",
+      "tier": "T3"
+    },
+    {
+      "key": "wax_off",
+      "vanilla_id": "minecraft:husbandry/wax_off",
+      "tier": "T1"
+    },
+    {
+      "key": "wax_on",
+      "vanilla_id": "minecraft:husbandry/wax_on",
+      "tier": "T1"
+    },
+    {
+      "key": "whole_pack",
+      "vanilla_id": "minecraft:husbandry/whole_pack",
+      "tier": "T5"
+    },
+    {
+      "key": "all_effects",
+      "vanilla_id": "minecraft:nether/all_effects",
+      "tier": "T6"
+    },
+    {
+      "key": "all_potions",
+      "vanilla_id": "minecraft:nether/all_potions",
+      "tier": "T5"
+    },
+    {
+      "key": "create_beacon",
+      "vanilla_id": "minecraft:nether/create_beacon",
+      "tier": "T3"
+    },
+    {
+      "key": "create_full_beacon",
+      "vanilla_id": "minecraft:nether/create_full_beacon",
+      "tier": "T5"
+    },
+    {
+      "key": "distract_piglin",
+      "vanilla_id": "minecraft:nether/distract_piglin",
+      "tier": "T2"
+    },
+    {
+      "key": "explore_nether",
+      "vanilla_id": "minecraft:nether/explore_nether",
+      "tier": "T5"
+    },
+    {
+      "key": "fast_travel",
+      "vanilla_id": "minecraft:nether/fast_travel",
+      "tier": "T4"
+    },
+    {
+      "key": "get_wither_skull",
+      "vanilla_id": "minecraft:nether/get_wither_skull",
+      "tier": "T3"
+    },
+    {
+      "key": "loot_bastion",
+      "vanilla_id": "minecraft:nether/loot_bastion",
+      "tier": "T3"
+    },
+    {
+      "key": "netherite_armor",
+      "vanilla_id": "minecraft:nether/netherite_armor",
+      "tier": "T5"
+    },
+    {
+      "key": "obtain_ancient_debris",
+      "vanilla_id": "minecraft:nether/obtain_ancient_debris",
+      "tier": "T3"
+    },
+    {
+      "key": "ride_strider_in_overworld_lava",
+      "vanilla_id": "minecraft:nether/ride_strider_in_overworld_lava",
+      "tier": "T4"
+    },
+    {
+      "key": "summon_wither",
+      "vanilla_id": "minecraft:nether/summon_wither",
+      "tier": "T4"
+    },
+    {
+      "key": "uneasy_alliance",
+      "vanilla_id": "minecraft:nether/uneasy_alliance",
+      "tier": "T5"
+    },
+    {
+      "key": "cure_zombie_villager",
+      "vanilla_id": "minecraft:story/cure_zombie_villager",
+      "tier": "T3"
+    },
+    {
+      "key": "form_obsidian",
+      "vanilla_id": "minecraft:story/form_obsidian",
+      "tier": "T1"
+    },
+    {
+      "key": "iron_tools",
+      "vanilla_id": "minecraft:story/iron_tools",
+      "tier": "T2"
+    },
+    {
+      "key": "shiny_gear",
+      "vanilla_id": "minecraft:story/shiny_gear",
+      "tier": "T3"
+    }
+  ]
+}

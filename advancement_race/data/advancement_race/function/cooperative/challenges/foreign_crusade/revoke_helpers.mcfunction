@@ -1,0 +1,3 @@
+advancement revoke @s only advancement_race_coop:challenge/foreign_crusade_end_wither
+advancement revoke @s only advancement_race_coop:challenge/foreign_crusade_nether_evoker
+advancement revoke @s only advancement_race_coop:challenge/foreign_crusade_overworld_shulker

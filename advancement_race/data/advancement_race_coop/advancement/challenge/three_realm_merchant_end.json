@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "trade": {
+      "trigger": "minecraft:villager_trade",
+      "conditions": {
+        "villager": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:villager",
+              "minecraft:nbt": "{Tags:[\"advancement_race_n15_merchant\"]}"
+            }
+          }
+        ],
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["trade"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/three_realm_merchant/trade_end"
+  }
+}

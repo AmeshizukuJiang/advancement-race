@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "simultaneous": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:flags": {
+                "is_on_fire": true,
+                "is_freezing": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["simultaneous"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/fire_and_ice/trigger"
+  }
+}

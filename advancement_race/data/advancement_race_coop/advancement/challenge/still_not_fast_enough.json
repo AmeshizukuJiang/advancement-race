@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "outside_border": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "advancement_race:outside_border",
+                "expected": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["outside_border"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/still_not_fast_enough/damage"
+  }
+}

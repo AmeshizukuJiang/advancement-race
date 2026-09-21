@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "kill_bound_evoker": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:evoker",
+              "minecraft:location": {
+                "dimension": "minecraft:the_nether"
+              },
+              "minecraft:nbt": "{Tags:[\"advancement_race_n15_crusade_nether_evoker\"]}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["kill_bound_evoker"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/foreign_crusade/nether_evoker"
+  }
+}

@@ -1,0 +1,6 @@
+data modify storage advancement_race:runtime cooperative_ui_list set value {}
+function advancement_race:cooperative/challenges/flowers_beyond/generated/show_list_prepare_generated
+execute if data storage advancement_race:match cooperative.challenges.flowers_beyond{status:"active"} run function advancement_race:cooperative/challenges/flowers_beyond/generated/show_list_active_generated
+execute if data storage advancement_race:match cooperative.challenges.flowers_beyond{status:"timed_out"} run function advancement_race:cooperative/challenges/flowers_beyond/generated/show_list_active_generated
+execute if data storage advancement_race:match cooperative.challenges.flowers_beyond{status:"completed"} run function advancement_race:cooperative/challenges/flowers_beyond/generated/show_list_active_generated
+function advancement_race:cooperative/challenges/flowers_beyond/generated/show_list_emit_generated with storage advancement_race:runtime cooperative_ui_list

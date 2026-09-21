@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match setup.cooperative.modifiers.border{faster_clock:1b,tight_start:1b,low_ceiling:1b} run tellraw @s [{"text":"Warning: all three Border Modifiers are enabled. This high-risk combination is allowed and contributes Border CR +9.","color":"red"}]

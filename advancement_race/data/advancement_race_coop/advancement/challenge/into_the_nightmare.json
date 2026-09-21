@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "kill": {
+      "trigger":"minecraft:player_killed_entity",
+      "conditions": {
+        "entity":[{"condition":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:entity_type":"minecraft:phantom"}}],
+        "player":[{"condition":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:location":{"dimension":"minecraft:overworld","position":{"y":{"max":-0.001}}}}}]
+      }
+    }
+  },
+  "requirements": [["kill"]],
+  "rewards": {"function":"advancement_race:cooperative/challenges/into_the_nightmare/trigger"}
+}

@@ -1,0 +1,12 @@
+scoreboard players set #n15_moon_started_now race_state 0
+execute if data storage advancement_race:match cooperative.challenges.shoot_down_the_moon{status:"armed"} in minecraft:the_end as @e[type=minecraft:ender_dragon,tag=!advancement_race_n15_moon_dragon,limit=1,sort=arbitrary] run function advancement_race:cooperative/challenges/shoot_down_the_moon/observe
+execute if data storage advancement_race:match cooperative.challenges.shoot_down_the_moon{status:"active"} unless score #n15_moon_started_now race_state matches 1 store result score #n15_moon_remaining race_state run data get storage advancement_race:match cooperative.challenges.shoot_down_the_moon.remaining_ticks
+execute if data storage advancement_race:match cooperative.challenges.shoot_down_the_moon{status:"active"} unless score #n15_moon_started_now race_state matches 1 run scoreboard players remove #n15_moon_remaining race_state 1
+execute if data storage advancement_race:match cooperative.challenges.shoot_down_the_moon{status:"active"} unless score #n15_moon_started_now race_state matches 1 store result storage advancement_race:match cooperative.challenges.shoot_down_the_moon.remaining_ticks int 1 run scoreboard players get #n15_moon_remaining race_state
+scoreboard players operation #n15_moon_seconds race_state = #n15_moon_remaining race_state
+scoreboard players add #n15_moon_seconds race_state 19
+scoreboard players set #n15_moon_twenty race_state 20
+scoreboard players operation #n15_moon_seconds race_state /= #n15_moon_twenty race_state
+execute if data storage advancement_race:match cooperative.challenges.shoot_down_the_moon{status:"active"} store result storage advancement_race:match cooperative.challenges.shoot_down_the_moon.remaining_seconds int 1 run scoreboard players get #n15_moon_seconds race_state
+execute if data storage advancement_race:match cooperative.challenges.shoot_down_the_moon{status:"active"} unless score #n15_moon_started_now race_state matches 1 in minecraft:the_end unless entity @e[type=minecraft:ender_dragon,tag=advancement_race_n15_moon_dragon,limit=1] run function advancement_race:cooperative/challenges/shoot_down_the_moon/timeout_lost
+execute if data storage advancement_race:match cooperative.challenges.shoot_down_the_moon{status:"active"} unless score #n15_moon_started_now race_state matches 1 if score #n15_moon_remaining race_state matches ..0 run function advancement_race:cooperative/challenges/shoot_down_the_moon/timeout

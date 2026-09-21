@@ -1,0 +1,3 @@
+execute in minecraft:the_end run tag @e[type=minecraft:wither,tag=advancement_race_n15_crusade_end_wither] remove advancement_race_n15_crusade_end_wither
+execute in minecraft:the_nether run tag @e[type=minecraft:evoker,tag=advancement_race_n15_crusade_nether_evoker] remove advancement_race_n15_crusade_nether_evoker
+execute in minecraft:overworld run tag @e[type=minecraft:shulker,tag=advancement_race_n15_crusade_overworld_shulker] remove advancement_race_n15_crusade_overworld_shulker

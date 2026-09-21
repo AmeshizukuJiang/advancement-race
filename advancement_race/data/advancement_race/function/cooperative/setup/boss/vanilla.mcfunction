@@ -1,0 +1,5 @@
+execute unless data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Boss modifier can only be changed in a prepared Cooperative Border lobby.","color":"red"}]
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run data modify storage advancement_race:match setup.cooperative.modifiers.boss set value "vanilla"
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run data modify storage advancement_race:match setup.cooperative.modifier_cr.boss set value 0
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run function advancement_race:cooperative/setup/recalculate_challenge_rating
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Bosses: Vanilla","color":"green","bold":true},{"text":" · Dragon 200 HP · Wither 300 HP · Boss CR +0","color":"gray","bold":false}]

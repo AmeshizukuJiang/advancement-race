@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match cooperative.challenges.ecological_restoration{status:"active",wheat:1b,beetroot:1b,carrot:1b,potato:1b,pumpkin:1b,melon:1b,torchflower:1b,pitcher:1b,cocoa:1b,nether_wart:1b} run function advancement_race:cooperative/challenges/ecological_restoration/complete

@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.fire_and_ice{status:"active"} run function advancement_race:cooperative/challenges/fire_and_ice/complete

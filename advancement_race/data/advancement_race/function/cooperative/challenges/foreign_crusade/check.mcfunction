@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match cooperative.challenges.foreign_crusade{status:"active",end_wither:1b,nether_evoker:1b,overworld_shulker:1b} run function advancement_race:cooperative/challenges/foreign_crusade/complete

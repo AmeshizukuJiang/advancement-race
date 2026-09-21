@@ -1,0 +1,2 @@
+advancement revoke @s only advancement_race_coop:challenge/foreign_crusade_nether_evoker
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.foreign_crusade{status:"active",nether_evoker:0b} run function advancement_race:cooperative/challenges/foreign_crusade/mark {field:"nether_evoker",label:"Nether Evoker"}

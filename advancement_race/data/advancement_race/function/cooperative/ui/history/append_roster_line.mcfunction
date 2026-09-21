@@ -1,1 +1,1 @@
-$data modify storage advancement_race:runtime info_center.pages[2].raw.extra append value {text:"\n#$(roster_number) $(name)",color:"#2B2B2B",bold:false}
+function advancement_race:cooperative/ui_v2/generated/history_append_roster_line_generated with storage advancement_race:runtime coop_history_work.participant

@@ -1,0 +1,2 @@
+$advancement revoke @s only advancement_race_coop:challenge/ecological_$(field)
+$execute if data storage advancement_race:match {status:"active",mode:"cooperative_border",cooperative:{challenges:{ecological_restoration:{status:"active"}}}} if score @s race_participant matches 0.. unless data storage advancement_race:match cooperative.challenges.ecological_restoration{$(field):1b} run function advancement_race:cooperative/challenges/ecological_restoration/mark {field:"$(field)",label:"$(label)"}

@@ -1,0 +1,1 @@
+execute in minecraft:the_end as @e[type=minecraft:item] at @s if items entity @s contents #advancement_race:froglights if entity @e[type=minecraft:frog,distance=..4] if data storage advancement_race:match cooperative.challenges.alien_froglight{status:"active"} run function advancement_race:cooperative/challenges/alien_froglight/found

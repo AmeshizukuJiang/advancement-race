@@ -1,0 +1,1 @@
+execute in minecraft:the_nether as @e[type=minecraft:wither_skeleton,limit=1,sort=arbitrary] if data entity @s active_effects[{id:"minecraft:levitation"}] if data storage advancement_race:match cooperative.challenges.ascend_the_soul{status:"active"} run function advancement_race:cooperative/challenges/ascend_the_soul/found

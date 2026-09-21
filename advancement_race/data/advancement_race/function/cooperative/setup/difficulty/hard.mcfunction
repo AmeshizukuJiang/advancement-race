@@ -1,0 +1,5 @@
+execute unless data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Game Difficulty can only be changed in a prepared Cooperative Border lobby.","color":"red"}]
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run data modify storage advancement_race:match setup.cooperative.game_difficulty set value "hard"
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run data modify storage advancement_race:match setup.cooperative.modifier_cr.difficulty set value 3
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run function advancement_race:cooperative/setup/recalculate_challenge_rating
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Game Difficulty: Hard","color":"red","bold":true},{"text":" · Difficulty CR +3\nThis is a world-wide setting and affects unregistered players when the match starts.","color":"gray","bold":false}]

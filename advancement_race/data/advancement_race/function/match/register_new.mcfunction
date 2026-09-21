@@ -4,7 +4,7 @@ scoreboard players set @s race_points 0
 scoreboard players set @s race_place 0
 scoreboard players set @s race_award 0
 function advancement_race:match/revoke_helpers
-function advancement_race:cooperative/challenges/relay/revoke_helpers
+function advancement_race:cooperative/challenges/revoke_helpers
 data modify storage advancement_race:match participants append value {}
 execute store result storage advancement_race:runtime participant_index int 1 run scoreboard players get @s race_participant
 data modify storage advancement_race:runtime player_uuid set from entity @s UUID

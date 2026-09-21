@@ -1,0 +1,2 @@
+data modify storage advancement_race:match cooperative.challenges.something_is_wrong.remaining_seconds set value 0
+function advancement_race:cooperative/challenges/something_is_wrong/timeout

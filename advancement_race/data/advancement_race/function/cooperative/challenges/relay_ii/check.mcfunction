@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match cooperative.challenges.relay_ii{status:"active",drowned:1b,blaze:1b,enderman:1b,pillager:1b,phantom:1b,slime:1b} run function advancement_race:cooperative/challenges/relay_ii/complete

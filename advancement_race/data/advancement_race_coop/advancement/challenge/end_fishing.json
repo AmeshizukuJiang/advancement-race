@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "catch": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "item": {},
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["catch"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/end_fishing/trigger"
+  }
+}

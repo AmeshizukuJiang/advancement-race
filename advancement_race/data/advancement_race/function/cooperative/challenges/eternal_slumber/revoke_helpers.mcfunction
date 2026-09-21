@@ -1,0 +1,6 @@
+advancement revoke @s only advancement_race_coop:challenge/eternal_slumber_overworld
+advancement revoke @s only advancement_race_coop:challenge/eternal_slumber_nether
+advancement revoke @s only advancement_race_coop:challenge/eternal_slumber_end
+tag @s remove advancement_race_n3_slumber_overworld_pending
+tag @s remove advancement_race_n3_slumber_nether_pending
+tag @s remove advancement_race_n3_slumber_end_pending

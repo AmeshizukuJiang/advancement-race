@@ -1,0 +1,2 @@
+advancement revoke @s only advancement_race_coop:challenge/three_realm_finale_warden
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.three_realm_finale{status:"active",warden:0b} run function advancement_race:cooperative/challenges/three_realm_finale/mark {field:"warden",label:"Overworld Warden"}

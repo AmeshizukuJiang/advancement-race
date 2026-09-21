@@ -4,9 +4,8 @@ data modify storage advancement_race:runtime info_center.team_points set from st
 data modify storage advancement_race:runtime info_center.border_size set from storage advancement_race:runtime coop_history.cooperative.border.size
 data modify storage advancement_race:runtime info_center.vanilla_completed set from storage advancement_race:runtime coop_history.cooperative.vanilla_completed
 data modify storage advancement_race:runtime info_center.challenge_completed set from storage advancement_race:runtime coop_history.cooperative.challenge_completed
-data modify storage advancement_race:runtime info_center.supply_status set from storage advancement_race:runtime coop_history.cooperative.challenges.supply.status
-data modify storage advancement_race:runtime info_center.relay_status set from storage advancement_race:runtime coop_history.cooperative.challenges.relay.status
-data modify storage advancement_race:runtime info_center.relay_attempts set from storage advancement_race:runtime coop_history.cooperative.challenges.relay.attempts
+function advancement_race:cooperative/ui/prepare_history_rules
+function advancement_race:cooperative/ui_v2/generated/history_prepare_generated
 data modify storage advancement_race:runtime info_center.end_reason set value "unknown"
 execute if data storage advancement_race:runtime coop_history.end_reason run data modify storage advancement_race:runtime info_center.end_reason set from storage advancement_race:runtime coop_history.end_reason
 execute store result score #coop_history_participants race_state run data get storage advancement_race:runtime coop_history.participants

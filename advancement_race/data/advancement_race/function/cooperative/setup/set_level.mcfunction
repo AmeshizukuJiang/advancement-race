@@ -1,0 +1,6 @@
+scoreboard players set #coop_setup_valid race_state 0
+$execute if data storage advancement_race:config cooperative_v11.difficulty_profiles[{level:$(level)}] run scoreboard players set #coop_setup_valid race_state 1
+$execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} if score #coop_setup_valid race_state matches 1 run data modify storage advancement_race:match setup.cooperative.difficulty_level set value $(level)
+$execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} if score #coop_setup_valid race_state matches 1 run tellraw @s [{"text":"Cooperative difficulty selected: ","color":"gray"},{"text":"N$(level)","color":"aqua","bold":true},{"text":". Rules lock when the match starts.","color":"gray","bold":false}]
+execute unless data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Cooperative difficulty can only be changed in a prepared Cooperative Border lobby.","color":"red"}]
+$execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} unless score #coop_setup_valid race_state matches 1 run tellraw @s [{"text":"Invalid Cooperative difficulty N$(level). Choose N0 through N18.","color":"red"}]

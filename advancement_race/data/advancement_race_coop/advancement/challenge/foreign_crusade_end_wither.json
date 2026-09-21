@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "kill_bound_wither": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:wither",
+              "minecraft:location": {
+                "dimension": "minecraft:the_end"
+              },
+              "minecraft:nbt": "{Tags:[\"advancement_race_n15_crusade_end_wither\"]}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["kill_bound_wither"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/foreign_crusade/end_wither"
+  }
+}

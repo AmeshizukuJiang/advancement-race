@@ -1,0 +1,2 @@
+advancement revoke @s only advancement_race_coop:challenge/something_wrong_fortress_barter
+advancement revoke @s only advancement_race_coop:challenge/something_wrong_bastion_blaze

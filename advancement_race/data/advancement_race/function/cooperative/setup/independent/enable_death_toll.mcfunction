@@ -1,0 +1,4 @@
+execute unless data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Independent modifiers can only be changed in a prepared Cooperative Border lobby.","color":"red"}]
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run data modify storage advancement_race:match setup.cooperative.modifiers.independent.death_toll set value 1b
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run function advancement_race:cooperative/setup/independent/recalculate
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Enabled Independent Modifier: Death Toll","color":"gold","bold":true},{"text":" · Each participant death costs 100 Border · CR +3","color":"gray","bold":false}]

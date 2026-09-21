@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "firework_damage": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "advancement_race:fireworks",
+                "expected": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["firework_damage"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/splendid_as_summer_flowers/damage"
+  }
+}

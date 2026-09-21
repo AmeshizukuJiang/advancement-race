@@ -1,0 +1,9 @@
+{
+  "criteria": {
+    "cold_strider": {
+      "trigger":"minecraft:tick",
+      "conditions":{"player":[{"condition":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:location":{"biomes":"#advancement_race:cold_or_snowy"},"minecraft:vehicle":{"minecraft:entity_type":"minecraft:strider"}}}]}
+    }
+  },
+  "requirements": [["cold_strider"]]
+}

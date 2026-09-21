@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "end_bed_explosion": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "advancement_race:bad_respawn_point",
+                "expected": true
+              }
+            ]
+          }
+        },
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["end_bed_explosion"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/rekindle_old_dream/bed"
+  }
+}

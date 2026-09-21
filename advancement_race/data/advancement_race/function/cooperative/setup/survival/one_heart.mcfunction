@@ -1,0 +1,5 @@
+execute unless data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Survival modifier can only be changed in a prepared Cooperative Border lobby.","color":"red"}]
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run data modify storage advancement_race:match setup.cooperative.modifiers.survival set value "one_heart"
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run data modify storage advancement_race:match setup.cooperative.modifier_cr.survival set value 10
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run function advancement_race:cooperative/setup/recalculate_challenge_rating
+execute if data storage advancement_race:match {status:"idle",prepared:1b,mode:"cooperative_border"} run tellraw @s [{"text":"Survival: One Heart","color":"dark_red","bold":true},{"text":" · 2 HP · Inventory drops on death · Survival CR +10","color":"gray","bold":false}]

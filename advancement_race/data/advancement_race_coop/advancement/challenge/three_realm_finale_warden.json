@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "kill_bound_warden": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:entity_type": "minecraft:warden",
+              "minecraft:nbt": "{Tags:[\"advancement_race_n9_finale_warden\"]}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["kill_bound_warden"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/three_realm_finale/warden"
+  }
+}

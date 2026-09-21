@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "trade_in_end": {
+      "trigger": "minecraft:villager_trade",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["trade_in_end"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/end_trading_post/trigger"
+  }
+}

@@ -1,0 +1,2 @@
+execute if data storage advancement_race:match cooperative.challenges.alien_froglight{status:"active"} run data modify storage advancement_race:match cooperative.challenges.alien_froglight.status set value "completed"
+execute if data storage advancement_race:match cooperative.challenges.alien_froglight{status:"completed"} unless data storage advancement_race:match cooperative.challenges.alien_froglight{rewarded:1b} run function advancement_race:cooperative/challenges/alien_froglight/reward

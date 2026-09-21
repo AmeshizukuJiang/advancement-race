@@ -1,0 +1,2 @@
+data modify storage advancement_race:match cooperative.challenges.flowers_beyond.remaining_seconds set value 0
+function advancement_race:cooperative/challenges/flowers_beyond/timeout

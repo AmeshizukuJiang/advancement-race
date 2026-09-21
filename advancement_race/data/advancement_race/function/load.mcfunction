@@ -9,6 +9,13 @@ scoreboard players set #score_percent race_state 100
 scoreboard players set #match_active race_state 0
 execute unless data storage advancement_race:state event_objectives run scoreboard objectives add race_participant dummy "Race Participant"
 data modify storage advancement_race:state event_objectives set value 1b
+execute unless data storage advancement_race:state cooperative_modifier_objectives run scoreboard objectives add race_deaths deathCount
+execute unless data storage advancement_race:state cooperative_modifier_objectives run scoreboard objectives add race_death_seen dummy "Race Death Baseline"
+data modify storage advancement_race:state cooperative_modifier_objectives set value 1b
+execute unless data storage advancement_race:state cooperative_challenge_objectives run scoreboard objectives add race_challenge_death_seen dummy "Challenge Death Baseline"
+data modify storage advancement_race:state cooperative_challenge_objectives set value 1b
+execute unless data storage advancement_race:state cooperative_n6_objectives run scoreboard objectives add race_cold_strider dummy "Cold Strider Duration"
+data modify storage advancement_race:state cooperative_n6_objectives set value 1b
 execute unless data storage advancement_race:match participants run data modify storage advancement_race:match participants set value []
 execute unless data storage advancement_race:match events run data modify storage advancement_race:match events set value []
 execute unless data storage advancement_race:match status run data modify storage advancement_race:match status set value "idle"

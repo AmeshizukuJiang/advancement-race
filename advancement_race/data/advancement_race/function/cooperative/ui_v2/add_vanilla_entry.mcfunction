@@ -1,0 +1,3 @@
+$data modify storage advancement_race:runtime cooperative_ui_v2.entry set value {marker:"✗",color:"#9B2226",status:"Incomplete",title_translate:"$(title_translate)",team_points:$(team_points),border_delta:$(border_delta),page_index:$(page_index)}
+$execute if data storage advancement_race:match cooperative.completed[{id:"$(id)"}] run data modify storage advancement_race:runtime cooperative_ui_v2.entry set value {marker:"✓",color:"#2E6B35",status:"Completed",title_translate:"$(title_translate)",team_points:$(team_points),border_delta:$(border_delta),page_index:$(page_index)}
+function advancement_race:cooperative/ui_v2/append_vanilla_entry with storage advancement_race:runtime cooperative_ui_v2.entry

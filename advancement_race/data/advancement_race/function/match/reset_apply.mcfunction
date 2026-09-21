@@ -1,5 +1,21 @@
 execute if data storage advancement_race:match {mode:"cooperative_border"} if data storage advancement_race:match cooperative.border.previous run function advancement_race:cooperative/border/restore
+execute if data storage advancement_race:match {mode:"cooperative_border"} run function advancement_race:cooperative/challenges/three_realm_finale/cleanup_targets
+execute if data storage advancement_race:match {mode:"cooperative_border"} run function advancement_race:cooperative/challenges/three_realm_merchant/cleanup_target
+execute if data storage advancement_race:match {mode:"cooperative_border"} run function advancement_race:cooperative/challenges/shoot_down_the_moon/cleanup_target
+execute if data storage advancement_race:match {mode:"cooperative_border"} run function advancement_race:cooperative/challenges/jailer_unemployed/cleanup_targets
+execute if data storage advancement_race:match {mode:"cooperative_border"} run function advancement_race:cooperative/challenges/rekindle_old_dream/cleanup
+execute if data storage advancement_race:match {mode:"cooperative_border"} run function advancement_race:cooperative/challenges/foreign_crusade/cleanup_targets
+tag @a remove advancement_race_n9_border_overworld_pending
+tag @a remove advancement_race_n9_border_nether_pending
+tag @a remove advancement_race_n9_border_end_pending
+execute if data storage advancement_race:match {mode:"cooperative_border"} run difficulty easy
+execute if data storage advancement_race:match {mode:"cooperative_border"} run gamerule minecraft:keep_inventory true
+execute if data storage advancement_race:match {mode:"cooperative_border"} run gamerule minecraft:natural_health_regeneration true
+execute if data storage advancement_race:match {mode:"cooperative_border"} run gamerule minecraft:players_sleeping_percentage 100
+execute if data storage advancement_race:match {mode:"cooperative_border"} as @a[scores={race_participant=0..}] run function advancement_race:cooperative/rules/restore_survival_player
 scoreboard players reset * race_participant
+scoreboard players reset * race_death_seen
+scoreboard players reset * race_challenge_death_seen
 scoreboard players reset * race_points
 scoreboard players reset * race_place
 scoreboard players reset * race_award
@@ -15,6 +31,7 @@ data modify storage advancement_race:match participants set value []
 data modify storage advancement_race:match events set value []
 data remove storage advancement_race:match cooperative
 data remove storage advancement_race:match rules
+data remove storage advancement_race:match setup
 data remove storage advancement_race:match end_reason
 data remove storage advancement_race:match duration_ticks
 tellraw @s [{"text":"Advancement Race match reset. Register participants before starting."}]

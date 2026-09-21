@@ -1,0 +1,2 @@
+execute if data storage advancement_race:match cooperative.challenges.ascend_the_soul{status:"active"} run data modify storage advancement_race:match cooperative.challenges.ascend_the_soul.status set value "completed"
+execute if data storage advancement_race:match cooperative.challenges.ascend_the_soul{status:"completed"} unless data storage advancement_race:match cooperative.challenges.ascend_the_soul{rewarded:1b} run function advancement_race:cooperative/challenges/ascend_the_soul/reward

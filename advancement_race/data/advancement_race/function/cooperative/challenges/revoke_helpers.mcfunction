@@ -1,0 +1,28 @@
+function advancement_race:cooperative/challenges/relay/revoke_helpers
+advancement revoke @s only advancement_race_coop:challenge/splendid_as_summer_flowers
+tag @s remove advancement_race_n3_firework_pending
+advancement revoke @s only advancement_race_coop:challenge/injustice_in_june
+advancement revoke @s only advancement_race_coop:challenge/end_fishing
+advancement revoke @s only advancement_race_coop:challenge/fire_and_ice
+function advancement_race:cooperative/challenges/eternal_slumber/revoke_helpers
+function advancement_race:cooperative/challenges/ecological_restoration/revoke_helpers
+function advancement_race:cooperative/challenges/something_is_wrong/revoke_helpers
+advancement revoke @s only advancement_race_coop:challenge/sleep_above_clouds
+advancement revoke @s only advancement_race_coop:challenge/out_of_climate
+function advancement_race:cooperative/challenges/relay_ii/revoke_helpers
+advancement revoke @s only advancement_race_coop:challenge/underwater_furnace
+advancement revoke @s only advancement_race_coop:challenge/into_the_nightmare
+scoreboard players set @s race_cold_strider 0
+advancement revoke @s only advancement_race_coop:challenge/end_trading_post
+function advancement_race:cooperative/challenges/three_realm_finale/revoke_helpers
+advancement revoke @s only advancement_race_coop:challenge/still_not_fast_enough
+advancement revoke @s only advancement_race_coop:challenge/visitor_from_beyond
+tag @s remove advancement_race_n9_border_overworld_pending
+tag @s remove advancement_race_n9_border_nether_pending
+tag @s remove advancement_race_n9_border_end_pending
+advancement revoke @s only advancement_race_coop:challenge/raid_silent_hill
+function advancement_race:cooperative/challenges/three_realm_merchant/revoke_helpers
+advancement revoke @s only advancement_race_coop:challenge/shoot_down_the_moon_dragon
+function advancement_race:cooperative/challenges/flowers_beyond/revoke_generated
+advancement revoke @s only advancement_race_coop:challenge/rekindle_old_dream_bed
+function advancement_race:cooperative/challenges/foreign_crusade/revoke_helpers

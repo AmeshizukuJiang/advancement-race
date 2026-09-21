@@ -1,0 +1,1 @@
+{"criteria":{"placed":{"trigger":"minecraft:placed_block","conditions":{"location":[{"condition":"minecraft:block_state_property","block":"minecraft:closed_eyeblossom"}]}}},"requirements":[["placed"]],"rewards":{"function":"advancement_race:cooperative/challenges/flowers_beyond/generated/closed_eyeblossom"}}

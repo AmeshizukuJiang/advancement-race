@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "hero_in_ancient_city": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "minecraft:hero_of_the_village": {}
+        },
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "structures": "minecraft:ancient_city"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["hero_in_ancient_city"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/raid_silent_hill/trigger"
+  }
+}

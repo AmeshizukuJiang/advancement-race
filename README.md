@@ -1,11 +1,34 @@
 # Advancement Race
 
 Advancement Race is a vanilla Minecraft Java Edition **26.2** data pack for
-multiplayer races based on vanilla advancements. Each advancement has a base
-score, and players receive fewer points when other players complete that same
-advancement first.
+multiplayer games based on vanilla advancements. It supports the original
+competitive race and a Cooperative Border mode built around shared progression,
+custom challenges, and a shrinking three-dimension World Border.
 
-## Current release — v1.0.0
+## Current development — v1.1.0 release candidate
+
+The v1.1 release candidate adds Cooperative Border without changing the v1.0
+Competitive scoring rules. A single registered team works toward all 121
+vanilla gameplay advancements plus the custom challenges enabled by its chosen
+difficulty.
+
+- N0–N18 difficulty profiles control the Border budget, vanilla rewards, game
+  difficulty, and cumulative challenge packs.
+- N3, N6, N9, and N15 unlock 29 custom challenges in total.
+- Vanilla and custom objectives award independent Cooperative Team Points and
+  Border distance. At N18, custom objectives retain their Team Points but apply
+  `-50` Border.
+- Optional Survival, Border, Boss, and independent modifiers produce a separate
+  Challenge Rating.
+- The Cooperative Info Center provides a Vanilla Index, Challenge Index,
+  challenge controls, completion markers, rules, live totals, and historical
+  challenge results.
+
+All values remain subject to multiplayer balance testing. The implementation
+has passed staged Minecraft 26.2 mechanic tests; the first full long-form
+survival playtest is the remaining RC balance gate.
+
+## Stable release — v1.0.0
 
 **Stable release — complete multiplayer flow and full gameplay catalog**
 
@@ -68,6 +91,10 @@ Prepare a new lobby:
 ```mcfunction
 /function advancement_race:match/reset
 ```
+
+Use the Admin Book to keep Competitive mode or select Cooperative Border. For
+Cooperative Border, configure N difficulty and optional modifiers before the
+match starts; the selected setup is snapshotted into that match's history.
 
 Register each player with the name that should be recorded in race history:
 
@@ -158,4 +185,6 @@ Mojang-verified Minecraft 26.2 server artifact, run:
 ```text
 python tools/validate_catalog.py --offline
 python tools/generate_advancements.py --offline --check
+python tools/validate_cooperative_config.py
+python tools/generate_cooperative_config.py --check
 ```

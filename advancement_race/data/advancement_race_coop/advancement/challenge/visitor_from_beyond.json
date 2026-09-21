@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "dolphins_grace_in_end": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "minecraft:dolphins_grace": {}
+        },
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:location": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["dolphins_grace_in_end"]],
+  "rewards": {
+    "function": "advancement_race:cooperative/challenges/visitor_from_beyond/trigger"
+  }
+}

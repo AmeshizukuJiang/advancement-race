@@ -1,0 +1,3 @@
+advancement revoke @s only advancement_race_coop:challenge/three_realm_merchant_overworld
+advancement revoke @s only advancement_race_coop:challenge/three_realm_merchant_nether
+advancement revoke @s only advancement_race_coop:challenge/three_realm_merchant_end

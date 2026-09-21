@@ -1,0 +1,1 @@
+$data modify storage advancement_race:runtime info_center.pages[$(page_index)].raw.extra append value {text:"\n$(marker) ",color:"$(color)",bold:true,hover_event:{action:"show_text",value:{text:"Team Points: +$(team_points)\nBorder: +$(border_delta)\nTeam Status: $(status)",color:"#8A6500"}},extra:[{translate:"$(title_translate)",color:"#2B2B2B",bold:false}]}

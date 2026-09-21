@@ -1,0 +1,3 @@
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.eternal_slumber{status:"active",end:0b} run advancement revoke @s only advancement_race_coop:challenge/eternal_slumber_end
+execute if data storage advancement_race:match {status:"active",mode:"cooperative_border"} if score @s race_participant matches 0.. if data storage advancement_race:match cooperative.challenges.eternal_slumber{status:"active",end:0b} run tag @s add advancement_race_n3_slumber_end_pending
+execute if entity @s[tag=advancement_race_n3_slumber_end_pending] run schedule function advancement_race:cooperative/challenges/death/check 1t replace

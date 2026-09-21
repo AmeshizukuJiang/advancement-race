@@ -1,0 +1,1 @@
+execute if data storage advancement_race:match cooperative.challenges.still_not_fast_enough{status:"active",overworld:1b,nether:1b,end:1b} run function advancement_race:cooperative/challenges/still_not_fast_enough/complete

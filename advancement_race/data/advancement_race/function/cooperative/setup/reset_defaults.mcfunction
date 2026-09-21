@@ -1,0 +1,2 @@
+# Prepared-lobby defaults. N difficulty and Minecraft Difficulty are independent.
+data modify storage advancement_race:match setup.cooperative set value {schema_version:2,difficulty_level:0,game_difficulty:"easy",challenge_rating:0,official:1b,modifier_cr:{difficulty:0,survival:0,border:0,boss:0,independent:0},modifiers:{survival:"standard",border:{faster_clock:0b,tight_start:0b,low_ceiling:0b},boss:"vanilla",independent:{no_natural_regeneration:0b,sleepless_nights:0b,death_toll:0b,failure_tax:0b,no_offline_pause:0b}}}

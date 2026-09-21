@@ -1,0 +1,2 @@
+data modify storage advancement_race:match cooperative.challenges.ecological_restoration.remaining_seconds set value 0
+function advancement_race:cooperative/challenges/ecological_restoration/timeout
